@@ -773,16 +773,17 @@ HTML_CODE = r'''<!DOCTYPE html>
             <!-- 2.75. CẢNH 1: BƯỚC XUỐNG TÀU (KHÔNG HỘP THOẠI) -->
             <!-- ---------------------------------------------------- -->
             <div id="marseilleNoDialogueCard" class="hidden absolute bottom-6 inset-x-4 md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:max-w-2xl z-30 pointer-events-auto">
-                <div class="p-4 md:p-5 rounded-2xl bg-[#070c18]/90 border border-amber-400/50 backdrop-blur-md shadow-[0_20px_50px_rgba(0,0,0,0.9)] text-center space-y-2">
-                    <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/15 border border-amber-400/40 text-amber-300 font-cinematic text-[11px] font-bold tracking-widest uppercase">
+                <div class="p-4 md:p-6 rounded-2xl bg-black/85 border-2 border-amber-400/60 backdrop-blur-md shadow-[0_20px_50px_rgba(0,0,0,0.95)] text-center space-y-2.5">
+                    <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-black/60 border border-amber-400/50 backdrop-blur-md text-amber-300 font-cinematic text-xs font-bold tracking-widest uppercase shadow-md">
+                        <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
                         ⚓ 06.07.1911 • CẢNG MARSEILLE (NƯỚC PHÁP)
                     </span>
-                    <p class="font-cinematic text-sm md:text-base text-slate-100 font-medium leading-relaxed">
+                    <p class="font-cinematic text-sm md:text-base text-white font-medium leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,1)]">
                         Sau 1 tháng 1 ngày vượt trùng dương mênh mông, con tàu Amiral Latouche-Tréville hạ cầu tàu gỗ cập bến Marseille. Dòng người hành khách và thủy thủ bắt đầu bước chân xuống đất Pháp...
                     </p>
-                    <div class="pt-1 flex items-center justify-center gap-2 text-xs font-typewriter text-amber-300/80">
-                        <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
-                        <button onclick="advanceDialogue()" class="hover:text-amber-200 underline underline-offset-4 cursor-pointer">
+                    <div class="pt-1 flex items-center justify-center gap-2 text-xs font-typewriter text-amber-300">
+                        <span class="w-2 h-2 rounded-full bg-amber-400 shadow-[0_0_8px_rgba(245,158,11,1)]"></span>
+                        <button onclick="advanceDialogue()" class="hover:text-amber-200 underline underline-offset-4 cursor-pointer font-semibold">
                             Nhấp vào đây hoặc bấm [Space] để tiếp tục quan sát →
                         </button>
                     </div>
@@ -795,163 +796,170 @@ HTML_CODE = r'''<!DOCTYPE html>
             <div id="diegeticMarseilleRig" class="hidden absolute inset-0 pointer-events-auto select-none z-25 flex flex-col justify-between p-4 md:p-6">
                 
                 <!-- Header Status Banner -->
-                <div class="w-full max-w-4xl mx-auto flex items-center justify-between p-3 rounded-xl bg-[#070c18]/90 border border-sky-500/40 backdrop-blur-md shadow-xl">
+                <div class="w-full max-w-4xl mx-auto flex items-center justify-between p-3.5 rounded-2xl bg-black/80 border border-amber-400/40 backdrop-blur-md shadow-2xl">
                     <div class="flex items-center gap-3">
-                        <div class="w-8 h-8 rounded-full bg-sky-950/90 border border-sky-400/60 flex items-center justify-center text-sky-300 text-sm">
+                        <div class="w-9 h-9 rounded-full bg-amber-950/80 border border-amber-400/70 flex items-center justify-center text-amber-300 text-sm shadow-md">
                             ⚓
                         </div>
                         <div>
-                            <span class="text-[9px] uppercase font-typewriter text-sky-400 tracking-widest block font-bold">
+                            <span class="text-[10px] md:text-xs uppercase font-typewriter text-amber-400 tracking-widest block font-bold drop-shadow-[0_2px_4px_rgba(0,0,0,1)]">
                                 BẾN CẢNG VIEUX-PORT • MARSEILLE (PHÁP) • 06.07.1911
                             </span>
-                            <h3 id="marseilleSpatialTitle" class="font-cinematic text-xs md:text-sm font-bold text-slate-100 uppercase tracking-wider">
+                            <h3 id="marseilleSpatialTitle" class="font-cinematic text-xs md:text-sm font-bold text-white uppercase tracking-wider drop-shadow-[0_2px_6px_rgba(0,0,0,1)]">
                                 Quảng Trường Cảng: Chọn Hướng Quan Sát Đời Sống
                             </h3>
                         </div>
                     </div>
                     <div class="flex items-center gap-2">
-                        <span id="marseilleExplorationBadge" class="px-3 py-1 rounded-full bg-black/70 border border-sky-500/50 text-sky-300 font-typewriter text-xs font-bold">
+                        <span id="marseilleExplorationBadge" class="px-3.5 py-1 rounded-full bg-black/80 border border-amber-400/50 text-amber-300 font-typewriter text-xs font-bold shadow-md">
                             0 / 2 Hướng Khám Phá
                         </span>
                     </div>
                 </div>
 
-                <!-- Central Navigation Arrows (Visible when in Center) -->
+                <!-- Central Navigation Arrows (Visible when in Center - No spoilers!) -->
                 <div id="marseilleCenterNav" class="w-full max-w-5xl mx-auto flex items-center justify-between my-auto px-2">
-                    <!-- Left Button -->
+                    <!-- Left Button (Pure Direction, No Pre-revelation) -->
                     <button id="btnPanLeft" onclick="panToMarseilleView('left')"
-                            class="group p-4 md:p-5 rounded-2xl bg-[#070c18]/90 hover:bg-sky-950/80 border-2 border-sky-500/50 hover:border-amber-400 backdrop-blur-md shadow-[0_15px_35px_rgba(0,0,0,0.8)] transition-all transform hover:-translate-x-2 cursor-pointer flex flex-col items-start gap-1 max-w-[260px] md:max-w-xs text-left">
-                        <div class="flex items-center gap-2 text-amber-300 font-cinematic font-bold text-xs uppercase tracking-wider">
-                            <span class="text-base group-hover:scale-125 transition-transform">←</span>
-                            <span>HƯỚNG TRÁI</span>
+                            class="group p-4 md:p-5 rounded-2xl bg-black/75 hover:bg-black/90 border-2 border-amber-400/40 hover:border-amber-400 backdrop-blur-md shadow-[0_15px_35px_rgba(0,0,0,0.8)] hover:shadow-[0_0_30px_rgba(245,158,11,0.3)] transition-all transform hover:-translate-x-2 cursor-pointer flex flex-col items-start gap-1.5 max-w-[260px] md:max-w-xs text-left">
+                        <div class="flex items-center gap-2 text-amber-300 font-cinematic font-bold text-xs md:text-sm uppercase tracking-wider drop-shadow-[0_2px_4px_rgba(0,0,0,1)]">
+                            <span class="text-base md:text-lg group-hover:scale-125 transition-transform">←</span>
+                            <span>QUAN SÁT PHÍA TRÁI</span>
                         </div>
-                        <h4 class="font-body font-bold text-sm text-slate-100 group-hover:text-amber-200">
-                            Hàng Phu Kéo Xe Da Trắng
-                        </h4>
-                        <p class="text-[11px] text-slate-300 font-light leading-snug">
-                            Quan sát những người lao động Pháp nghèo khổ còng lưng kéo xe hàng nặng trĩu.
+                        <span class="font-typewriter text-xs text-slate-300 tracking-wide">
+                            [Bến Cảng Phía Tây]
+                        </span>
+                        <p class="text-[11px] text-amber-200/70 font-cinematic italic leading-snug">
+                            Nhấp hoặc bấm [←] để chuyển hướng nhìn
                         </p>
-                        <span id="marseilleLeftStatus" class="mt-2 text-[10px] font-typewriter px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 border border-sky-500/30">
+                        <span id="marseilleLeftStatus" class="mt-2 text-[10px] font-typewriter px-2.5 py-0.5 rounded-full bg-amber-500/10 text-amber-300 border border-amber-400/30 font-semibold">
                             Chưa quan sát
                         </span>
                     </button>
 
                     <!-- Center Compass Hint -->
-                    <div class="hidden md:flex flex-col items-center justify-center p-3 rounded-full bg-black/60 border border-sky-500/30 backdrop-blur-sm text-center">
-                        <span class="text-xs text-sky-300 font-typewriter uppercase tracking-widest font-bold">La Bàn Quan Sát</span>
-                        <span class="text-[10px] text-slate-400">Chọn 2 hướng để tìm ra Chân Lý</span>
+                    <div class="hidden md:flex flex-col items-center justify-center p-4 rounded-2xl bg-black/70 border border-amber-400/40 backdrop-blur-md text-center shadow-xl">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+                            <span class="text-xs text-amber-300 font-cinematic uppercase tracking-widest font-bold">La Bàn Quan Sát</span>
+                        </div>
+                        <span class="text-[11px] text-slate-300 font-typewriter">Khám phá cả 2 hướng để đúc kết Chân Lý</span>
                     </div>
 
-                    <!-- Right Button -->
+                    <!-- Right Button (Pure Direction, No Pre-revelation) -->
                     <button id="btnPanRight" onclick="panToMarseilleView('right')"
-                            class="group p-4 md:p-5 rounded-2xl bg-[#070c18]/90 hover:bg-sky-950/80 border-2 border-sky-500/50 hover:border-amber-400 backdrop-blur-md shadow-[0_15px_35px_rgba(0,0,0,0.8)] transition-all transform hover:translate-x-2 cursor-pointer flex flex-col items-end gap-1 max-w-[260px] md:max-w-xs text-right">
-                        <div class="flex items-center gap-2 text-amber-300 font-cinematic font-bold text-xs uppercase tracking-wider">
-                            <span>HƯỚNG PHẢI</span>
-                            <span class="text-base group-hover:scale-125 transition-transform">→</span>
+                            class="group p-4 md:p-5 rounded-2xl bg-black/75 hover:bg-black/90 border-2 border-amber-400/40 hover:border-amber-400 backdrop-blur-md shadow-[0_15px_35px_rgba(0,0,0,0.8)] hover:shadow-[0_0_30px_rgba(245,158,11,0.3)] transition-all transform hover:translate-x-2 cursor-pointer flex flex-col items-end gap-1.5 max-w-[260px] md:max-w-xs text-right">
+                        <div class="flex items-center gap-2 text-amber-300 font-cinematic font-bold text-xs md:text-sm uppercase tracking-wider drop-shadow-[0_2px_4px_rgba(0,0,0,1)]">
+                            <span>QUAN SÁT PHÍA PHẢI</span>
+                            <span class="text-base md:text-lg group-hover:scale-125 transition-transform">→</span>
                         </div>
-                        <h4 class="font-body font-bold text-sm text-slate-100 group-hover:text-amber-200">
-                            Bậc Đá Cảng Cũ & Người Nghèo
-                        </h4>
-                        <p class="text-[11px] text-slate-300 font-light leading-snug">
-                            Chứng kiến những người phụ nữ, trẻ em và người già ăn xin cơ hàn bên bờ đá.
+                        <span class="font-typewriter text-xs text-slate-300 tracking-wide">
+                            [Mép Nước Phía Đông]
+                        </span>
+                        <p class="text-[11px] text-amber-200/70 font-cinematic italic leading-snug">
+                            Nhấp hoặc bấm [→] để chuyển hướng nhìn
                         </p>
-                        <span id="marseilleRightStatus" class="mt-2 text-[10px] font-typewriter px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 border border-sky-500/30">
+                        <span id="marseilleRightStatus" class="mt-2 text-[10px] font-typewriter px-2.5 py-0.5 rounded-full bg-amber-500/10 text-amber-300 border border-amber-400/30 font-semibold">
                             Chưa quan sát
                         </span>
                     </button>
                 </div>
 
                 <!-- Left Focused Panel (When in Left View) -->
-                <div id="marseilleLeftPanel" class="hidden w-full max-w-3xl mx-auto my-auto p-5 md:p-6 rounded-2xl bg-[#070c18]/95 border-2 border-amber-500/60 backdrop-blur-md shadow-2xl animate-fade-in space-y-3">
-                    <div class="flex items-center justify-between border-b border-amber-500/30 pb-2">
-                        <span class="text-xs font-cinematic font-bold text-amber-300 uppercase tracking-wider flex items-center gap-2">
+                <div id="marseilleLeftPanel" class="hidden w-full max-w-3xl mx-auto my-auto p-5 md:p-7 rounded-2xl bg-black/85 border-2 border-amber-400/70 backdrop-blur-lg shadow-[0_20px_50px_rgba(0,0,0,0.9)] animate-fade-in space-y-4">
+                    <div class="flex items-center justify-between border-b border-amber-500/30 pb-2.5">
+                        <span class="text-xs md:text-sm font-cinematic font-bold text-amber-300 uppercase tracking-widest flex items-center gap-2 drop-shadow-[0_2px_4px_rgba(0,0,0,1)]">
                             <span>←</span> GÓC QUAN SÁT PHÍA TRÁI: HÀNG PHU KÉO XE
                         </span>
-                        <span class="text-[10px] font-cinematic px-2.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
+                        <span class="text-[10px] md:text-xs font-typewriter px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-bold">
                             ✓ ĐÃ QUAN SÁT
                         </span>
                     </div>
-                    <div class="space-y-2">
-                        <h3 class="font-body font-bold text-base md:text-lg text-slate-100">
+                    <div class="space-y-3">
+                        <h3 class="font-cinematic font-bold text-lg md:text-2xl text-white tracking-wide drop-shadow-[0_3px_10px_rgba(0,0,0,1)]">
                             Người Pháp Da Trắng Lao Động Cực Nhọc Chẳng Khác Gì Xứ Ta
                         </h3>
-                        <p class="font-body text-xs md:text-sm text-slate-300 leading-relaxed">
+                        <p class="font-cinematic text-xs md:text-sm text-slate-200 leading-relaxed drop-shadow-[0_2px_6px_rgba(0,0,0,1)]">
                             Dưới nắng hè gay gắt của vịnh Địa Trung Hải, những người thợ khuân vác và phu xe Pháp còng lưng kéo từng chuyến xe hàng nặng trĩu. Mồ hôi nhễ nhại ướt đẫm áo vải thô, nét mặt hằn sâu nỗi vất vả mưu sinh.
                         </p>
-                        <div class="p-3 rounded-xl bg-amber-950/40 border-l-4 border-amber-400 text-xs md:text-sm text-amber-200 font-body italic leading-relaxed">
-                            <strong class="text-amber-300 not-italic">Anh Ba trầm ngâm chia sẻ:</strong> "Anh nhìn kìa... Ngay tại chính quốc, người Pháp da trắng cũng phải kéo xe, mồ hôi nhễ nhại, cực nhọc chẳng khác gì phu xe An Nam ta! Họ cũng phải bán sức lao động để kiếm miếng cơm manh áo."
-                        </div>
+                        <blockquote class="p-3.5 rounded-xl bg-amber-950/30 border-l-4 border-amber-400 text-xs md:text-sm text-amber-200 font-cinematic italic leading-relaxed drop-shadow-[0_2px_6px_rgba(0,0,0,1)]">
+                            <strong class="text-amber-300 not-italic font-cinematic block mb-1">Anh Ba trầm ngâm chia sẻ:</strong>
+                            "Anh nhìn kìa... Ngay tại chính quốc, người Pháp da trắng cũng phải kéo xe, mồ hôi nhễ nhại, cực nhọc chẳng khác gì phu xe An Nam ta! Họ cũng phải bán sức lao động để kiếm miếng cơm manh áo."
+                        </blockquote>
                     </div>
                     <div class="pt-2 text-center">
                         <button onclick="panToMarseilleView('center')"
-                                class="py-2.5 px-6 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-cinematic font-bold text-xs uppercase tracking-wider shadow-lg transition active:scale-95 cursor-pointer">
+                                class="min-h-[44px] py-2.5 px-7 rounded-xl border border-amber-400/60 bg-amber-500/20 hover:bg-amber-500 hover:text-black text-amber-300 font-cinematic font-bold text-xs uppercase tracking-widest shadow-lg transition-all active:scale-95 cursor-pointer">
                             Quay Về Giữa Bến Cảng →
                         </button>
                     </div>
                 </div>
 
                 <!-- Right Focused Panel (When in Right View) -->
-                <div id="marseilleRightPanel" class="hidden w-full max-w-3xl mx-auto my-auto p-5 md:p-6 rounded-2xl bg-[#070c18]/95 border-2 border-amber-500/60 backdrop-blur-md shadow-2xl animate-fade-in space-y-3">
-                    <div class="flex items-center justify-between border-b border-amber-500/30 pb-2">
-                        <span class="text-xs font-cinematic font-bold text-amber-300 uppercase tracking-wider flex items-center gap-2">
+                <div id="marseilleRightPanel" class="hidden w-full max-w-3xl mx-auto my-auto p-5 md:p-7 rounded-2xl bg-black/85 border-2 border-amber-400/70 backdrop-blur-lg shadow-[0_20px_50px_rgba(0,0,0,0.9)] animate-fade-in space-y-4">
+                    <div class="flex items-center justify-between border-b border-amber-500/30 pb-2.5">
+                        <span class="text-xs md:text-sm font-cinematic font-bold text-amber-300 uppercase tracking-widest flex items-center gap-2 drop-shadow-[0_2px_4px_rgba(0,0,0,1)]">
                             GÓC QUAN SÁT PHÍA PHẢI: BẬC ĐÁ CẢNG CŨ <span>→</span>
                         </span>
-                        <span class="text-[10px] font-cinematic px-2.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
+                        <span class="text-[10px] md:text-xs font-typewriter px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-bold">
                             ✓ ĐÃ QUAN SÁT
                         </span>
                     </div>
-                    <div class="space-y-2">
-                        <h3 class="font-body font-bold text-base md:text-lg text-slate-100">
+                    <div class="space-y-3">
+                        <h3 class="font-cinematic font-bold text-lg md:text-2xl text-white tracking-wide drop-shadow-[0_3px_10px_rgba(0,0,0,1)]">
                             Nỗi Khổ Cực & Phận Nghèo Bên Bờ Biển Mẫu Quốc
                         </h3>
-                        <p class="font-body text-xs md:text-sm text-slate-300 leading-relaxed">
+                        <p class="font-cinematic text-xs md:text-sm text-slate-200 leading-relaxed drop-shadow-[0_2px_6px_rgba(0,0,0,1)]">
                             Bên mép nước bến cảng, những bậc đá cũ rêu phong là nơi co ro của những người phụ nữ bế con nhỏ và người già ăn xin. Ảo tưởng về một "thiên đường văn minh giàu sang đồng đều" của chế độ thực dân tan vỡ hoàn toàn.
                         </p>
-                        <div class="p-3 rounded-xl bg-amber-950/40 border-l-4 border-amber-400 text-xs md:text-sm text-amber-200 font-body italic leading-relaxed">
-                            <strong class="text-amber-300 not-italic">Anh Ba mắt thoáng buồn:</strong> "Tại sao thực dân rêu rao sang xứ ta để 'khai hóa', trong khi ngay trên đất nước họ, những người lao động nghèo khổ vẫn phải sống cảnh bần hàn đói rách thế này?!"
-                        </div>
+                        <blockquote class="p-3.5 rounded-xl bg-amber-950/30 border-l-4 border-amber-400 text-xs md:text-sm text-amber-200 font-cinematic italic leading-relaxed drop-shadow-[0_2px_6px_rgba(0,0,0,1)]">
+                            <strong class="text-amber-300 not-italic font-cinematic block mb-1">Anh Ba mắt thoáng buồn:</strong>
+                            "Tại sao thực dân rêu rao sang xứ ta để 'khai hóa', trong khi ngay trên đất nước họ, những người lao động nghèo khổ vẫn phải sống cảnh bần hàn đói rách thế này?!"
+                        </blockquote>
                     </div>
                     <div class="pt-2 text-center">
                         <button onclick="panToMarseilleView('center')"
-                                class="py-2.5 px-6 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-cinematic font-bold text-xs uppercase tracking-wider shadow-lg transition active:scale-95 cursor-pointer">
+                                class="min-h-[44px] py-2.5 px-7 rounded-xl border border-amber-400/60 bg-amber-500/20 hover:bg-amber-500 hover:text-black text-amber-300 font-cinematic font-bold text-xs uppercase tracking-widest shadow-lg transition-all active:scale-95 cursor-pointer">
                             ← Quay Về Giữa Bến Cảng
                         </button>
                     </div>
                 </div>
 
-                <!-- Epiphany Embossed Overlay (When returned to Center after exploring both) -->
-                <div id="marseilleEpiphanyOverlay" class="hidden absolute inset-0 bg-black/90 backdrop-blur-md z-30 flex flex-col items-center justify-center p-6 text-center animate-fade-in">
-                    <div class="max-w-3xl space-y-4">
-                        <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-amber-500/20 border border-amber-400/50 text-amber-300 font-cinematic text-xs font-bold uppercase tracking-widest shadow-lg">
-                            ⭐ BƯỚC NGOẶT TƯ TƯỞNG TẠI CẢNG MARSEILLE • 06.07.1911 ⭐
+                <!-- Epiphany Embossed Overlay (When returned to Center after exploring both - Hồi 0 Grand Style) -->
+                <div id="marseilleEpiphanyOverlay" class="hidden absolute inset-0 bg-black/90 backdrop-blur-md z-30 flex flex-col items-center justify-center p-6 text-center animate-fade-in select-none">
+                    <div class="max-w-4xl space-y-5">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/70 border border-amber-400/60 backdrop-blur-md text-amber-300 font-cinematic text-xs font-bold uppercase tracking-widest shadow-lg">
+                            <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+                            BƯỚC NGOẶT TƯ TƯỞNG TẠI CẢNG MARSEILLE • 06.07.1911
                         </div>
 
                         <p class="font-cinematic text-lg md:text-2xl text-amber-200 font-bold uppercase tracking-wide drop-shadow-[0_4px_16px_rgba(245,158,11,0.6)]">
                             "Ở Pháp cũng có những người nghèo như ở xứ ta..."
                         </p>
 
-                        <h2 class="font-cinematic text-2xl md:text-4xl text-white font-black uppercase tracking-wide leading-tight drop-shadow-[0_6px_25px_rgba(0,0,0,1)]">
+                        <h2 class="font-cinematic text-2xl md:text-4xl lg:text-5xl text-white font-black uppercase tracking-wide leading-tight drop-shadow-[0_6px_25px_rgba(0,0,0,1)]">
                             KẺ THÙ LÀ ÁCH ÁP BỨC THỰC DÂN,<br>
-                            <span class="text-amber-400">CÒN NHÂN DÂN LAO ĐỘNG PHÁP CHÍNH LÀ BẠN BÈ!</span>
+                            <span class="text-amber-400 drop-shadow-[0_4px_30px_rgba(245,158,11,0.9)]">NHÂN DÂN LAO ĐỘNG PHÁP CHÍNH LÀ BẠN BÈ!</span>
                         </h2>
 
-                        <p class="font-body text-xs md:text-sm text-slate-300 italic max-w-2xl mx-auto leading-relaxed">
+                        <p class="font-cinematic text-xs md:text-base text-slate-200 max-w-2xl mx-auto leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,1)]">
                             Lần đầu tiên trong lịch sử cách mạng Việt Nam, người thanh niên Nguyễn Tất Thành đã phân biệt rõ ràng giữa nhân dân lao động Pháp và chính quyền thực dân cai trị. Đây là viên gạch nền móng đầu tiên cho tư tưởng đoàn kết quốc tế cao đẹp.
                         </p>
 
                         <div class="pt-6">
                             <button id="btnFinishEpiphany" onclick="finishMarseilleSpatialScene()"
-                                    class="py-3 px-8 rounded-xl bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500 hover:from-amber-400 hover:to-orange-400 text-black font-cinematic font-bold text-sm uppercase tracking-wider shadow-[0_0_35px_rgba(245,158,11,0.8)] transition active:scale-95 cursor-pointer animate-bounce">
-                                Tiếp Tục Hải Trình Ra Thế Giới (Sang Hoa Kỳ 1912) →
+                                    class="min-h-[44px] py-3.5 px-8 rounded-xl bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500 hover:from-amber-400 hover:to-orange-400 text-black font-cinematic font-bold text-xs md:text-sm uppercase tracking-wider shadow-[0_0_35px_rgba(245,158,11,0.8)] transition active:scale-95 cursor-pointer animate-bounce flex items-center gap-2 mx-auto">
+                                <span>Tiếp Tục Hải Trình Ra Thế Giới (Sang Hoa Kỳ 1912)</span>
+                                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                             </button>
                         </div>
                     </div>
                 </div>
 
                 <!-- Footer status bar -->
-                <div class="w-full max-w-4xl mx-auto flex items-center justify-between text-[11px] font-typewriter text-slate-400 pt-2 border-t border-sky-500/20">
-                    <span id="marseilleInsightText" class="text-sky-300/80 font-body">"Người Pháp ở Pháp tốt và lịch sự hơn thực dân ở xứ ta rất nhiều..." — Văn Ba</span>
-                    <span class="text-sky-400 font-cinematic uppercase">Cảng Marseille • Tháng 7/1911</span>
+                <div class="w-full max-w-4xl mx-auto flex items-center justify-between text-[11px] font-typewriter text-slate-400 pt-2 border-t border-amber-400/20">
+                    <span id="marseilleInsightText" class="text-amber-300/90 font-cinematic italic">"Người Pháp ở Pháp tốt và lịch sự hơn thực dân ở xứ ta rất nhiều..." — Văn Ba</span>
+                    <span class="text-amber-400 font-cinematic uppercase tracking-wider">Cảng Marseille • Tháng 7/1911</span>
                 </div>
 
             </div>
@@ -1455,7 +1463,7 @@ HTML_CODE = r'''<!DOCTYPE html>
                 coords: 'Bến Cảng Marseille • Ngày 06.07.1911',
                 speaker: 'Văn Ba',
                 role: 'Đứng trên bến cảng nhìn về khu dân cư',
-                text: 'Chúng ta đã đặt chân lên đất Pháp. Hãy nhìn sang hai hướng bến cảng: bên trái là hàng phu kéo xe da trắng, bên phải là bậc đá cảng cũ nơi người nghèo co ro. Hãy nhấp chọn hướng để quan sát đời sống nhân dân Pháp!',
+                text: 'Chúng ta đã đặt chân lên đất Pháp. Hãy hướng tầm mắt sang hai bên bến cảng để quan sát đời sống thực sự của nhân dân nơi đây. Hãy chọn một hướng để bắt đầu quan sát!',
                 action: 'diegetic_marseille_spatial'
             },
             {
@@ -2492,10 +2500,10 @@ HTML_CODE = r'''<!DOCTYPE html>
                 if (title) title.textContent = 'Góc Trái: Phu Kéo Xe Da Trắng Bến Cảng';
                 if (leftStatus) {
                     leftStatus.textContent = '✓ ĐÃ QUAN SÁT';
-                    leftStatus.className = 'mt-2 text-[10px] font-typewriter px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-bold';
+                    leftStatus.className = 'mt-2 text-[10px] font-typewriter px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-bold';
                 }
                 if (insightText) {
-                    insightText.innerHTML = '<strong class="text-amber-300">Anh Ba chia sẻ:</strong> "Ngay tại chính quốc, người Pháp da trắng cũng phải kéo xe cực nhọc chẳng khác gì phu xe An Nam ta!"';
+                    insightText.innerHTML = '<strong class="text-amber-300 not-italic font-cinematic">Anh Ba chia sẻ:</strong> "Ngay tại chính quốc, người Pháp da trắng cũng phải kéo xe cực nhọc chẳng khác gì phu xe An Nam ta!"';
                 }
 
                 state.resonance = Math.min(100, state.resonance + 10);
@@ -2515,10 +2523,10 @@ HTML_CODE = r'''<!DOCTYPE html>
                 if (title) title.textContent = 'Góc Phải: Bậc Đá Cảng Cũ & Người Cơ Hàn';
                 if (rightStatus) {
                     rightStatus.textContent = '✓ ĐÃ QUAN SÁT';
-                    rightStatus.className = 'mt-2 text-[10px] font-typewriter px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-bold';
+                    rightStatus.className = 'mt-2 text-[10px] font-typewriter px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-bold';
                 }
                 if (insightText) {
-                    insightText.innerHTML = '<strong class="text-amber-300">Anh Ba thoáng buồn:</strong> "Tại sao thực dân rêu rao sang khai hóa, trong khi trên đất nước họ người nghèo vẫn cơ hàn đói rách thế này?!"';
+                    insightText.innerHTML = '<strong class="text-amber-300 not-italic font-cinematic">Anh Ba thoáng buồn:</strong> "Tại sao thực dân rêu rao sang khai hóa, trong khi trên đất nước họ người nghèo vẫn cơ hàn đói rách thế này?!"';
                 }
 
                 state.resonance = Math.min(100, state.resonance + 10);
@@ -2547,7 +2555,7 @@ HTML_CODE = r'''<!DOCTYPE html>
             if (badge) {
                 badge.textContent = `${exploredCount} / 2 Hướng Khám Phá`;
                 if (exploredCount >= 2) {
-                    badge.className = 'px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-400 text-emerald-300 font-typewriter text-xs font-bold';
+                    badge.className = 'px-3.5 py-1 rounded-full bg-emerald-950/80 border border-emerald-400 text-emerald-300 font-typewriter text-xs font-bold shadow-md';
                 }
             }
         }
@@ -2562,7 +2570,7 @@ HTML_CODE = r'''<!DOCTYPE html>
 
             const insightText = document.getElementById('marseilleInsightText');
             if (insightText) {
-                insightText.innerHTML = '<strong class="text-amber-300">Chân Lý Lịch Sử:</strong> "Kẻ thù là thực dân áp bức, còn nhân dân lao động Pháp chính là bạn bè!"';
+                insightText.innerHTML = '<strong class="text-amber-300 not-italic font-cinematic">Chân Lý Lịch Sử:</strong> "Kẻ thù là thực dân áp bức, còn nhân dân lao động Pháp chính là bạn bè!"';
             }
         }
 
@@ -2606,15 +2614,15 @@ HTML_CODE = r'''<!DOCTYPE html>
 
             if (badge) {
                 badge.textContent = '0 / 2 Hướng Khám Phá';
-                badge.className = 'px-3 py-1 rounded-full bg-black/70 border border-sky-500/50 text-sky-300 font-typewriter text-xs font-bold';
+                badge.className = 'px-3.5 py-1 rounded-full bg-black/80 border border-amber-400/50 text-amber-300 font-typewriter text-xs font-bold shadow-md';
             }
             if (leftStatus) {
                 leftStatus.textContent = 'Chưa quan sát';
-                leftStatus.className = 'mt-2 text-[10px] font-typewriter px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 border border-sky-500/30';
+                leftStatus.className = 'mt-2 text-[10px] font-typewriter px-2.5 py-0.5 rounded-full bg-amber-500/10 text-amber-300 border border-amber-400/30 font-semibold';
             }
             if (rightStatus) {
                 rightStatus.textContent = 'Chưa quan sát';
-                rightStatus.className = 'mt-2 text-[10px] font-typewriter px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 border border-sky-500/30';
+                rightStatus.className = 'mt-2 text-[10px] font-typewriter px-2.5 py-0.5 rounded-full bg-amber-500/10 text-amber-300 border border-amber-400/30 font-semibold';
             }
             if (title) title.textContent = 'Quảng Trường Cảng: Chọn Hướng Quan Sát Đời Sống';
 
