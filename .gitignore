@@ -1,0 +1,10 @@
+# Vercel & Git ignore
+.vercel/
+hai_trinh_1911_1941_share.zip
+scratch/
+*.log
+__pycache__/
+*.pyc
+.agents/
+.DS_Store
+zealous-davinci/
