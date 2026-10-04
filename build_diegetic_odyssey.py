@@ -59,6 +59,7 @@ HTML_CODE = r'''<!DOCTYPE html>
     <link rel="preload" as="image" href="dock_3_gangway.jpg">
     <link rel="preload" as="image" href="ship_1_boiler.jpg">
     <link rel="preload" as="image" href="ship_2_study.jpg">
+    <link rel="preload" as="image" href="marseille_1_port.jpg">
     <link rel="preload" as="image" href="world_1_boston_london.jpg">
     <link rel="preload" as="image" href="act4_1_versailles_1919.jpg">
     <link rel="preload" as="image" href="act4_2_paris_room.jpg">
@@ -745,6 +746,137 @@ HTML_CODE = r'''<!DOCTYPE html>
             </div>
 
             <!-- ---------------------------------------------------- -->
+            <!-- 2.8. CẢNG MARSEILLE 1911: BƯỚC CHÂN ĐẦU TIÊN LÊN ĐẤT PHÁP -->
+            <!-- ---------------------------------------------------- -->
+            <div id="diegeticMarseilleRig" class="hidden absolute inset-0 pointer-events-auto select-none flex flex-col items-center justify-center p-3 md:p-6 z-25">
+                <div class="w-full max-w-4xl bg-[#0e1624]/95 border-2 border-sky-600/70 rounded-2xl p-4 md:p-6 shadow-[0_25px_60px_rgba(0,0,0,0.95)] text-slate-200 relative backdrop-blur-md flex flex-col max-h-[90vh]">
+                    
+                    <!-- Rig Header -->
+                    <div class="flex items-center justify-between border-b border-sky-500/30 pb-3 mb-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-9 h-9 rounded-full bg-sky-950/80 border border-sky-400/60 flex items-center justify-center shadow-[0_0_15px_rgba(56,189,248,0.5)]">
+                                <span class="text-base animate-pulse">⚓</span>
+                            </div>
+                            <div>
+                                <span class="text-[9px] uppercase font-typewriter text-sky-400 tracking-widest block font-bold">
+                                    CẢNG VIEUX-PORT • MARSEILLE (PHÁP) • 06.07.1911
+                                </span>
+                                <h3 class="font-cinematic text-sm md:text-base font-bold text-slate-100 uppercase tracking-wider">
+                                    Lần Đầu Đặt Chân Lên Đất Pháp & Bước Ngoặt Nhận Thức
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span id="marseilleCounterBadge" class="px-3 py-1 rounded-full bg-black/70 border border-sky-500/50 text-sky-300 font-typewriter text-xs font-bold">
+                                0 / 3 Khám Phá Lịch Sử
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Instruction Banner -->
+                    <div class="mb-3 px-3.5 py-2 rounded-xl bg-sky-950/40 border border-sky-500/30 flex items-center justify-between text-xs font-typewriter text-sky-200">
+                        <div class="flex items-center gap-2">
+                            <span class="inline-block w-2 h-2 rounded-full bg-sky-400 animate-ping"></span>
+                            <span>Hãy nhấp vào 3 góc quan sát trên bến cảng để cùng anh Ba khám phá sự thật về "mẫu quốc":</span>
+                        </div>
+                        <span class="text-sky-400 font-bold hidden sm:inline">Vịnh Cảng Địa Trung Hải</span>
+                    </div>
+
+                    <!-- 3 Interactive Discovery Cards Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 flex-1 overflow-y-auto pr-1">
+                        
+                        <!-- Card 1: Phu kéo xe da trắng -->
+                        <div id="marseilleCard1" onclick="discoverMarseillePoint(1)" 
+                             class="p-4 rounded-xl border border-sky-500/40 bg-black/60 hover:bg-sky-950/40 hover:border-sky-400 transition-all cursor-pointer flex flex-col justify-between group">
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-xs font-cinematic font-bold text-sky-300 uppercase tracking-wider">1. Bến Hàng Phu Kéo Xe</span>
+                                    <span id="marseilleStatus1" class="text-[10px] font-typewriter px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 border border-sky-500/30">
+                                        Khám phá →
+                                    </span>
+                                </div>
+                                <h4 class="font-serif font-bold text-sm text-slate-100 mb-1 group-hover:text-amber-200 transition-colors">
+                                    Người Pháp Da Trắng Lao Động Cực Nhọc
+                                </h4>
+                                <p class="text-xs text-slate-300 font-light leading-relaxed">
+                                    Tận mắt thấy những người Pháp nghèo khổ còng lưng kéo xe hàng "Transports Marseillais", mồ hôi nhễ nhại dưới nắng hè.
+                                </p>
+                            </div>
+                            <div id="marseilleQuote1" class="hidden mt-3 p-2.5 rounded-lg bg-sky-900/30 border-l-2 border-sky-400 text-[11px] text-amber-200 font-serif italic animate-fade-in">
+                                "Ở Pháp cũng có những người nghèo như ở xứ ta! Họ lao động cực nhọc để kiếm sống, tốt và lịch sự hơn những tên thực dân rất nhiều."
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Bậc đá cảng cũ & người nghèo ăn xin -->
+                        <div id="marseilleCard2" onclick="discoverMarseillePoint(2)" 
+                             class="p-4 rounded-xl border border-sky-500/40 bg-black/60 hover:bg-sky-950/40 hover:border-sky-400 transition-all cursor-pointer flex flex-col justify-between group">
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-xs font-cinematic font-bold text-sky-300 uppercase tracking-wider">2. Bậc Đá Cảng Cũ</span>
+                                    <span id="marseilleStatus2" class="text-[10px] font-typewriter px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 border border-sky-500/30">
+                                        Khám phá →
+                                    </span>
+                                </div>
+                                <h4 class="font-serif font-bold text-sm text-slate-100 mb-1 group-hover:text-amber-200 transition-colors">
+                                    Phận Người Nghèo Khổ & Trẻ Em Cơ Hàn
+                                </h4>
+                                <p class="text-xs text-slate-300 font-light leading-relaxed">
+                                    Những người phụ nữ bế con và người già ăn xin co ro bên bậc đá. Ảo tưởng về một "thiên đường mẫu quốc" sụp đổ hoàn toàn.
+                                </p>
+                            </div>
+                            <div id="marseilleQuote2" class="hidden mt-3 p-2.5 rounded-lg bg-sky-900/30 border-l-2 border-sky-400 text-[11px] text-amber-200 font-serif italic animate-fade-in">
+                                "Tại sao thực dân nói sang khai hóa cho ta, trong khi ngay tại đất nước họ, nhân dân cũng chịu cảnh bần hàn đói rách?"
+                            </div>
+                        </div>
+
+                        <!-- Card 3: Bước ngoặt tư tưởng -->
+                        <div id="marseilleCard3" onclick="discoverMarseillePoint(3)" 
+                             class="p-4 rounded-xl border border-sky-500/40 bg-black/60 hover:bg-sky-950/40 hover:border-sky-400 transition-all cursor-pointer flex flex-col justify-between group">
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-xs font-cinematic font-bold text-sky-300 uppercase tracking-wider">3. Chân Lý Lịch Sử</span>
+                                    <span id="marseilleStatus3" class="text-[10px] font-typewriter px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 border border-sky-500/30">
+                                        Khám phá →
+                                    </span>
+                                </div>
+                                <h4 class="font-serif font-bold text-sm text-slate-100 mb-1 group-hover:text-amber-200 transition-colors">
+                                    Phân Biệt Nhân Dân Pháp Và Thực Dân
+                                </h4>
+                                <p class="text-xs text-slate-300 font-light leading-relaxed">
+                                    Anh Ba đúc rút bài học vĩ đại: Kẻ thù là chế độ thực dân áp bức. Nhân dân lao động khắp năm châu đều là bạn bè, anh em.
+                                </p>
+                            </div>
+                            <div id="marseilleQuote3" class="hidden mt-3 p-2.5 rounded-lg bg-sky-900/30 border-l-2 border-sky-400 text-[11px] text-amber-200 font-serif italic animate-fade-in">
+                                "Lao động chân chính ở đâu cũng cùng chung số phận. Muốn giải phóng dân tộc mình, phải đoàn kết với nhân dân tiến bộ toàn thế giới!"
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Completion Banner & Action Button -->
+                    <div id="marseilleCompletionBox" class="hidden mt-3 p-3 rounded-xl bg-gradient-to-r from-sky-950/90 via-emerald-950/90 to-amber-950/90 border-2 border-sky-400 text-center animate-fade-in">
+                        <span class="text-xs font-cinematic font-bold text-sky-300 uppercase tracking-wider block mb-1">
+                            ⭐ BƯỚC NGOẶT NHẬN THỨC ĐẦU TIÊN CỦA NGUYỄN TẤT THÀNH TRÊN ĐẤT PHÁP ⭐
+                        </span>
+                        <p class="text-xs text-amber-100 font-serif italic mb-2">
+                            "Hiểu được bản chất của chủ nghĩa thực dân, người thanh niên Văn Ba tiếp tục hành trình bôn ba sang châu Mỹ và châu Âu..."
+                        </p>
+                        <button id="btnFinishMarseille" onclick="finishMarseilleScene()"
+                                class="py-2.5 px-6 rounded-lg bg-gradient-to-r from-sky-500 via-amber-500 to-orange-500 hover:from-sky-400 hover:to-orange-400 text-black font-cinematic font-bold text-xs uppercase tracking-wider shadow-lg transition active:scale-95 cursor-pointer animate-bounce">
+                            Tiếp Tục Hải Trình Ra Thế Giới (Sang Hoa Kỳ 1912) →
+                        </button>
+                    </div>
+
+                    <!-- Rig Footer Status -->
+                    <div class="mt-3 pt-2 border-t border-sky-500/20 flex items-center justify-between text-[11px] font-typewriter text-slate-400">
+                        <span id="marseilleInsightText" class="text-sky-300/80">"Người Pháp ở Pháp tốt và lịch sự hơn thực dân ở xứ ta rất nhiều..." — Văn Ba</span>
+                        <span class="text-sky-400 font-cinematic uppercase">Cảng Marseille • Mùa Hè 1911</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ---------------------------------------------------- -->
             <!-- 3. HƯƠNG CẢNG 1930: 3 HUY HIỆU HỢP NHẤT TRÊN BÀN HỘI NGHỊ -->
             <!-- ---------------------------------------------------- -->
             <div id="diegeticUnificationRig" class="hidden absolute inset-0 pointer-events-auto select-none flex flex-col items-center justify-center p-4">
@@ -979,42 +1111,42 @@ HTML_CODE = r'''<!DOCTYPE html>
                         </div>
                         <span class="text-brass">Khám phá →</span>
                     </button>
-                    <button onclick="jumpToChapter(0)" class="w-full text-left p-3 rounded-xl border border-slate-700 bg-void/80 hover:border-brass hover:bg-brass/10 flex items-center justify-between transition cursor-pointer">
+                    <button onclick="jumpToChapter('inn_1')" class="w-full text-left p-3 rounded-xl border border-slate-700 bg-void/80 hover:border-brass hover:bg-brass/10 flex items-center justify-between transition cursor-pointer">
                         <div>
                             <span class="text-amber-400 font-bold block">HỒI 1 • LỜI THỀ GÁC TRỌ (06/1911)</span>
                             <span class="text-slate-400 text-[11px]">Căn Gác Trọ Sài Gòn, Hai Bàn Tay & Lời Thề Khởi Hành</span>
                         </div>
                         <span class="text-brass">Khám phá →</span>
                     </button>
-                    <button onclick="jumpToChapter(4)" class="w-full text-left p-3 rounded-xl border border-slate-700 bg-void/80 hover:border-brass hover:bg-brass/10 flex items-center justify-between transition cursor-pointer">
+                    <button onclick="jumpToChapter('dock_1')" class="w-full text-left p-3 rounded-xl border border-slate-700 bg-void/80 hover:border-brass hover:bg-brass/10 flex items-center justify-between transition cursor-pointer">
                         <div>
                             <span class="text-amber-400 font-bold block">HỒI 2 • XUẤT BẾN BẾN NHÀ RỒNG (05.06.1911)</span>
                             <span class="text-slate-400 text-[11px]">Ký Sổ Thuyền Viên Phụ Bếp & Còi Tàu Nhổ Neo</span>
                         </div>
                         <span class="text-brass">Khám phá →</span>
                     </button>
-                    <button onclick="jumpToChapter(7)" class="w-full text-left p-3 rounded-xl border border-slate-700 bg-void/80 hover:border-brass hover:bg-brass/10 flex items-center justify-between transition cursor-pointer">
+                    <button onclick="jumpToChapter('ship_1')" class="w-full text-left p-3 rounded-xl border border-slate-700 bg-void/80 hover:border-brass hover:bg-brass/10 flex items-center justify-between transition cursor-pointer">
                         <div>
                             <span class="text-amber-400 font-bold block">HỒI 3 • GIAN LAO HẢI TRÌNH & VÒNG QUANH THẾ GIỚI (1911 – 1917)</span>
-                            <span class="text-slate-400 text-[11px]">Xúc Than Hầm Lò 40°C, Sổ Tay Boong Tàu, Boston & Tuyết Trắng London</span>
+                            <span class="text-slate-400 text-[11px]">Xúc Than Hầm Lò 40°C, Sổ Tay Boong Tàu, Cảng Marseille, Boston & London</span>
                         </div>
                         <span class="text-brass">Khám phá →</span>
                     </button>
-                    <button onclick="jumpToChapter(12)" class="w-full text-left p-3 rounded-xl border border-slate-700 bg-void/80 hover:border-brass hover:bg-brass/10 flex items-center justify-between transition cursor-pointer">
+                    <button onclick="jumpToChapter('act4_1')" class="w-full text-left p-3 rounded-xl border border-slate-700 bg-void/80 hover:border-brass hover:bg-brass/10 flex items-center justify-between transition cursor-pointer">
                         <div>
                             <span class="text-amber-400 font-bold block">HỒI 4 • TỎA SÁNG CHÂN LÝ CỨU NƯỚC (1917 – 1923)</span>
                             <span class="text-slate-400 text-[11px]">Yêu Sách Versailles 1919, Viên Gạch Hồng & Luận Cương Lênin, Đại Hội Tours</span>
                         </div>
                         <span class="text-brass">Khám phá →</span>
                     </button>
-                    <button onclick="jumpToChapter(16)" class="w-full text-left p-3 rounded-xl border border-slate-700 bg-void/80 hover:border-brass hover:bg-brass/10 flex items-center justify-between transition cursor-pointer">
+                    <button onclick="jumpToChapter('act5_1')" class="w-full text-left p-3 rounded-xl border border-slate-700 bg-void/80 hover:border-brass hover:bg-brass/10 flex items-center justify-between transition cursor-pointer">
                         <div>
                             <span class="text-amber-400 font-bold block">HỒI 5 • NGỌN LỬA LAN TỎA CÁCH MẠNG (1923 – 1930)</span>
                             <span class="text-slate-400 text-[11px]">Mát-xcơ-va, Đường Kách Mệnh Quảng Châu & Hợp Nhất Đảng Tại Hương Cảng</span>
                         </div>
                         <span class="text-brass">Khám phá →</span>
                     </button>
-                    <button onclick="jumpToChapter(20)" class="w-full text-left p-3 rounded-xl border border-slate-700 bg-void/80 hover:border-brass hover:bg-brass/10 flex items-center justify-between transition cursor-pointer">
+                    <button onclick="jumpToChapter('act6_1')" class="w-full text-left p-3 rounded-xl border border-slate-700 bg-void/80 hover:border-brass hover:bg-brass/10 flex items-center justify-between transition cursor-pointer">
                         <div>
                             <span class="text-amber-400 font-bold block">HỒI 6 • MÙA XUÂN TRỞ VỀ & BÌNH MINH NON SÔNG (1941)</span>
                             <span class="text-slate-400 text-[11px]">Cột Mốc 108 Pác Bó, Bàn Đá Cốc Bó & Bình Minh Độc Lập</span>
@@ -1173,7 +1305,7 @@ HTML_CODE = r'''<!DOCTYPE html>
                 image: 'ship_1_boiler.jpg',
                 act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
                 actIndex: 3,
-                sceneNum: 'Cảnh 1/5',
+                sceneNum: 'Cảnh 1/6',
                 location: 'Hầm Than Tàu Hơi Nước Amiral Latouche-Tréville',
                 coords: 'Ấn Độ Dương • Mùa Hè 1911',
                 speaker: 'Văn Ba',
@@ -1186,7 +1318,7 @@ HTML_CODE = r'''<!DOCTYPE html>
                 image: 'ship_1_boiler.jpg',
                 act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
                 actIndex: 3,
-                sceneNum: 'Cảnh 2/5',
+                sceneNum: 'Cảnh 2/6',
                 location: 'Hầm Than Tàu Hơi Nước',
                 coords: 'Ấn Độ Dương • Mùa Hè 1911',
                 speaker: 'Văn Ba',
@@ -1199,7 +1331,7 @@ HTML_CODE = r'''<!DOCTYPE html>
                 image: 'ship_2_study.jpg',
                 act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
                 actIndex: 3,
-                sceneNum: 'Cảnh 3/5',
+                sceneNum: 'Cảnh 3/6',
                 location: 'Góc Cabin Thuyền Viên • Đêm Khuya 1911',
                 coords: 'Ấn Độ Dương • Đêm Khuya Mùa Hè 1911',
                 speaker: 'Văn Ba',
@@ -1208,11 +1340,24 @@ HTML_CODE = r'''<!DOCTYPE html>
                 action: 'diegetic_study'
             },
             {
+                id: 'marseille_1',
+                image: 'marseille_1_port.jpg',
+                act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
+                actIndex: 3,
+                sceneNum: 'Cảnh 4/6',
+                location: 'Cảng Cũ Marseille (Vieux-Port) — Nước Pháp',
+                coords: '43°17\'N 5°22\'E • Ngày 06.07.1911 (Trưa Nắng)',
+                speaker: 'Văn Ba',
+                role: 'Lần đầu tiên đặt chân lên đất Pháp sau 1 tháng 1 ngày vượt đại dương',
+                text: 'Sau hơn một tháng lênh đênh qua các đại dương, con tàu Latouche-Tréville đã cập bến cảng Marseille! Hãy nhìn kìa anh bạn... Ở ngay chính quốc, người Pháp da trắng cũng nghèo khổ, cũng kéo xe và khuân vác cực nhọc! Hãy nhấp vào 3 góc quan sát trên bến cảng để cùng tôi tìm hiểu sự thật.',
+                action: 'diegetic_marseille'
+            },
+            {
                 id: 'world_1',
                 image: 'world_1_boston_london.jpg',
                 act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
                 actIndex: 3,
-                sceneNum: 'Cảnh 4/5',
+                sceneNum: 'Cảnh 5/6',
                 location: 'Boston & New York (Hoa Kỳ) • 1912 – 1913',
                 coords: 'Khách Sạn Parker House, Boston (Mỹ)',
                 speaker: 'Người Dẫn Truyện',
@@ -1225,7 +1370,7 @@ HTML_CODE = r'''<!DOCTYPE html>
                 image: 'world_1_boston_london.jpg',
                 act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
                 actIndex: 3,
-                sceneNum: 'Cảnh 5/5',
+                sceneNum: 'Cảnh 6/6',
                 location: 'London (Vương Quốc Anh) • 1913 – 1917',
                 coords: 'Khách Sạn Carlton, Luân Đôn (Anh)',
                 speaker: 'Văn Ba',
@@ -1422,6 +1567,7 @@ HTML_CODE = r'''<!DOCTYPE html>
             boilerShovelsCount: 0,
             boilerCoalsCount: 0,
             wordsLearnedCount: 0,
+            marseilleDiscoveriesCount: 0,
             badgesUnified: 0,
             playerName: 'Nguyễn Văn Đồng Hành',
             playerAge: 21
@@ -1622,6 +1768,25 @@ HTML_CODE = r'''<!DOCTYPE html>
                 gain.connect(audioCtx.destination);
                 osc.start(t);
                 osc.stop(t + 2.8);
+            });
+        }
+
+        function playMarseilleDiscoverySound() {
+            initAudioContext();
+            if (!audioCtx || !state.audioEnabled) return;
+            const t = audioCtx.currentTime;
+            [523.25, 659.25, 783.99, 1046.50].forEach((f, idx) => {
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(f, t + idx * 0.05);
+                gain.gain.setValueAtTime(0.001, t + idx * 0.05);
+                gain.gain.exponentialRampToValueAtTime(0.12 / (idx + 1), t + idx * 0.05 + 0.04);
+                gain.gain.exponentialRampToValueAtTime(0.0001, t + 3.2);
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.start(t + idx * 0.05);
+                osc.stop(t + 3.3);
             });
         }
 
@@ -2018,7 +2183,8 @@ HTML_CODE = r'''<!DOCTYPE html>
                     closeBoilerModal();
                     const hotspot = document.getElementById('furnaceHotspot');
                     if (hotspot) hotspot.classList.add('hidden');
-                    state.currentStepIndex = 8; // ship_1_dialogue
+                    const targetIdx = SCENE_SCRIPT.findIndex(s => s.id === 'ship_1_dialogue');
+                    state.currentStepIndex = targetIdx !== -1 ? targetIdx : 8;
                     renderCurrentStep();
                 }, 1600);
             }
@@ -2047,7 +2213,8 @@ HTML_CODE = r'''<!DOCTYPE html>
             setTimeout(() => {
                 document.getElementById('diegeticRegisterRig').classList.add('hidden');
                 stampMark.classList.add('hidden');
-                state.currentStepIndex = 6; // dock_3
+                const targetIdx = SCENE_SCRIPT.findIndex(s => s.id === 'dock_3');
+                state.currentStepIndex = targetIdx !== -1 ? targetIdx : 6;
                 renderCurrentStep();
             }, 1600);
         }
@@ -2116,7 +2283,8 @@ HTML_CODE = r'''<!DOCTYPE html>
             state.resonance = Math.min(100, state.resonance + 15);
             updateResonanceHUD();
 
-            state.currentStepIndex = 10; // world_1 (Boston & New York 1912-1913)
+            const targetIdx = SCENE_SCRIPT.findIndex(s => s.id === 'marseille_1');
+            state.currentStepIndex = targetIdx !== -1 ? targetIdx : 10;
             renderCurrentStep();
         }
 
@@ -2149,6 +2317,98 @@ HTML_CODE = r'''<!DOCTYPE html>
             }
         }
 
+        // 5.26. Cảng Marseille 1911: Khám phá 3 góc quan sát trên bến cảng
+        function discoverMarseillePoint(num) {
+            initAudioContext();
+            playMarseilleDiscoverySound();
+
+            const card = document.getElementById(`marseilleCard${num}`);
+            const status = document.getElementById(`marseilleStatus${num}`);
+            const quote = document.getElementById(`marseilleQuote${num}`);
+
+            if (card && !card.classList.contains('marseille-discovered')) {
+                card.classList.add('marseille-discovered', 'border-emerald-500/70', 'bg-emerald-950/40');
+                card.classList.remove('border-sky-500/40', 'bg-black/60');
+                if (status) {
+                    status.className = 'text-[10px] font-cinematic px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30';
+                    status.textContent = '✓ ĐÃ QUAN SÁT';
+                }
+                if (quote) quote.classList.remove('hidden');
+
+                state.marseilleDiscoveriesCount = (state.marseilleDiscoveriesCount || 0) + 1;
+                state.resonance = Math.min(100, state.resonance + 8);
+                updateResonanceHUD();
+
+                const badge = document.getElementById('marseilleCounterBadge');
+                if (badge) badge.textContent = `${state.marseilleDiscoveriesCount} / 3 Quan Sát`;
+
+                const insightText = document.getElementById('marseilleInsightText');
+                if (num === 1 && insightText) {
+                    insightText.innerHTML = '<strong class="text-amber-300">Anh Ba trầm ngâm nhìn bến cảng:</strong> "Họ cũng là những con người bằng xương bằng thịt, cũng mồ hôi nhễ nhại kéo hàng. Người Pháp ở đây không phải ai cũng là kẻ thống trị roi vọt!"';
+                } else if (num === 2 && insightText) {
+                    insightText.innerHTML = '<strong class="text-amber-300">Anh Ba chỉ tay vào góc phố:</strong> "Hãy nhìn những người ăn xin này. Khổ đau của giai cấp cần lao không phân biệt màu da hay biên giới quốc gia!"';
+                } else if (num === 3 && insightText) {
+                    insightText.innerHTML = '<strong class="text-amber-300">Anh Ba đúc kết sâu sắc:</strong> "Người Pháp ở mẫu quốc và bọn thực dân sang cai trị nước ta là hoàn toàn khác nhau. Kẻ thù của ta là ách áp bức, còn người lao động Pháp chính là bạn bè!"';
+                }
+
+                if (state.marseilleDiscoveriesCount >= 3) {
+                    playPledgeChime();
+                    const completionBox = document.getElementById('marseilleCompletionBox');
+                    if (completionBox) completionBox.classList.remove('hidden');
+                    if (insightText) {
+                        insightText.innerHTML = '<strong class="text-amber-300">Anh Ba mắt sáng rực niềm tin:</strong> "Bước chân đầu tiên lên đất Pháp đã mở toang tầm nhìn của chúng ta! Nhận thức được điều này, cuộc đấu tranh giải phóng dân tộc mới tìm đúng người bạn đồng minh chân chính!"';
+                    }
+                }
+            }
+        }
+
+        function finishMarseilleScene() {
+            initAudioContext();
+            playShipHorn(0.35);
+
+            state.historyLog.push({
+                speaker: 'Cảng Marseille • 06.07.1911',
+                role: 'Anh Ba & Bạn đồng hành',
+                text: 'Đặt chân lên đất Pháp, anh Ba và bạn nhận ra sự thật vĩ đại: Ở chính quốc, người Pháp lao động cũng nghèo khổ, cũng bị bóc lột. Bọn thực dân cai trị và nhân dân Pháp là hai thực thể khác nhau!'
+            });
+
+            const marseilleRig = document.getElementById('diegeticMarseilleRig');
+            if (marseilleRig) marseilleRig.classList.add('hidden');
+
+            state.resonance = Math.min(100, state.resonance + 15);
+            updateResonanceHUD();
+
+            const targetIdx = SCENE_SCRIPT.findIndex(s => s.id === 'world_1');
+            state.currentStepIndex = targetIdx !== -1 ? targetIdx : state.currentStepIndex + 1;
+            renderCurrentStep();
+        }
+
+        function resetMarseilleUI() {
+            state.marseilleDiscoveriesCount = 0;
+            for (let i = 1; i <= 3; i++) {
+                const card = document.getElementById(`marseilleCard${i}`);
+                if (card) {
+                    card.classList.remove('marseille-discovered', 'border-emerald-500/70', 'bg-emerald-950/40');
+                    card.classList.add('border-sky-500/40', 'bg-black/60');
+                }
+                const status = document.getElementById(`marseilleStatus${i}`);
+                if (status) {
+                    status.className = 'text-[10px] font-cinematic px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 border border-sky-500/30';
+                    status.textContent = 'Khám phá →';
+                }
+                const quote = document.getElementById(`marseilleQuote${i}`);
+                if (quote) quote.classList.add('hidden');
+            }
+            const cBox = document.getElementById('marseilleCompletionBox');
+            if (cBox) cBox.classList.add('hidden');
+            const badge = document.getElementById('marseilleCounterBadge');
+            if (badge) badge.textContent = '0 / 3 Quan Sát';
+            const insightText = document.getElementById('marseilleInsightText');
+            if (insightText) {
+                insightText.textContent = '"Người Pháp ở Pháp tốt và lịch sự hơn thực dân ở xứ ta rất nhiều..." — Văn Ba';
+            }
+        }
+
         // 5.3. Hợp Nhất 3 Tổ Chức Đảng (Diegetic Unification)
         function unifyBadge(num) {
             initAudioContext();
@@ -2166,7 +2426,8 @@ HTML_CODE = r'''<!DOCTYPE html>
 
                 setTimeout(() => {
                     document.getElementById('diegeticUnificationRig').classList.add('hidden');
-                    state.currentStepIndex = 19; // act5_3_summary
+                    const targetIdx = SCENE_SCRIPT.findIndex(s => s.id === 'act5_3_summary');
+                    state.currentStepIndex = targetIdx !== -1 ? targetIdx : state.currentStepIndex + 1;
                     renderCurrentStep();
                 }, 1800);
             }
@@ -2183,7 +2444,8 @@ HTML_CODE = r'''<!DOCTYPE html>
 
             setTimeout(() => {
                 document.getElementById('diegeticMilestoneRig').classList.add('hidden');
-                state.currentStepIndex = 21; // act6_2 Pác Bó lamp
+                const targetIdx = SCENE_SCRIPT.findIndex(s => s.id === 'act6_2');
+                state.currentStepIndex = targetIdx !== -1 ? targetIdx : state.currentStepIndex + 1;
                 renderCurrentStep();
             }, 2400);
         }
@@ -2264,6 +2526,7 @@ HTML_CODE = r'''<!DOCTYPE html>
             const hotspot = document.getElementById('furnaceHotspot');
             const registerRig = document.getElementById('diegeticRegisterRig');
             const studyRig = document.getElementById('diegeticStudyRig');
+            const marseilleRig = document.getElementById('diegeticMarseilleRig');
             const unificationRig = document.getElementById('diegeticUnificationRig');
             const milestoneRig = document.getElementById('diegeticMilestoneRig');
             const dawnRig = document.getElementById('diegeticDawnRig');
@@ -2272,6 +2535,7 @@ HTML_CODE = r'''<!DOCTYPE html>
             if (hotspot) hotspot.classList.add('hidden');
             if (registerRig) registerRig.classList.add('hidden');
             if (studyRig) studyRig.classList.add('hidden');
+            if (marseilleRig) marseilleRig.classList.add('hidden');
             if (unificationRig) unificationRig.classList.add('hidden');
             if (milestoneRig) milestoneRig.classList.add('hidden');
             if (dawnRig) dawnRig.classList.add('hidden');
@@ -2298,6 +2562,9 @@ HTML_CODE = r'''<!DOCTYPE html>
             } else if (action === 'diegetic_study') {
                 if (dialogueBox) dialogueBox.classList.add('hidden');
                 if (studyRig) studyRig.classList.remove('hidden');
+            } else if (action === 'diegetic_marseille') {
+                if (dialogueBox) dialogueBox.classList.add('hidden');
+                if (marseilleRig) marseilleRig.classList.remove('hidden');
             } else if (action === 'diegetic_unification') {
                 if (dialogueBox) dialogueBox.classList.add('hidden');
                 if (questBanner) questBanner.classList.remove('hidden');
@@ -2379,6 +2646,13 @@ HTML_CODE = r'''<!DOCTYPE html>
                 return;
             }
 
+            if (currentStep && currentStep.action === 'diegetic_marseille') {
+                if (state.marseilleDiscoveriesCount >= 3) {
+                    finishMarseilleScene();
+                }
+                return;
+            }
+
             if (state.currentStepIndex < SCENE_SCRIPT.length - 1) {
                 state.currentStepIndex++;
                 renderCurrentStep();
@@ -2446,7 +2720,12 @@ HTML_CODE = r'''<!DOCTYPE html>
             } else {
                 state.prologueActive = false;
                 document.getElementById('prologueStage').classList.add('hidden');
-                state.currentStepIndex = target;
+                if (typeof target === 'string') {
+                    const idx = SCENE_SCRIPT.findIndex(s => s.id === target);
+                    state.currentStepIndex = idx !== -1 ? idx : 0;
+                } else {
+                    state.currentStepIndex = target;
+                }
                 renderCurrentStep();
             }
         }
@@ -2519,8 +2798,10 @@ HTML_CODE = r'''<!DOCTYPE html>
             state.boilerCoalsCount = 0;
             state.boilerShovelsCount = 0;
             state.wordsLearnedCount = 0;
+            state.marseilleDiscoveriesCount = 0;
             state.badgesUnified = 0;
             resetStudyUI();
+            resetMarseilleUI();
             updateResonanceHUD();
             openPrologue();
         }
