@@ -13,11 +13,22 @@ required_ids = [
     'notebookWrittenWords', 'notebookEmptyPrompt',
     'writtenWord1', 'writtenWord2', 'writtenWord3', 'writtenWord4', 'writtenWord5',
     'studyAnhBaInsight', 'btnStudyWord1', 'btnStudyWord5', 'studyCompletionBox', 'btnFinishStudy',
-    'diegeticMarseilleRig', 'marseilleCounterBadge', 'marseilleInsightText',
-    'marseilleCard1', 'marseilleCard2', 'marseilleCard3',
-    'marseilleStatus1', 'marseilleStatus2', 'marseilleStatus3',
-    'marseilleQuote1', 'marseilleQuote2', 'marseilleQuote3',
-    'marseilleCompletionBox', 'btnFinishMarseille',
+    # Marseille 3-shot sequence & spatial navigation IDs:
+    'marseilleNoDialogueCard',
+    'diegeticMarseilleRig',
+    'marseilleSpatialTitle',
+    'marseilleExplorationBadge',
+    'marseilleCenterNav',
+    'btnPanLeft',
+    'btnPanRight',
+    'marseilleLeftStatus',
+    'marseilleRightStatus',
+    'marseilleLeftPanel',
+    'marseilleRightPanel',
+    'marseilleEpiphanyOverlay',
+    'btnFinishEpiphany',
+    'marseilleInsightText',
+    # Hong Kong & Pac Bo rigs:
     'diegeticUnificationRig', 'diegeticMilestoneRig', 'diegeticDawnRig'
 ]
 
@@ -29,4 +40,3 @@ for fname in ['preview.html', 'index.html']:
         print(f'MISSING in {fname}:', missing)
         exit(1)
     print(f'SUCCESS: ALL {len(required_ids)} required DOM element IDs verified in {fname}!')
-
