@@ -1,0 +1,229 @@
+================================================================================
+           HẢI TRÌNH 1911 – 1941: THIÊN SỬ THI CỦA NGỌN LỬA
+          (DIEGETIC HISTORICAL ODYSSEY - BẢN THIẾT KẾ & HƯỚNG DẪN TRẢI NGHIỆM)
+================================================================================
+
+================================================================================
+PHẦN 0: Ý TƯỞNG BAN ĐẦU & HỒ SƠ THIẾT KẾ GAME (GAME CONCEPT & DESIGN BIBLE)
+================================================================================
+
+1. Khởi Nguồn Ý Tưởng (The Origin & Vision):
+   - Câu hỏi trăn trở ban đầu:
+     "Làm thế nào để hành trình 30 năm bôn ba tìm đường cứu nước của Bác Hồ không
+     còn là những mốc sự kiện, con số khô khan trong sách giáo khoa, mà trở thành
+     một thiên anh hùng ca sống động, chạm đến tận đáy lòng thế hệ trẻ như một
+     tác phẩm game nghệ thuật chuẩn quốc tế?"
+   - Cảm hứng sáng tạo cốt lõi:
+     Lấy cảm hứng từ chuẩn mực kể chuyện tương tác (Interactive Narrative Web Events)
+     đỉnh cao của Riot Games (như "RiotX Arcane", "Spirit Blossom - Hoa Linh Lục Địa",
+     "Bilgewater: Burning Tides"), kết hợp tinh thần nghệ thuật visual novel bảo tàng
+     phương Tây (như "Pentiment", "Disco Elysium", "1979 Revolution").
+   - Định nghĩa thể loại:
+     "Diegetic Historical Narrative Odyssey" — Trò chơi điện ảnh lịch sử nhập vai
+     không gian thực (Diegetic), nơi mọi hành động, âm thanh và giao diện đều thuộc
+     về thế giới lịch sử, không có sự can thiệp của các yếu tố ngoại lai hiện đại.
+
+2. Vai Trò Của Người Chơi (Player Persona & Roleplay):
+   - Bạn KHÔNG phải là một người quan sát đứng ngoài màn hình xem phim tài liệu.
+   - Bạn nhập vai: "NGƯỜI BẠN ĐỒNG HÀNH LỊCH SỬ" (The Companion) — nhân chứng của thời đại,
+     đại diện cho thế hệ trẻ hôm nay quay ngược thời gian 110 năm trước.
+   - Bạn cùng Anh Ba (Nguyễn Tất Thành) ngồi dưới ánh đèn dầu căn gác trọ nghèo Sài Gòn;
+     cùng bước lên cầu tàu Amiral Latouche-Tréville; cùng cầm xẻng sắt xúc than trong
+     hầm máy rực lửa 42°C; cùng cào tuyết lạnh buốt thấu xương ở Luân Đôn; cùng sẻ chia
+     hơi ấm từ viên gạch nung hồng ở Paris và cùng òa khóc nghẹn ngào khi Người tìm ra
+     con đường cứu nước trong Luận cương Lênin.
+
+3. Bộ 5 Trụ Cột Triết Lý Thiết Kế (5 Core Pillars of Game Design):
+
+   ★ Trụ cột 1: TƯƠNG TÁC THỰC TẠI 100% (100% Diegetic Gameplay - Zero Modern Pop-up)
+     - Triệt tiêu hoàn toàn các bảng câu hỏi trắc nghiệm (quiz), điểm số game show hay
+       pop-up hiện đại làm đứt gãy cảm xúc người chơi.
+     - Mọi nhiệm vụ (quest/minigame) đều gắn liền với vật thể thật trong khung cảnh:
+       + Xúc than: Kéo xẻng sắt vào đống than, đổ vào cửa lò đỏ rực, cảm nhận tiếng rít
+         kim loại, lửa bùng, màn hình rung chuyển và kim áp suất cơ khí nảy giòn giã.
+       + Học tập: Lật từng trang sổ tay bồi giấy học từ vựng tiếng Pháp trên boong tàu đêm.
+       + Quan sát xã hội: Tự tay xoay camera bến cảng Marseille 3 hướng để nhận diện nỗi
+         khổ của người lao động Pháp.
+       + Sinh tồn: Dùng xẻng gỗ cào từng lớp tuyết dày trên lối đi công viên Luân Đôn.
+       + Đấu tranh chính trị: Cầm con dấu triện đỏ đóng tên "NGUYỄN ÁI QUỐC" lên bản Yêu sách.
+       + Khai sáng: Thắp ngọn đèn dầu giữa đêm Paris để đọc Luận cương Lênin.
+       + Hợp nhất: Kết nối các mảnh huy hiệu để khai sinh Đảng Cộng sản Việt Nam.
+
+   ★ Trụ cột 2: GIAO DIỆN THÔNG MINH CHUẨN RIOT GAMES (Smart HUD & Cinema Mode)
+     - Cơ chế "Auto-Switching HUD":
+       + Khi ở chế độ Tự sự/Đối thoại (Story Mode): Hộp thoại điện ảnh xuất hiện ở đáy
+         màn hình với hiệu ứng chữ gõ máy typewriter êm ái.
+       + Khi chuyển sang Chế độ Tương tác (Quest Mode): Toàn bộ hộp thoại ở đáy tự động
+         biến mất 100%, thay bằng thanh Banner Nhiệm Vụ Điện Ảnh cố định thanh mảnh ở trên đỉnh,
+         giải phóng toàn bộ không gian tranh vẽ để người chơi thao tác vật lý không bị che khuất.
+     - Chế độ Rạp Chiếu Phim (Cinema Clean Mode - Phím tắt H hoặc U):
+       + Nhấn một phím để ẩn toàn bộ giao diện điều khiển, nút bấm và chữ viết; thưởng lãm
+         trọn vẹn bức tranh sơn dầu nghệ thuật 1080p chuẩn bảo tàng.
+
+   ★ Trụ cột 3: MỸ THUẬT SƠN DẦU BẢO TÀNG (Museum Historical Realism on Canvas)
+     - Định dạng sân khấu điện ảnh tỉ lệ vàng 16:9 (Theatrical Stage).
+     - Toàn bộ phong cách tạo hình dựa trên trường phái Hiện thực Lịch sử Cổ điển châu Âu
+       (Classical European Realism) với kỹ thuật tương phản sáng tối Chiaroscuro (Rembrandt),
+       chất liệu vân cọ sơn dầu đắp nổi (impasto), tạo chiều sâu không gian và cảm giác trang
+       nghiêm, hoài niệm như đang bước đi trong một bảo tàng nghệ thuật quốc gia.
+     - Chuyển động góc máy Ken Burns lướt nhẹ nhàng, mang lại nhịp điệu điện ảnh sống động.
+
+   ★ Trụ cột 4: BẦU KHÔNG KHÍ ÂM THANH THỦ TỤC (Procedural Web Audio Soundscape)
+     - Không dùng các đoạn MP3 ghi âm sẵn cồng kềnh; hệ thống sử dụng thuật toán tổng hợp
+       sóng âm thời gian thực (Procedural Audio Synthesis) qua Web Audio API.
+     - Tái tạo chân thực: tiếng còi tàu viễn dương trầm vang vọng đáy biển, tiếng xẻng cào
+       than đá rổn rảng, tiếng lửa lò gầm thét, tiếng hơi nước xì qua van xả, tiếng gió tuyết
+       gầm rú mùa đông Luân Đôn, tiếng gõ phím máy chữ lách cách và tiếng chuông giáo đường ngân nga.
+
+   ★ Trụ cột 5: TIẾN TRÌNH TƯ TƯỞNG THAY VÌ CẤP ĐỘ THƯƠNG MẠI (Ideological Progression)
+     - Thay vì cày cấp độ (level), tích lũy vàng hay trang bị thường thấy trong game giải trí,
+       thước đo tiến trình trong tác phẩm là "SỰ CHUYỂN BIẾN TƯ TƯỞNG CỨU NƯỚC":
+       + Từ lòng yêu nước căm thù giặc thuở niên thiếu (1885 - 1911),
+       + Đến bài học thực tiễn về giai cấp vô sản và bản chất chủ nghĩa thực dân (1911 - 1917),
+       + Đến sự thức tỉnh của ánh sáng chủ nghĩa Mác - Lênin (1920),
+       + Đến tư tưởng giải phóng dân tộc thuộc địa và thành lập Đảng tiền phong (1930),
+       + Đỉnh cao là ngày trở về Pác Bó lãnh đạo toàn dân đi đến Độc lập (1941 - 1945).
+
+4. Vòng Lặp Trải Nghiệm (Core Gameplay Loop):
+   [ BỐI CẢNH LỊCH SỬ ] -> [ ĐỐI THOẠI NỘI TÂM (BÁC CHIA SẺ) ] -> [ NGƯỜI ĐỒNG HÀNH ĐÁP LỜI ]
+            |
+            v
+   [ TƯƠNG TÁC DIEGETIC ] (Xúc than, lật sổ, cào tuyết, đóng dấu, thắp đèn...)
+            |
+            v
+   [ KHAI MỞ CHÂN LÝ ] -> [ CHUYỂN CẢNH ĐIỆN ẢNH SANG MIỀN ĐẤT MỚI ]
+
+
+================================================================================
+PHẦN 1: MÔ TẢ TỔNG QUAN VỀ DỰ ÁN WEB
+================================================================================
+1. Thể Loại & Định Dạng:
+   - Thể loại: Trải nghiệm tương tác lịch sử điện ảnh (Cinematic Diegetic Web Experience).
+   - Khung hình: Sân khấu điện ảnh tỉ lệ vàng 16:9 (Theatrical Stage), tối ưu cho mọi màn hình máy tính và thiết bị di động.
+   - Phong cách Mỹ thuật: 100% Tranh sơn dầu lịch sử cổ điển (Classical European Historical Realism on Canvas), hiệu ứng ánh sáng tương phản Chiaroscuro (Rembrandt), vân cọ đắp nổi dày dặn (impasto), tạo cảm giác như đang thưởng lãm tại bảo tàng nghệ thuật quốc gia.
+   - Âm thanh: Bộ tổng hợp âm thanh thủ tục (Procedural Web Audio Synthesizer) không cần tải file ngoài; mô phỏng chân thực tiếng còi tàu biển, tiếng xẻng than, lửa lò nung, tiếng gió tuyết, tiếng gõ phím máy chữ, chuông ngân và sóng biển.
+
+2. Mục Đích & Ý Nghĩa:
+   - Tái hiện chân thực, sâu sắc và đầy xúc động toàn bộ hành trình 30 năm bôn ba tìm đường cứu nước của Bác Hồ (1911 – 1941) và mốc son Tuyên ngôn Độc lập 1945.
+   - Thể hiện sự chuyển biến tư tưởng vĩ đại: từ một thanh niên yêu nước với hai bàn tay trắng, qua thử thách lao động cùng khổ ở năm châu, đúc kết bản chất của chủ nghĩa thực dân và chủ nghĩa tư bản, tìm thấy ánh sáng Luận cương Lênin, sáng lập Đảng và lãnh đạo toàn dân tộc đi đến thắng lợi.
+
+3. Những Điểm Nhấn Độc Đáo (Gameplay & Mechanics):
+   - Hoàn toàn "In-Scene" (Diegetic): Không có pop-up hiện đại, không câu hỏi trắc nghiệm kiểm tra bài cũ làm đứt gãy mạch cảm xúc. Mọi tương tác diễn ra trực tiếp trên các vật phẩm lịch sử (xẻng than, quyển sổ tay, tờ báo, ngọn đèn dầu, cột mốc đá...).
+   - Mạch Đối Thoại 2 Người Đồng Hành:
+     * Lượt 1: Bác (Văn Ba / Nguyễn Ái Quốc / Bác Hồ) chia sẻ trăn trở nội tâm, nỗi day dứt trước nỗi khổ của nhân dân lao động và đúc kết chân lý lịch sử.
+     * Lượt 2: Người Đồng Hành (đại diện cho thế hệ trẻ / hậu thế) đối thoại thấu hiểu, tiếp lửa và khẳng định niềm tin sắt son.
+   - Hiệu Ứng Điện Ảnh Liền Mạch (Seamless Camera Pan): Khi hai nhân vật đối thoại liên tiếp trên cùng một khung tranh, góc quay Ken Burns lướt êm ái, hoàn toàn không bị chớp giật hay tải lại hình ảnh.
+   - Hệ Thống Phím Tắt Tiện Lợi:
+     * [Phím Space] hoặc [Nhấp Chuột]: Tiếp tục câu chuyện / xem đối thoại tiếp theo.
+     * [Phím C]: Mở Menu chọn Hồi Ký (chuyển nhanh đến bất kỳ chặng lịch sử nào).
+     * [Phím L]: Mở Nhật Ký Hải Trình (xem lại toàn bộ lịch sử đối thoại đã qua).
+     * [Phím H] hoặc [Phím U]: Bật / Tắt giao diện (Chế độ Rạp Chiếu Phim - Cinema Clean Mode).
+     * [Phím M]: Bật / Tắt âm thanh không gian.
+     * [Phím R]: Chơi lại từ đầu tác phẩm.
+
+
+================================================================================
+PHẦN 2: THỨ TỰ CHƠI CHI TIẾT TỪ ĐẦU ĐẾN CUỐI (PLAYTHROUGH TIMELINE)
+================================================================================
+
+Tác phẩm được chia làm 6 Hồi ký lịch sử và 1 Chương Dẫn nhập:
+
+--------------------------------------------------------------------------------
+HỒI 0: KHỞI NGUỒN TƯ TƯỞNG (1885 – 1911)
+--------------------------------------------------------------------------------
+- Bối Cảnh: Đêm dài nô lệ dưới ách thực dân Pháp, các phong trào Cần Vương, Đông Du, Duy Tân lần lượt thất bại.
+- Trải Nghiệm & Sự Kiện:
+  1. Slide 1: Bức tranh ngọn lửa Cần Vương lụi tàn; tiếng thở dài của non sông mất nước.
+  2. Slide 2: Người thanh niên Nguyễn Tất Thành nhận ra hạn chế của các bậc tiền bối: "Cầu viện Nhật Bản chẳng khác nào đuổi hổ cửa trước rước beo cửa sau; dựa vào Pháp để cầu tiến bộ chẳng khác nào xin giặc rủ lòng thương".
+  3. Slide 3: Đến Sài Gòn — Cửa ngõ mở ra đại dương, nơi bắt đầu của quyết định lịch sử: Sang thẳng phương Tây để xem họ làm như thế nào rồi trở về giúp đồng bào.
+
+--------------------------------------------------------------------------------
+HỒI 1: LỜI THỀ GÁC TRỌ (SÀI GÒN, ĐẦU THÁNG 6/1911)
+--------------------------------------------------------------------------------
+- Bối Cảnh: Căn gác trọ nhỏ nghèo nàn ở Sài Gòn, đêm khuya bên ngọn đèn dầu le lói trên vách nứa.
+- Trải Nghiệm & Sự Kiện:
+  1. Cảnh 1 (inn_1): Nguyễn Tất Thành ngồi đối diện với người bạn thân, ánh mắt sáng quắc đầy chí hướng, ngỏ lời rủ bạn cùng xuất dương.
+  2. Cảnh 2 (inn_1_dialogue): Người chơi đưa ra lựa chọn đồng hành: bày tỏ nỗi lo sợ về tiền bạc và hiểm nguy nơi đất khách quê người.
+  3. Cảnh 3 (inn_2): Bác xòe hai bàn tay gầy guộc ra và nói câu nói bất hủ: "Tiền đây chứ đâu! Chúng ta sẽ làm việc, chúng ta sẽ làm bất cứ việc gì để sống và để đi!".
+  4. Cảnh 4 (inn_3): Hai người nắm chặt tay nhau kết lời thề son sắt, quyết tâm lên đường vì vận mệnh non sông.
+
+--------------------------------------------------------------------------------
+HỒI 2: XUẤT BẾN BẾN NHÀ RỒNG (NGÀY 05.06.1911)
+--------------------------------------------------------------------------------
+- Bối Cảnh: Bến cảng Sài Gòn rạng sáng ngày 5 tháng 6 năm 1911; con tàu buôn hơi nước Amiral Latouche-Tréville khổng lồ đậu bên bờ sông.
+- Trải Nghiệm & Sự Kiện:
+  1. Cảnh 1 (dock_1): Bác đứng trên bến cảng nhìn con tàu buôn Pháp đồ sộ.
+  2. Cảnh 2 (dock_2 - TƯƠNG TÁC KÝ SỔ TÀU): Người chơi mở cuốn sổ thuyền viên (*Rôle d'équipage*), tự tay gõ tên người đồng hành và chứng kiến dòng chữ: "VĂN BA • Phụ bếp • 21 tuổi".
+  3. Cảnh 3 (dock_3): Anh Ba khoác túi vải thô, bước lên cầu tàu gỗ dài. Tiếng còi tàu rúc lên ba hồi trầm hùng, con tàu từ từ nhổ neo tách bến, bóng dáng quê hương lùi dần sau làn sóng trắng.
+
+--------------------------------------------------------------------------------
+HỒI 3: GIAN LAO HẢI TRÌNH & VÒNG QUANH THẾ GIỚI (1911 – 1917)
+--------------------------------------------------------------------------------
+- Bối Cảnh: Hành trình vượt ba đại dương, bốn châu lục qua gian khổ cùng cực và những bài học thực tiễn đầu tiên.
+- Trải Nghiệm & Sự Kiện:
+  1. Cảnh 3.1: Hầm Than Tàu Latouche-Tréville (ship_1 - TƯƠNG TÁC XÚC THAN):
+     - Không gian lò lửa rực đỏ 40°C dưới đáy tàu. Người chơi nhấp xúc từng xẻng than anthracite vào cửa lò, kim đồng hồ áp suất rung lắc dữ dội, cảm nhận sức lao động nhọc nhằn của người phụ bếp.
+  2. Cảnh 3.2: Boong Tàu Đêm Khuya (ship_2 - TƯƠNG TÁC SỔ TAY HỌC TẬP):
+     - Sau ca làm việc kiệt sức, Anh Ba ngồi bên ngọn đèn bão lật cuốn sổ tay học tiếng Pháp. Người chơi nhấp lật 5 trang từ vựng (*Liberté, Égalité, Fraternité, Peuple, Patrie*).
+  3. Cảnh 3.3: Bến Cảng Marseille - Pháp (marseille_spatial - TƯƠNG TÁC QUAY CAMERA 3 HƯỚNG):
+     - Ngày 06.07.1911, tàu cập cảng nước Pháp. Người chơi dùng mũi tên xoay góc nhìn:
+       * Hướng Trái: Con đường bến cảng với phu xe da trắng người Pháp gập người kéo xe cải tiến nặng nhọc.
+       * Hướng Phải: Bờ kè đá với những người thợ bốc vác thất nghiệp và người mẹ nghèo ôm con ăn xin.
+       * Hướng Giữa: Màn đúc kết tư tưởng mang tính bước ngoặt: "Ở Pháp cũng có người nghèo như ở xứ ta... Kẻ thù là thực dân áp bức, còn nhân dân lao động Pháp chính là bạn bè!".
+  4. Cảnh 3.4: Duyên Hải Tây Phi - Dakar 1912 (africa_1):
+     - Chứng kiến cảnh phu da đen bị xua nhảy xuống biển dông bão bốc hàng dưới làn roi của giám thị thuộc địa. Bác thấu hiểu: Dẫu khác màu da, nỗi đau mất nước ở đâu cũng giống như nhau.
+  5. Cảnh 3.5: Đêm Biển Đỏ 1912 (africa_2):
+     - Bác đứng bên mạn tàu trong đêm dông bão, trăn trở về việc đoàn kết hàng trăm triệu người cùng khổ Á - Phi. Người đồng hành khẳng định niềm tin.
+  6. Cảnh 3.6: Vịnh New York (Mùa thu 1912 - usa_1 - TƯƠNG TÁC NGỌN ĐUỐC & BỆ ĐÁ):
+     - Tàu vào vịnh New York trong sương sớm. Nhìn Tượng Nữ Thần Tự Do, ngẫm về Tuyên ngôn Mỹ 1776; phát hiện nghịch lý: ngọn đuốc sáng trên cao nhưng bóng tối phủ kín dưới chân tượng.
+  7. Cảnh 3.7: Bếp Bánh Parker House - Boston (1912–1913 - usa_2 - TƯƠNG TÁC NHÀO BỘT & ĐỌC BÁO):
+     - Vừa nhào bột làm bánh kiếm sống vừa đọc báo tìm hiểu công nghệ và thể chế phương Tây.
+  8. Cảnh 3.8: Góc Phố Harlem - New York (1913 - usa_3):
+     - Tận mắt thấy cảnh người nghèo và người da đen bị phân biệt chủng tộc tàn khốc. Nhận ra bản chất: Dân chủ tư sản chỉ là tự do của kẻ giàu bóc lột người nghèo.
+  9. Cảnh 3.9: Công Viên Luân Đôn (1913–1914 - london_1 - TƯƠNG TÁC CÀO 3 LỚP TUYẾT):
+     - Mùa đông giá buốt, người chơi dùng xẻng gỗ cào 3 lớp băng tuyết dọn lối đi công viên; bàn tay buốt rát nhưng ý chí không hề tắt.
+  10. Cảnh 3.10: Khách Sạn Carlton (1914 - london_2):
+      - Vua đầu bếp Escoffier muốn truyền nghề làm bếp trưởng giàu có; Bác lịch thiệp từ chối vì không thể màng an nhàn bản thân khi đất nước đang chìm trong xiềng xích.
+
+--------------------------------------------------------------------------------
+HỒI 4: TỎA SÁNG CHÂN LÝ CỨU NƯỚC (PARIS 1917 – 1923)
+--------------------------------------------------------------------------------
+- Bối Cảnh: Paris sau Thế chiến thứ nhất — Trung tâm chính trị châu Âu và bước ngoặt tìm thấy con đường cứu nước.
+- Trải Nghiệm & Sự Kiện:
+  1. Cảnh 4.1: Hội Nghị Versailles 1919 (act4_1 - TƯƠNG TÁC ĐÓNG DẤU TRIỆN ĐỎ):
+     - Ngày 18.06.1919, Bác thảo Bản Yêu sách 8 điểm của nhân dân An Nam. Người chơi ấn con dấu triện đỏ rực mang tên "NGUYỄN ÁI QUỐC", tạo nên tiếng sét làm rúng động chính giới phương Tây.
+  2. Cảnh 4.2: Số 9 Ngõ Compoint Mùa Đông (act4_2 - TƯƠNG TÁC Ủ ẤM VIÊN GẠCH NUNG):
+     - Mùa đông Paris rét buốt, căn gác nhỏ sưởi bằng viên gạch nung hồng bọc báo cũ. Người chơi chạm vào viên gạch nung để lan tỏa hơi ấm xua tan giá lạnh.
+  3. Cảnh 4.3: Luận Cương Lênin (Tháng 7/1920 - act4_2_lenin - TƯƠNG TÁC THẮP ĐÈN DẦU CHÂN LÝ):
+     - Đọc Sơ thảo Luận cương của Lênin trên báo L'Humanité. Người chơi thắp ngọn đèn dầu, căn phòng bừng sáng hào quang vàng rực, Bác òa khóc reo to: "Hỡi đồng bào bị đọa đày đau khổ! Đây là cái cần thiết cho chúng ta, đây là con đường giải phóng chúng ta!".
+  4. Cảnh 4.4: Đại Hội Tours & Báo Le Paria (act4_3):
+     - Tháng 12/1920, bỏ phiếu sáng lập Đảng Cộng sản Pháp; năm 1922 ra báo *Người Cùng Khổ* — trở thành người cộng sản Việt Nam đầu tiên.
+
+--------------------------------------------------------------------------------
+HỒI 5: NGỌN LỬA LAN TỎA CÁCH MẠNG (1923 – 1930)
+--------------------------------------------------------------------------------
+- Bối Cảnh: Chuyển hướng về phương Đông, đào tạo cán bộ và chuẩn bị thành lập Đảng tiên phong.
+- Trải Nghiệm & Sự Kiện:
+  1. Cảnh 5.1: Mát-xcơ-va & Quốc Tế Cộng Sản (1923–1924 - act5_1):
+     - Bảo vệ luận điểm cách mạng thuộc địa tại Đại hội V Quốc tế Cộng sản: Thuộc địa có thể chủ động đứng lên bùng nổ trước chính quốc.
+  2. Cảnh 5.2: Số 13 Đường Văn Minh, Quảng Châu (1925–1927 - act5_2):
+     - Thành lập Hội Việt Nam Cách mạng Thanh niên, xuất bản cuốn "Đường Kách Mệnh" — gieo mầm những hạt giống đỏ cách mạng đầu tiên.
+  3. Cảnh 5.3: Cửu Long, Hương Cảng (03.02.1930 - act5_3 - TƯƠNG TÁC HỢP NHẤT ĐẢNG):
+     - Bác chủ trì hội nghị hợp nhất. Người chơi nhấp vào 3 huy hiệu của các tổ chức cộng sản để hợp nhất thành một Đảng duy nhất: **ĐẢNG CỘNG SẢN VIỆT NAM RA ĐỜI**, chấm dứt khủng hoảng đường lối cứu nước kéo dài nửa thế kỷ.
+
+--------------------------------------------------------------------------------
+HỒI 6: MÙA XUÂN TRỞ VỀ & BÌNH MINH NON SÔNG (1941 – 1945)
+--------------------------------------------------------------------------------
+- Bối Cảnh: Sau 30 năm xa cách, Người trở về lãnh đạo cách mạng giải phóng dân tộc.
+- Trải Nghiệm & Sự Kiện:
+  1. Cảnh 6.1: Cột Mốc 108 Pác Bó (28.01.1941 - act6_1 - TƯƠNG TÁC CHẠM CỘT MỐC):
+     - Mùa xuân năm 1941, sau đúng 30 năm bôn ba, Bác Hồ cúi đầu chạm tay lên Cột mốc biên giới 108 Cao Bằng thiêng liêng. Khung cảnh bừng nở hoa đào rừng, câu thơ Tố Hữu vang lên: *"Kìa, bóng Bác đang hôn lên hòn đá / Lắng nghe trong màu hồng sắc đỏ quê hương..."*.
+  2. Cảnh 6.2: Hang Cốc Bó, Suối Lênin (act6_2):
+     - Bác ngồi bên tảng đá tự nhiên dịch sử Đảng: *"Bàn đá chông chênh dịch sử Đảng / Cuộc đời cách mạng thật là sang"*. Khí phách ung dung, chuẩn bị thành lập Mặt trận Việt Minh đón thời cơ Tổng khởi nghĩa.
+  3. Cảnh 6.3: Vĩ Thanh Ba Đình (02.09.1945 - act6_3 - TƯƠNG TÁC BÌNH MINH ĐỘC LẬP):
+     - Quảng trường Ba Đình rực rỡ cờ hoa, Bác đọc Tuyên ngôn Độc lập. Hình ảnh ngọn đèn dầu nhỏ năm 1911 hòa tan và bừng nở thành Vầng Thái Dương Độc Lập soi rọi non sông muôn thuở: *"Không có gì quý hơn độc lập, tự do!"*.
+     - Người chơi có thể mở xem toàn bộ Nhật ký Hải trình 30 năm hoặc chơi lại từ đầu.
+
+================================================================================
+BẢN QUYỀN & THIẾT KẾ: DỰ ÁN HẢI TRÌNH 1911 - 1941
+================================================================================
