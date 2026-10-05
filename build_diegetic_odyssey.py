@@ -65,6 +65,7 @@ HTML_CODE = r'''<!DOCTYPE html>
     <link rel="preload" as="image" href="marseille_left_carts.jpg">
     <link rel="preload" as="image" href="marseille_right_steps.jpg">
     <link rel="preload" as="image" href="africa_1_coast.jpg">
+    <link rel="preload" as="image" href="africa_2_red_sea.jpg">
     <link rel="preload" as="image" href="world_1_boston_london.jpg">
     <link rel="preload" as="image" href="act4_1_versailles_1919.jpg">
     <link rel="preload" as="image" href="act4_2_paris_room.jpg">
@@ -1636,25 +1637,51 @@ HTML_CODE = r'''<!DOCTYPE html>
                 image: 'africa_1_coast.jpg',
                 act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
                 actIndex: 3,
-                sceneNum: 'Cảnh 4/8',
-                location: 'Dakar & Vùng Duyên Hải Châu Phi • 1912',
-                coords: 'Các Cảng Vùng Tây Phi & Biển Đỏ',
+                sceneNum: 'Cảnh 4/10 • Tây Phi',
+                location: 'Dakar & Bờ Biển Tây Phi • 1912',
+                coords: 'Cảng Dakar & Các Vùng Thuộc Địa Tây Phi',
                 speaker: 'Văn Ba',
-                role: 'Quan sát những người phu da đen nhảy xuống biển kéo dây',
-                text: 'Nhìn những người nô lệ da đen bị xua xuống biển lạnh bốc dỡ hàng, rồi bị sóng cuốn đi trong tiếng roi vọt của viên giám thị... Tôi quặn thắt lòng. Dẫu khác màu da, nhưng nỗi đau của người mất nước thì ở đâu cũng giống như nhau!',
+                role: 'Nỗi đau trước cảnh nô lệ da đen bị xua xuống biển',
+                text: 'Nhìn những người nô lệ da đen bị xua xuống biển lạnh bốc dỡ hàng, rồi bị sóng cuốn trôi trong tiếng roi vút của viên giám thị... Tôi quặn thắt lòng. Dẫu khác màu da, nhưng nỗi đau của người mất nước thì ở đâu cũng giống như nhau!',
                 action: 'ambient'
             },
             {
-                id: 'africa_trust',
+                id: 'africa_1_trust',
                 image: 'africa_1_coast.jpg',
                 act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
                 actIndex: 3,
-                sceneNum: 'Cảnh 5/8',
-                location: 'Dakar & Vùng Duyên Hải Châu Phi • 1912',
-                coords: 'Đêm trên boong tàu nhìn về lục địa đen',
+                sceneNum: 'Cảnh 4/10 • Thấu Cảm',
+                location: 'Dakar & Bờ Biển Tây Phi • 1912',
+                coords: 'Tiếng gọi lương tri của người cùng khổ',
                 speaker: 'Bạn Đồng Hành',
-                role: 'Khẳng định niềm tin cùng Anh Ba',
-                text: 'Anh Ba, nỗi đau này không hề uổng phí. Từng giọt mồ hôi và nước mắt anh nhìn thấy ở châu Phi hôm nay sẽ biến thành sức mạnh đoàn kết muôn triệu người cùng khổ trên toàn thế giới!',
+                role: 'Chia sẻ nỗi đau mất nước cùng Anh Ba',
+                text: 'Chứng kiến thảm cảnh này, tôi mới thấu suốt vì sao anh không chọn con đường cầu viện ngoại bang. Dưới ách thực dân, giai cấp cần lao ở đâu cũng chung một nỗi đọa đày. Tiếng roi quất kia chính là tiếng gọi lương tri thôi thúc ta tìm đường giải phóng!',
+                action: 'ambient'
+            },
+            {
+                id: 'africa_2',
+                image: 'africa_2_red_sea.jpg',
+                act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
+                actIndex: 3,
+                sceneNum: 'Cảnh 5/10 • Biển Đỏ',
+                location: 'Vùng Biển Đỏ • Đêm Giông Bão 1912',
+                coords: 'Mạn Thuyền Hơi Nước Giữa Biển Đêm',
+                speaker: 'Văn Ba',
+                role: 'Nỗi trăn trở đại đoàn kết các dân tộc thuộc địa',
+                text: 'Đêm nay đứng nơi mạn tàu nhìn về bờ Biển Đỏ mịt mùng, sóng dữ dập dồn... Tôi tự hỏi: Làm sao để liên kết hàng trăm triệu con người cùng khổ đang rên xiết ở Á - Phi lại với nhau? Nếu không đoàn kết lại, làm sao bẻ gãy được gông cùm thực dân?',
+                action: 'ambient'
+            },
+            {
+                id: 'africa_2_trust',
+                image: 'africa_2_red_sea.jpg',
+                act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
+                actIndex: 3,
+                sceneNum: 'Cảnh 5/10 • Niềm Tin',
+                location: 'Vùng Biển Đỏ • Đêm Giông Bão 1912',
+                coords: 'Ngọn lửa đoàn kết vô sản năm châu',
+                speaker: 'Bạn Đồng Hành',
+                role: 'Khẳng định niềm tin sắt son cùng Anh Ba',
+                text: 'Anh Ba, nỗi trăn trở đêm nay của anh sẽ không hề uổng phí! Từng giọt mồ hôi và nước mắt anh nhìn thấy ở châu Phi hôm nay sẽ hóa thành ngọn cờ hiệu triệu muôn triệu người cùng khổ toàn thế giới đứng lên tự cứu mình. Chúng tôi vững tin vào anh!',
                 action: 'ambient'
             },
 
@@ -1664,25 +1691,51 @@ HTML_CODE = r'''<!DOCTYPE html>
                 image: 'world_1_boston_london.jpg',
                 act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
                 actIndex: 3,
-                sceneNum: 'Cảnh 6/8',
-                location: 'Boston & New York (Hoa Kỳ) • 1912 – 1913',
-                coords: 'Khách Sạn Parker House, Boston (Mỹ)',
+                sceneNum: 'Cảnh 6/10 • New York',
+                location: 'Vịnh New York (Hoa Kỳ) • Mùa Thu 1912',
+                coords: 'Mũi Tàu Cập Bến & Tượng Nữ Thần Tự Do',
                 speaker: 'Văn Ba',
-                role: 'Quan sát mặt trái của chủ nghĩa tư bản',
-                text: 'Bên kia bức tượng Nữ thần Tự do tráng lệ, tôi tìm đến khu Harlem của người da đen, chứng kiến những người lao động nghèo bị phân biệt đối xử tàn khốc. Bản Tuyên ngôn Độc lập Mỹ năm 1776 viết về nhân quyền rất đẹp đẽ, nhưng vì sao người lao động vẫn cơ cực đến thế?!',
+                role: 'Chiêm nghiệm Tuyên ngôn Độc lập Mỹ 1776',
+                text: 'Tàu rẽ sương mù tiến vào vịnh New York. Nhìn ngọn đuốc Nữ thần Tự do vươn cao, tôi ngẫm về Tuyên ngôn Độc lập Mỹ năm 1776: "Mọi người sinh ra đều có quyền bình đẳng; tạo hóa cho họ những quyền không ai có thể xâm phạm được..." Những lời ấy vang dội và đẹp đẽ biết bao!',
                 action: 'ambient'
             },
             {
-                id: 'usa_trust',
+                id: 'usa_1_trust',
                 image: 'world_1_boston_london.jpg',
                 act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
                 actIndex: 3,
-                sceneNum: 'Cảnh 7/8',
-                location: 'Boston & New York (Hoa Kỳ) • 1912 – 1913',
-                coords: 'Khách Sạn Parker House, Boston (Mỹ)',
+                sceneNum: 'Cảnh 6/10 • Đối Thoại',
+                location: 'Vịnh New York (Hoa Kỳ) • Mùa Thu 1912',
+                coords: 'Nghịch lý sau bức tượng tự do',
                 speaker: 'Bạn Đồng Hành',
-                role: 'Khắc sâu bài học thực tiễn',
-                text: 'Bởi vì tự do của chủ nghĩa tư bản chưa phải là tự do thực sự cho người cùng khổ. Anh đã nhìn thấu tận bản chất của chúng, và con đường anh tìm kiếm chắc chắn sẽ vượt xa những giới hạn đó!',
+                role: 'Nhìn nhận nghịch lý của nền dân chủ tư sản',
+                text: 'Lời văn của họ quả thật lấp lánh như vàng ngọc... Nhưng liệu ngọn đuốc tự do ấy có thực sự soi rọi đến những kiếp người lao động cùng cực ở xứ cờ hoa này không, hay chỉ dành riêng cho những ông chủ tư bản giàu sang, thưa anh Ba?',
+                action: 'ambient'
+            },
+            {
+                id: 'usa_2',
+                image: 'world_1_boston_london.jpg',
+                act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
+                actIndex: 3,
+                sceneNum: 'Cảnh 7/10 • Boston & Harlem',
+                location: 'Boston & Khu Harlem (New York) • 1912 – 1913',
+                coords: 'Khách Sạn Parker House & Khu Người Nghèo Harlem',
+                speaker: 'Văn Ba',
+                role: 'Thấu suốt mặt trái của chủ nghĩa tư bản',
+                text: 'Vừa làm bánh ở khách sạn Parker House vừa tìm đến khu Harlem, tôi thấy rõ sự thật trần trụi: đằng sau ánh sáng hào nhoáng, người lao động nghèo vẫn bị bóc lột đến tận xương tủy, người da đen vẫn bị đối xử tàn tệ. Tự do của chủ nghĩa tư bản chưa phải là tự do thực sự cho người cùng khổ!',
+                action: 'ambient'
+            },
+            {
+                id: 'usa_2_trust',
+                image: 'world_1_boston_london.jpg',
+                act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
+                actIndex: 3,
+                sceneNum: 'Cảnh 7/10 • Đúc Kết',
+                location: 'Boston & Khu Harlem (New York) • 1912 – 1913',
+                coords: 'Bài học thực tiễn vô giá',
+                speaker: 'Bạn Đồng Hành',
+                role: 'Khắc sâu bài học thực tiễn chính trị',
+                text: 'Anh đã nhìn thấu bản chất của họ! Bài học thực tiễn vô giá này khẳng định: ta không thể rập khuôn mô hình tư bản phương Tây. Con đường cứu nước mà anh đang tìm kiếm nhất định phải vượt xa những giới hạn đó, đem lại độc lập tự do thật sự cho nhân dân lao động!',
                 action: 'ambient'
             },
 
@@ -1692,25 +1745,51 @@ HTML_CODE = r'''<!DOCTYPE html>
                 image: 'world_1_boston_london.jpg',
                 act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
                 actIndex: 3,
-                sceneNum: 'Cảnh 8/8',
-                location: 'London (Vương Quốc Anh) • 1913 – 1917',
-                coords: 'Khách Sạn Carlton & Công Viên Mùa Đông Luân Đôn',
+                sceneNum: 'Cảnh 8/10 • Cào Tuyết',
+                location: 'Luân Đôn (Vương Quốc Anh) • Mùa Đông 1913 – 1917',
+                coords: 'Công Viên Phủ Tuyết & Sương Mù Luân Đôn',
                 speaker: 'Văn Ba',
-                role: 'Quét tuyết mùa đông nước Anh',
+                role: 'Cào tuyết kiếm sống và tự học tiếng Anh',
                 text: 'Mùa đông sương mù Luân Đôn giá buốt căm căm. Tôi phải dậy từ tinh mơ cào tuyết đóng băng trong công viên để kiếm vài xu sưởi ấm. Bàn tay cóng buốt rát bỏng, nhưng ngọn lửa trong lòng tôi chưa từng tắt!',
                 action: 'diegetic_london'
             },
             {
-                id: 'london_trust',
+                id: 'london_1_trust',
                 image: 'world_1_boston_london.jpg',
                 act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
                 actIndex: 3,
-                sceneNum: 'Cảnh 8/8 • Niềm Tin',
-                location: 'London (Vương Quốc Anh) • 1913 – 1917',
-                coords: 'Khách Sạn Carlton, Luân Đôn',
+                sceneNum: 'Cảnh 8/10 • Tiếp Lửa',
+                location: 'Luân Đôn (Vương Quốc Anh) • Mùa Đông 1913 – 1917',
+                coords: 'Ý chí tôi luyện trong bão tuyết',
                 speaker: 'Bạn Đồng Hành',
-                role: 'Tiếp thêm hơi ấm niềm tin',
-                text: 'Tuyết lạnh London không khuất phục được ý chí của anh. Đầu bếp trứ danh Escoffier muốn dạy anh nghệ thuật ẩm thực đỉnh cao, nhưng anh đã từ chối để giữ trọn sứ mệnh cứu dân tộc. Chúng tôi luôn tin vào lý tưởng kiên định của anh!',
+                role: 'Tiếp thêm hơi ấm niềm tin cùng Anh Ba',
+                text: 'Gió tuyết phương Tây không thể làm nguội ý chí gang thép của anh! Từng nhát xẻng cào tuyết trong giá buốt hôm nay chính là từng bước tôi luyện bản lĩnh của một bậc vĩ nhân. Chúng tôi tin vào nghị lực phi thường của anh!',
+                action: 'ambient'
+            },
+            {
+                id: 'london_2',
+                image: 'world_1_boston_london.jpg',
+                act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
+                actIndex: 3,
+                sceneNum: 'Cảnh 9/10 • Carlton Hotel',
+                location: 'Khách Sạn Carlton • Luân Đôn 1914',
+                coords: 'Gian Bếp Khách Sạn & Vua Bếp Escoffier',
+                speaker: 'Văn Ba',
+                role: 'Từ chối vinh hoa vì sứ mệnh cứu dân tộc',
+                text: 'Vua đầu bếp Auguste Escoffier quý mến muốn truyền thụ nghệ thuật ẩm thực đỉnh cao để tôi trở thành bếp trưởng giàu có và danh giá. Nhưng nếu chỉ màng sung sướng bản thân nơi xứ người, thì ai sẽ gánh vác nỗi đau của non sông đang quằn quại trong xiềng xích?',
+                action: 'ambient'
+            },
+            {
+                id: 'london_2_trust',
+                image: 'world_1_boston_london.jpg',
+                act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
+                actIndex: 3,
+                sceneNum: 'Cảnh 9/10 • Kính Phục',
+                location: 'Khách Sạn Carlton • Luân Đôn 1914',
+                coords: 'Nhân cách sáng ngời vì nước quên thân',
+                speaker: 'Bạn Đồng Hành',
+                role: 'Nghiêng mình trước nhân cách cao thượng',
+                text: 'Trước danh lợi nhung lụa, sự kiên định của anh sáng ngời như ngọc! Từ chối vinh hoa cá nhân để dấn thân trọn đời cho đại nghĩa dân tộc — chúng tôi mãi mãi nghiêng mình kính phục phẩm cách cao thượng của anh!',
                 action: 'ambient'
             },
 
@@ -1720,11 +1799,11 @@ HTML_CODE = r'''<!DOCTYPE html>
                 image: 'act4_1_versailles_1919.jpg',
                 act: 'HỒI 4 • TỎA SÁNG CHÂN LÝ',
                 actIndex: 4,
-                sceneNum: 'Cảnh 1/5',
+                sceneNum: 'Cảnh 1/6 • Yêu Sách 1919',
                 location: 'Hội Nghị Hòa Bình Versailles (Pháp)',
                 coords: 'Paris (Pháp) • Ngày 18.06.1919',
                 speaker: 'Nguyễn Ái Quốc',
-                role: 'Ký tên vào Bản Yêu Sách 8 Điểm',
+                role: 'Ký tên vào Bản Yêu Sách 8 Điểm của Nhân Dân An Nam',
                 text: 'Thay mặt Hội Những Người An Nam Yêu Nước, tôi gửi đến Hội nghị Versailles "Bản Yêu sách của nhân dân An Nam". Dù các cường quốc phớt lờ, nhưng tiếng chuông cảnh tỉnh đã gióng lên: Muốn giải phóng, dân tộc ta phải tự đứng trên đôi chân của chính mình!',
                 action: 'diegetic_versailles'
             },
@@ -1733,12 +1812,12 @@ HTML_CODE = r'''<!DOCTYPE html>
                 image: 'act4_1_versailles_1919.jpg',
                 act: 'HỒI 4 • TỎA SÁNG CHÂN LÝ',
                 actIndex: 4,
-                sceneNum: 'Cảnh 2/5',
+                sceneNum: 'Cảnh 2/6 • Tiếng Chuông',
                 location: 'Hội Nghị Hòa Bình Versailles (Pháp)',
-                coords: 'Paris (Pháp) • Ngày 18.06.1919',
+                coords: 'Tiếng sét Nguyễn Ái Quốc chấn động Paris',
                 speaker: 'Bạn Đồng Hành',
                 role: 'Niềm tự hào non sông',
-                text: 'Cái tên NGUYỄN ÁI QUỐC xuất hiện như một tia chớp giữa trời Âu! Từ hôm nay, người dân mất nước An Nam đã có một người đại diện kiên trung dám nói thẳng vào mặt các cường quốc đế quốc!',
+                text: 'Cái tên NGUYỄN ÁI QUỐC xuất hiện như một tia chớp giữa trời Âu! Từ hôm nay, người dân mất nước An Nam đã có một người đại diện kiên trung dám nói thẳng vào mặt các cường quốc đế quốc, đòi quyền sống và quyền tự do cho đồng bào!',
                 action: 'ambient'
             },
             {
@@ -1746,25 +1825,12 @@ HTML_CODE = r'''<!DOCTYPE html>
                 image: 'act4_2_paris_room.jpg',
                 act: 'HỒI 4 • TỎA SÁNG CHÂN LÝ',
                 actIndex: 4,
-                sceneNum: 'Cảnh 3/5',
-                location: 'Ngõ Compoint, Quận 17, Paris',
-                coords: 'Paris (Pháp) • Tháng 7/1920 (Mùa Hè)',
+                sceneNum: 'Cảnh 3/6 • Ngõ Compoint',
+                location: 'Số 9 Ngõ Compoint, Quận 17, Paris',
+                coords: 'Paris (Pháp) • Mùa Đông Năm 1920',
                 speaker: 'Nguyễn Ái Quốc',
-                role: 'Căn gác trọ mùa đông sưởi bằng gạch nung',
-                text: 'Đêm Paris giá lạnh, chỉ có viên gạch nung sưởi ấm đôi bàn tay. Nhưng đêm nay, dưới ngọn đèn dầu này, tôi mở tờ báo L\'Humanité đọc Luận cương của Lênin... Hãy thắp sáng ngọn đèn này cùng tôi!',
-                action: 'diegetic_lenin'
-            },
-            {
-                id: 'act4_2_quote',
-                image: 'act4_2_paris_room.jpg',
-                act: 'HỒI 4 • TỎA SÁNG CHÂN LÝ',
-                actIndex: 4,
-                sceneNum: 'Cảnh 4/5',
-                location: 'Ngõ Compoint, Quận 17, Paris',
-                coords: 'Paris (Pháp) • Tháng 7/1920',
-                speaker: 'Nguyễn Ái Quốc',
-                role: 'Reo to lên một mình trong phòng trọ như nói với toàn thể đồng bào',
-                text: 'Hỡi đồng bào bị đọa đày đau khổ! Đây là cái cần thiết cho chúng ta, đây là con đường giải phóng chúng ta! Luận cương của Lênin làm cho tôi rất cảm động, phấn khởi, sáng tỏ, tin tưởng biết bao! Muốn cứu nước và giải phóng dân tộc không có con đường nào khác con đường cách mạng vô sản!',
+                role: 'Căn phòng trọ nghèo sưởi bằng viên gạch nung',
+                text: 'Mùa đông Paris rét buốt thấu xương. Mỗi sáng trước khi đi làm, tôi để nhờ một viên gạch vào lò than của bác chủ nhà, chiều về lấy ra bọc vào tờ báo cũ đặt dưới chân giường để sưởi. Giá rét thể xác không đáng sợ bằng nỗi đau quằn quại khi non sông chưa tìm thấy con đường giải phóng!',
                 action: 'ambient'
             },
             {
@@ -1772,12 +1838,51 @@ HTML_CODE = r'''<!DOCTYPE html>
                 image: 'act4_2_paris_room.jpg',
                 act: 'HỒI 4 • TỎA SÁNG CHÂN LÝ',
                 actIndex: 4,
-                sceneNum: 'Cảnh 5/5',
-                location: 'Ngõ Compoint, Quận 17, Paris',
-                coords: 'Paris (Pháp) • Tháng 7/1920',
+                sceneNum: 'Cảnh 3/6 • Viên Gạch Hồng',
+                location: 'Số 9 Ngõ Compoint, Quận 17, Paris',
+                coords: 'Hơi ấm từ ngọn lửa lòng kiên định',
                 speaker: 'Bạn Đồng Hành',
-                role: 'Lời hứa của hậu thế',
-                text: 'Chân lý đã bừng sáng! Con đường mà Bác tìm thấy trong căn phòng nhỏ ngõ Compoint hôm nay sẽ dẫn lối cho toàn thể dân tộc Việt Nam đi từ bùn đen nô lệ đến độc lập, tự do và vinh quang rực rỡ!',
+                role: 'Hơi ấm từ viên gạch hồng ủ nóng triệu con tim',
+                text: 'Viên gạch nung hồng trong đêm đông Compoint đã ủ ấm trái tim của cả một dân tộc! Gian khổ nhường ấy mà Người vẫn dành trọn tâm trí cho độc lập tự do. Hậu thế chúng con xin nghiêng mình trước đức hy sinh vô bờ bến của Người!',
+                action: 'ambient'
+            },
+            {
+                id: 'act4_2_lenin',
+                image: 'act4_2_paris_room.jpg',
+                act: 'HỒI 4 • TỎA SÁNG CHÂN LÝ',
+                actIndex: 4,
+                sceneNum: 'Cảnh 4/6 • Luận Cương Lênin',
+                location: 'Ngõ Compoint, Quận 17, Paris',
+                coords: 'Paris (Pháp) • Tháng 7/1920 (Đêm Hè Lịch Sử)',
+                speaker: 'Nguyễn Ái Quốc',
+                role: 'Bừng sáng Luận cương của Lênin trên báo L\'Humanité',
+                text: 'Đêm nay, dưới ngọn đèn dầu này, tôi mở tờ báo L\'Humanité đọc Luận cương của Lênin về vấn đề dân tộc và thuộc địa... Hãy cùng tôi thắp sáng ngọn đèn này!',
+                action: 'diegetic_lenin'
+            },
+            {
+                id: 'act4_2_quote',
+                image: 'act4_2_paris_room.jpg',
+                act: 'HỒI 4 • TỎA SÁNG CHÂN LÝ',
+                actIndex: 4,
+                sceneNum: 'Cảnh 4/6 • Tiếng Reo Thiêng Liêng',
+                location: 'Ngõ Compoint, Quận 17, Paris',
+                coords: 'Tiếng reo thiêng liêng vọng về Tổ quốc',
+                speaker: 'Nguyễn Ái Quốc',
+                role: 'Khóc vì mừng vui reo to một mình trong phòng trọ',
+                text: 'Hỡi đồng bào bị đọa đày đau khổ! Đây là cái cần thiết cho chúng ta, đây là con đường giải phóng chúng ta! Luận cương của Lênin làm cho tôi rất cảm động, phấn khởi, sáng tỏ, tin tưởng biết bao! Muốn cứu nước và giải phóng dân tộc không có con đường nào khác con đường cách mạng vô sản!',
+                action: 'ambient'
+            },
+            {
+                id: 'act4_2_lenin_trust',
+                image: 'act4_2_paris_room.jpg',
+                act: 'HỒI 4 • TỎA SÁNG CHÂN LÝ',
+                actIndex: 4,
+                sceneNum: 'Cảnh 5/6 • Lời Hứa Hậu Thế',
+                location: 'Ngõ Compoint, Quận 17, Paris',
+                coords: 'Paris (Pháp) • Chân lý bừng sáng',
+                speaker: 'Bạn Đồng Hành',
+                role: 'Lời hứa thiêng liêng của hậu thế',
+                text: 'Chân lý đã bừng sáng! Giọt nước mắt của Bác rơi trên tờ báo L\'Humanité đêm nay đã chấm dứt đêm dài tăm tối ngàn năm. Con đường mà Bác tìm thấy trong căn phòng nhỏ ngõ Compoint sẽ dẫn lối cho toàn thể dân tộc Việt Nam đi tới độc lập, tự do và vinh quang rực rỡ!',
                 action: 'ambient'
             },
             {
@@ -1785,12 +1890,25 @@ HTML_CODE = r'''<!DOCTYPE html>
                 image: 'act4_3_tours_congress.jpg',
                 act: 'HỒI 4 • TỎA SÁNG CHÂN LÝ',
                 actIndex: 4,
-                sceneNum: 'Cảnh 4/4',
+                sceneNum: 'Cảnh 6/6 • Đại Hội Tours',
                 location: 'Đại Hội Lần Thứ 18 Đảng Xã Hội Pháp (Tours)',
                 coords: 'Tours (Pháp) • Tháng 12/1920 & Báo Le Paria 1922',
-                speaker: 'Người Dẫn Truyện',
-                role: 'Người cộng sản Việt Nam đầu tiên',
-                text: 'Tháng 12/1920 tại Đại hội Tours, Người bỏ phiếu tán thành Quốc tế Cộng sản, tham gia sáng lập Đảng Cộng sản Pháp. Năm 1922, Người sáng lập báo Le Paria (Người Cùng Khổ) — ngọn cờ tập hợp các dân tộc thuộc địa trên toàn thế giới đứng lên đấu tranh tự giải phóng mình.',
+                speaker: 'Nguyễn Ái Quốc',
+                role: 'Bỏ phiếu tán thành Quốc tế 3 & Sáng lập báo Le Paria',
+                text: 'Tháng 12/1920 tại Đại hội Tours, tôi giơ tay bỏ phiếu tán thành Quốc tế 3, tham gia sáng lập Đảng Cộng sản Pháp. Năm 1922, chúng tôi xuất bản báo Le Paria (Người Cùng Khổ) — ngọn cờ tập hợp các dân tộc thuộc địa trên toàn thế giới đứng lên đấu tranh tự giải phóng mình.',
+                action: 'ambient'
+            },
+            {
+                id: 'act4_3_trust',
+                image: 'act4_3_tours_congress.jpg',
+                act: 'HỒI 4 • TỎA SÁNG CHÂN LÝ',
+                actIndex: 4,
+                sceneNum: 'Cảnh 6/6 • Khẳng Định',
+                location: 'Đại Hội Tours & Báo Le Paria',
+                coords: 'Người cộng sản Việt Nam đầu tiên',
+                speaker: 'Bạn Đồng Hành',
+                role: 'Tôn vinh người chiến sĩ cộng sản quốc tế kiệt xuất',
+                text: 'Từ một người thanh niên ra đi tìm đường cứu nước, Người đã trở thành người cộng sản Việt Nam đầu tiên, gắn liền độc lập dân tộc với chủ nghĩa xã hội, đưa cách mạng Việt Nam hòa vào dòng chảy vĩ đại của thời đại!',
                 action: 'ambient'
             },
 
@@ -1800,12 +1918,25 @@ HTML_CODE = r'''<!DOCTYPE html>
                 image: 'act5_1_moscow_1923.jpg',
                 act: 'HỒI 5 • NGỌN LỬA LAN TỎA',
                 actIndex: 5,
-                sceneNum: 'Cảnh 1/4',
+                sceneNum: 'Cảnh 1/4 • Mát-xcơ-va',
                 location: 'Mát-xcơ-va (Liên Xô) • 1923 – 1924',
-                coords: 'Đại Học Phương Đông (KUTV), Mát-xcơ-va',
-                speaker: 'Người Dẫn Truyện',
-                role: 'Quê hương của Cách mạng Tháng Mười',
-                text: 'Mùa đông 1923, vượt qua sự truy lùng gắt gao của mật thám Pháp, Người bí mật sang Mát-xcơ-va. Tại Đại học Phương Đông và Đại hội V Quốc tế Cộng sản, Người khẳng định vai trò quyết định của phong trào giải phóng dân tộc ở các nước thuộc địa đối với cách mạng thế giới.',
+                coords: 'Đại Học Phương Đông (KUTV) & Đại Hội V Quốc Tế Cộng Sản',
+                speaker: 'Nguyễn Ái Quốc',
+                role: 'Bảo vệ luận điểm cách mạng thuộc địa',
+                text: 'Đến Mát-xcơ-va quê hương Cách mạng Tháng Mười, tôi phát biểu trước Quốc tế Cộng sản: Vận mệnh của giai cấp vô sản thế giới gắn chặt với cuộc đấu tranh của các dân tộc thuộc địa. Thuộc địa không phải là hậu phương thụ động, mà có thể chủ động đứng lên tự giải phóng mình, góp phần giải phóng chính quốc!',
+                action: 'ambient'
+            },
+            {
+                id: 'act5_1_trust',
+                image: 'act5_1_moscow_1923.jpg',
+                act: 'HỒI 5 • NGỌN LỬA LAN TỎA',
+                actIndex: 5,
+                sceneNum: 'Cảnh 1/4 • Sáng Tạo',
+                location: 'Mát-xcơ-va (Liên Xô) • 1923 – 1924',
+                coords: 'Tư duy lý luận độc lập tự chủ',
+                speaker: 'Bạn Đồng Hành',
+                role: 'Tự hào trước tầm nhìn kiệt xuất của Người',
+                text: 'Tư tưởng sáng tạo độc lập của Bác đã bổ sung phát triển chủ nghĩa Mác - Lênin ngay tại trung tâm phong trào cộng sản quốc tế. Chúng con vô cùng tự hào trước tầm nhìn chiến lược đi trước thời đại của Người!',
                 action: 'ambient'
             },
             {
@@ -1813,12 +1944,25 @@ HTML_CODE = r'''<!DOCTYPE html>
                 image: 'act5_2_guangzhou_school.jpg',
                 act: 'HỒI 5 • NGỌN LỬA LAN TỎA',
                 actIndex: 5,
-                sceneNum: 'Cảnh 2/4',
+                sceneNum: 'Cảnh 2/4 • Quảng Châu',
                 location: 'Nhà Số 13 Đường Văn Minh, Quảng Châu',
                 coords: 'Quảng Châu (Trung Quốc) • Năm 1925 – 1927',
-                speaker: 'Người Dẫn Truyện',
-                role: 'Lớp huấn luyện cán bộ cách mạng thanh niên',
-                text: 'Cuối năm 1924, Người về Quảng Châu mang bí danh Lý Thụy, thành lập Hội Việt Nam Cách mạng Thanh niên. Năm 1927, Người xuất bản tác phẩm kinh điển "Đường Kách Mệnh": "Cách mệnh trước hết phải có cái gì? Trước hết phải có Đảng cách mệnh..." — kim chỉ nam đào tạo lớp chiến sĩ cách mạng tiền phong.',
+                speaker: 'Nguyễn Ái Quốc',
+                role: 'Thành lập Việt Nam Thanh niên Cách mạng Đồng chí Hội',
+                text: 'Về Quảng Châu mang bí danh Lý Thụy, tôi thành lập Hội Việt Nam Cách mạng Thanh niên và xuất bản cuốn "Đường Kách Mệnh". Tôi dặn dò anh em: "Cách mệnh trước hết phải có cái gì? Trước hết phải có Đảng cách mệnh để trong thì vận động và tổ chức dân chúng, ngoài thì liên lạc với vô sản các nơi"!',
+                action: 'ambient'
+            },
+            {
+                id: 'act5_2_trust',
+                image: 'act5_2_guangzhou_school.jpg',
+                act: 'HỒI 5 • NGỌN LỬA LAN TỎA',
+                actIndex: 5,
+                sceneNum: 'Cảnh 2/4 • Hạt Giống Đỏ',
+                location: 'Quảng Châu (Trung Quốc) • Năm 1925 – 1927',
+                coords: 'Những hạt giống đỏ tiền phong',
+                speaker: 'Bạn Đồng Hành',
+                role: 'Đón nhận ánh sáng Đường Kách Mệnh',
+                text: 'Những hạt giống đỏ Bác gieo trồng bên bờ sông Châu Giang đã đâm chồi nảy lộc, đào tạo nên thế hệ cán bộ tiền phong kiên trung mang tư tưởng Mác - Lênin trở về quê hương, thổi bùng ngọn lửa cách mạng khắp ba miền đất nước!',
                 action: 'ambient'
             },
             {
@@ -1826,25 +1970,25 @@ HTML_CODE = r'''<!DOCTYPE html>
                 image: 'act5_3_hongkong_unification.jpg',
                 act: 'HỒI 5 • NGỌN LỬA LAN TỎA',
                 actIndex: 5,
-                sceneNum: 'Cảnh 3/4',
+                sceneNum: 'Cảnh 3/4 • Hương Cảng 1930',
                 location: 'Cửu Long, Hương Cảng (Hong Kong)',
                 coords: 'Hương Cảng • Mùa Xuân Ngày 03.02.1930',
                 speaker: 'Nguyễn Ái Quốc',
-                role: 'Chủ trì Hội nghị hợp nhất Đảng',
+                role: 'Chủ trì Hội nghị hợp nhất các tổ chức cộng sản',
                 text: 'Các đồng chí! Đều là những người cộng sản cùng chung mục đích cứu nước, tại sao lại chia rẽ làm ba tổ chức? Hãy gạt bỏ mọi bất đồng cục bộ, đoàn kết lại thành một Đảng duy nhất để lãnh đạo toàn dân làm cách mạng!',
                 action: 'diegetic_unification'
             },
             {
-                id: 'act5_3_summary',
+                id: 'act5_3_trust',
                 image: 'act5_3_hongkong_unification.jpg',
                 act: 'HỒI 5 • NGỌN LỬA LAN TỎA',
                 actIndex: 5,
-                sceneNum: 'Cảnh 4/4',
+                sceneNum: 'Cảnh 4/4 • Bước Ngoặt Lịch Sử',
                 location: 'Cửu Long, Hương Cảng',
-                coords: 'Ngày 03.02.1930 • Bước Ngoặt Vĩ Đại',
-                speaker: 'Người Dẫn Truyện',
-                role: 'Đảng Cộng sản Việt Nam ra đời',
-                text: 'Hội nghị nhất trí hợp nhất các tổ chức thành Đảng Cộng sản Việt Nam, thông qua Chánh cương vắn tắt, Sách lược vắn tắt do Nguyễn Ái Quốc khởi thảo. Cuộc khủng hoảng đường lối cứu nước kéo dài gần nửa thế kỷ đã chính thức chấm dứt!',
+                coords: 'Ngày 03.02.1930 • Đảng Cộng sản Việt Nam ra đời',
+                speaker: 'Bạn Đồng Hành',
+                role: 'Chào mừng mốc son chói lọi',
+                text: 'Mùa xuân năm 1930, Đảng Cộng sản Việt Nam chính thức ra đời! Cuộc khủng hoảng đường lối cứu nước kéo dài gần nửa thế kỷ đã chấm dứt hoàn toàn. Từ đây, con thuyền cách mạng Việt Nam đã có người cầm lái vĩ đại đưa dân tộc đến bến bờ thắng lợi!',
                 action: 'ambient'
             },
 
@@ -1854,25 +1998,51 @@ HTML_CODE = r'''<!DOCTYPE html>
                 image: 'act5_1_pacbo_return.jpg',
                 act: 'HỒI 6 • MÙA XUÂN TRỞ VỀ',
                 actIndex: 6,
-                sceneNum: 'Cảnh 1/3',
+                sceneNum: 'Cảnh 1/3 • Cột Mốc 108',
                 location: 'Cột Mốc 108 Biên Giới Việt - Trung',
                 coords: 'Pác Bó, Hà Quảng, Cao Bằng • 28.01.1941',
-                speaker: 'Người Dẫn Truyện',
-                role: 'Cột mốc 108 Cao Bằng (Sau 30 năm bôn ba)',
-                text: 'Ngày 28 tháng 1 năm 1941 — sau tròn 30 năm bôn ba khắp năm châu bốn biển, Bác Hồ kính yêu đặt bước chân thiêng liêng đầu tiên trở về đất mẹ qua cột mốc 108 Cao Bằng. Hãy nhấp chạm vào Cột mốc biên giới để cảm nhận hơi ấm quê hương sau ba thập kỷ chia xa!',
+                speaker: 'Bác Hồ',
+                role: 'Cúi mình chạm tay vào đất mẹ sau 30 năm bôn ba',
+                text: 'Ngày 28 tháng 1 năm 1941 — sau tròn 30 năm bôn ba khắp năm châu bốn biển, tôi cúi mình chạm tay vào cột mốc 108 Cao Bằng thiêng liêng. Đất mẹ quê hương đây rồi... Ba mươi năm xa cách, máu thịt của Tổ quốc vẫn ấm nồng trong huyết quản! Hãy chạm vào cột mốc này cùng tôi!',
                 action: 'diegetic_milestone'
+            },
+            {
+                id: 'act6_1_trust',
+                image: 'act5_1_pacbo_return.jpg',
+                act: 'HỒI 6 • MÙA XUÂN TRỞ VỀ',
+                actIndex: 6,
+                sceneNum: 'Cảnh 1/3 • Đón Người Trở Về',
+                location: 'Pác Bó, Hà Quảng, Cao Bằng • 28.01.1941',
+                coords: 'Kìa bóng Bác đang hôn lên hòn đá',
+                speaker: 'Bạn Đồng Hành',
+                role: '30 năm vẹn tròn lời thề non sông',
+                text: '"Kìa, bóng Bác đang hôn lên hòn đá / Lắng nghe trong màu hồng sắc đỏ quê hương..." Ba mươi năm bão táp năm châu nay đã kết tinh thành bước chân thiêng liêng trở về. Triệu triệu trái tim người Việt Nam xin dâng trọn niềm kính yêu đón Người về lãnh đạo non sông!',
+                action: 'ambient'
             },
             {
                 id: 'act6_2',
                 image: 'act5_2_pacbo_lamp.jpg',
                 act: 'HỒI 6 • MÙA XUÂN TRỞ VỀ',
                 actIndex: 6,
-                sceneNum: 'Cảnh 2/3',
+                sceneNum: 'Cảnh 2/3 • Hang Pác Bó',
                 location: 'Hang Cốc Bó, Suối Lênin',
                 coords: 'Pác Bó, Cao Bằng • Mùa Xuân 1941',
-                speaker: 'Người Dẫn Truyện',
-                role: 'Bàn đá chông chênh hang Pác Bó',
-                text: '"Bàn đá chông chênh dịch sử Đảng / Cuộc đời cách mạng thật là sang". Bên dòng suối Lênin xanh biếc, chiếc đèn dầu mộc mạc lại thắp sáng trong hang đá, soi đường cho Hội nghị Trung ương 8 quyết định thành lập Mặt trận Việt Minh, giương cao ngọn cờ giải phóng dân tộc, chuẩn bị cho ngày Tổng khởi nghĩa.',
+                speaker: 'Bác Hồ',
+                role: 'Bàn đá chông chênh dịch sử Đảng',
+                text: '"Sáng ra bờ suối, tối vào hang / Cháo bẹ rau măng vẫn sẵn sàng / Bàn đá chông chênh dịch sử Đảng / Cuộc đời cách mạng thật là sang". Dù gian khổ nơi rừng thiêng nước độc, ngọn đèn dầu này vẫn sẽ thắp sáng Hội nghị Trung ương 8, giương cao ngọn cờ độc lập chuẩn bị cho ngày Tổng khởi nghĩa!',
+                action: 'ambient'
+            },
+            {
+                id: 'act6_2_trust',
+                image: 'act5_2_pacbo_lamp.jpg',
+                act: 'HỒI 6 • MÙA XUÂN TRỞ VỀ',
+                actIndex: 3,
+                sceneNum: 'Cảnh 2/3 • Lạc Quan Cách Mạng',
+                location: 'Hang Cốc Bó, Suối Lênin',
+                coords: 'Khí phách ung dung lạc quan của Người',
+                speaker: 'Bạn Đồng Hành',
+                role: 'Tiếp nhận nguồn sức mạnh bất khuất',
+                text: 'Gian nan muôn trùng hóa thành thi ca tuyệt mỹ! Phong thái ung dung tự tại và niềm lạc quan vô bờ của Bác đã truyền sức mạnh bất khuất cho toàn thể dân tộc đứng lên phá tan xiềng xích, đón chờ ngày rạng đông lịch sử!',
                 action: 'ambient'
             },
             {
@@ -1880,13 +2050,26 @@ HTML_CODE = r'''<!DOCTYPE html>
                 image: 'act5_3_sunrise_independence.jpg',
                 act: 'HỒI 6 • BÌNH MINH ĐỘC LẬP',
                 actIndex: 6,
-                sceneNum: 'Cảnh 3/3',
+                sceneNum: 'Cảnh 3/3 • Khải Hoàn Ca',
                 location: 'Việt Nam • Độc Lập - Tự Do - Hạnh Phúc',
-                coords: 'Quảng Trường Ba Đình • Mùa Thu Lịch Sử',
-                speaker: 'Người Dẫn Truyện',
-                role: 'Bình minh Độc Lập • Đúc kết Tư tưởng Hồ Chí Minh',
-                text: 'Từ ngọn đèn dầu nhỏ nhoi trong căn gác trọ Sài Gòn năm 1911, ngọn lửa yêu nước và ý chí bất khuất đã bùng lên thành Ánh Bình Minh Độc Lập chói lọi! "Không có gì quý hơn độc lập, tự do!" — Tư tưởng Hồ Chí Minh mãi mãi là ngọn hải đăng soi sáng non sông Việt Nam.',
+                coords: 'Quảng Trường Ba Đình • Mùa Thu Lịch Sử 1945',
+                speaker: 'Bác Hồ',
+                role: 'Tuyên ngôn Độc lập • Khẳng định quyền dân tộc',
+                text: 'Từ ngọn đèn dầu nhỏ nhoi trong căn gác trọ Sài Gòn năm 1911 đến Quảng trường Ba Đình mùa thu lịch sử 1945: "Nước Việt Nam có quyền hưởng tự do và độc lập, và sự thật đã thành một nước tự do, độc lập! Toàn thể dân tộc Việt Nam quyết đem tất cả tinh thần và lực lượng, tính mạng và của cải để giữ vững quyền tự do, độc lập ấy!".',
                 action: 'diegetic_dawn'
+            },
+            {
+                id: 'act6_3_trust',
+                image: 'act5_3_sunrise_independence.jpg',
+                act: 'HỒI 6 • BÌNH MINH ĐỘC LẬP',
+                actIndex: 6,
+                sceneNum: 'Cảnh 3/3 • Lời Thề Non Sông',
+                location: 'Việt Nam • Độc Lập - Tự Do - Hạnh Phúc',
+                coords: 'Lời thề độc lập trường tồn muôn đời',
+                speaker: 'Bạn Đồng Hành',
+                role: 'Khắc ghi và tiếp bước muôn đời',
+                text: '"Không có gì quý hơn độc lập, tự do!" Ngọn lửa mà Bác thắp lên từ hai bàn tay trắng năm 1911 đã bừng sáng thành vầng dương độc lập trường tồn cho muôn đời non sông Việt Nam. Chúng con nguyện muôn đời khắc ghi và tiếp bước!',
+                action: 'ambient'
             }
         ];
 
@@ -1913,6 +2096,7 @@ HTML_CODE = r'''<!DOCTYPE html>
             isUIHidden: false,
             currentStepIndex: 0,
             activeBgLayer: 'A',
+            currentDisplayedImage: null,
             isTyping: false,
             typingTimer: null,
             fullText: '',
@@ -3094,7 +3278,7 @@ HTML_CODE = r'''<!DOCTYPE html>
 
                 setTimeout(() => {
                     document.getElementById('diegeticUnificationRig').classList.add('hidden');
-                    const targetIdx = SCENE_SCRIPT.findIndex(s => s.id === 'act5_3_summary');
+                    const targetIdx = SCENE_SCRIPT.findIndex(s => s.id === 'act5_3_trust');
                     state.currentStepIndex = targetIdx !== -1 ? targetIdx : state.currentStepIndex + 1;
                     renderCurrentStep();
                 }, 1800);
@@ -3112,7 +3296,7 @@ HTML_CODE = r'''<!DOCTYPE html>
 
             setTimeout(() => {
                 document.getElementById('diegeticMilestoneRig').classList.add('hidden');
-                const targetIdx = SCENE_SCRIPT.findIndex(s => s.id === 'act6_2');
+                const targetIdx = SCENE_SCRIPT.findIndex(s => s.id === 'act6_1_trust');
                 state.currentStepIndex = targetIdx !== -1 ? targetIdx : state.currentStepIndex + 1;
                 renderCurrentStep();
             }, 2400);
@@ -3142,26 +3326,31 @@ HTML_CODE = r'''<!DOCTYPE html>
                 badge.className = 'px-3 py-1 rounded bg-amber-500/20 border border-amber-400/50 text-amber-300 font-cinematic text-xs md:text-sm font-bold tracking-widest uppercase shadow-[0_0_15px_rgba(245,158,11,0.25)]';
             } else if (step.speaker === 'Nguyễn Ái Quốc') {
                 badge.className = 'px-3 py-1 rounded bg-red-900/40 border border-red-500/60 text-red-200 font-cinematic text-xs md:text-sm font-bold tracking-widest uppercase shadow-[0_0_15px_rgba(220,38,38,0.3)]';
+            } else if (step.speaker === 'Bác Hồ') {
+                badge.className = 'px-3 py-1 rounded bg-amber-500/30 border border-amber-300 text-amber-200 font-cinematic text-xs md:text-sm font-bold tracking-widest uppercase shadow-[0_0_20px_rgba(245,158,11,0.4)]';
             } else if (step.speaker === 'Bạn Đồng Hành') {
                 badge.className = 'px-3 py-1 rounded bg-cyan-950/60 border border-cyan-400/60 text-cyan-200 font-cinematic text-xs md:text-sm font-bold tracking-widest uppercase shadow-[0_0_15px_rgba(6,182,212,0.3)]';
             } else {
                 badge.className = 'px-3 py-1 rounded bg-slate-800 border border-slate-700 text-slate-300 font-cinematic text-xs md:text-sm font-bold tracking-widest uppercase';
             }
 
-            // 3. Smooth Dual Cross-Dissolve Stage Background
+            // 3. Smooth Dual Cross-Dissolve Stage Background (Giữ nguyên camera pan khi cùng một ảnh)
             const bgA = document.getElementById('bgLayerA');
             const bgB = document.getElementById('bgLayerB');
 
-            if (state.activeBgLayer === 'A') {
-                bgB.src = step.image;
-                bgB.className = `absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 filter brightness-[0.92] contrast-105 kenburns-${(state.currentStepIndex % 3) + 1} opacity-100`;
-                bgA.className = 'absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 filter brightness-[0.92] contrast-105 opacity-0';
-                state.activeBgLayer = 'B';
-            } else {
-                bgA.src = step.image;
-                bgA.className = `absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 filter brightness-[0.92] contrast-105 kenburns-${(state.currentStepIndex % 3) + 1} opacity-100`;
-                bgB.className = 'absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 filter brightness-[0.92] contrast-105 opacity-0';
-                state.activeBgLayer = 'A';
+            if (state.currentDisplayedImage !== step.image) {
+                if (state.activeBgLayer === 'A') {
+                    bgB.src = step.image;
+                    bgB.className = `absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 filter brightness-[0.92] contrast-105 kenburns-${(state.currentStepIndex % 3) + 1} opacity-100`;
+                    bgA.className = 'absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 filter brightness-[0.92] contrast-105 opacity-0';
+                    state.activeBgLayer = 'B';
+                } else {
+                    bgA.src = step.image;
+                    bgA.className = `absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 filter brightness-[0.92] contrast-105 kenburns-${(state.currentStepIndex % 3) + 1} opacity-100`;
+                    bgB.className = 'absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 filter brightness-[0.92] contrast-105 opacity-0';
+                    state.activeBgLayer = 'A';
+                }
+                state.currentDisplayedImage = step.image;
             }
 
             // 4. Log text
