@@ -192,8 +192,8 @@ HTML_CODE = r'''<!DOCTYPE html>
             40% { transform: scale(1.04) translateY(-20px); filter: blur(12px); }
             100% { transform: scale(1) translateY(0); filter: blur(0px); }
         }
-        .marseille-whip-left { animation: whipLeft 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards !important; filter: brightness(0.8) contrast(1.15) saturate(0.85) !important; }
-        .marseille-whip-right { animation: whipRight 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards !important; filter: brightness(0.72) contrast(1.2) saturate(0.78) sepia(0.15) !important; }
+        .marseille-whip-left { animation: whipLeft 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards !important; filter: brightness(0.92) contrast(1.08) !important; }
+        .marseille-whip-right { animation: whipRight 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards !important; filter: brightness(0.92) contrast(1.08) !important; }
         .marseille-whip-center { animation: whipCenter 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards !important; filter: brightness(0.92) contrast(1.05) !important; }
     </style>
 </head>
