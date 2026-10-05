@@ -207,9 +207,9 @@ HTML_CODE = r'''<!DOCTYPE html>
         <!-- CINEMATIC BACKGROUND CANVAS (CROSS-FADING) -->
         <!-- ========================================== -->
         <div id="mainBgStage" class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-            <img id="bgLayerA" src="inn_1_talking.jpg" alt="Minh họa lịch sử" 
-                 class="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 filter brightness-[0.92] contrast-105 kenburns-1 opacity-100">
-            <img id="bgLayerB" src="inn_2_hands.jpg" alt="Minh họa lịch sử dự phòng" 
+            <img id="bgLayerA" src="" alt="Minh họa lịch sử" 
+                 class="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 filter brightness-[0.92] contrast-105 kenburns-1 opacity-0">
+            <img id="bgLayerB" src="" alt="Minh họa lịch sử dự phòng" 
                  class="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 filter brightness-[0.92] contrast-105 kenburns-2 opacity-0">
             
             <!-- Atmospheric VFX Overlays -->
@@ -3468,7 +3468,14 @@ HTML_CODE = r'''<!DOCTYPE html>
             const bgB = document.getElementById('bgLayerB');
 
             if (state.currentDisplayedImage !== step.image) {
-                if (state.activeBgLayer === 'A') {
+                if (!state.currentDisplayedImage) {
+                    // First scene load: display immediately on layer A without cross-fading from placeholder
+                    bgA.src = step.image;
+                    bgA.className = `absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.92] contrast-105 kenburns-1 opacity-100`;
+                    bgB.src = '';
+                    bgB.className = 'absolute inset-0 w-full h-full object-cover object-center opacity-0';
+                    state.activeBgLayer = 'A';
+                } else if (state.activeBgLayer === 'A') {
                     bgB.src = step.image;
                     bgB.className = `absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 filter brightness-[0.92] contrast-105 kenburns-${(state.currentStepIndex % 3) + 1} opacity-100`;
                     bgA.className = 'absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 filter brightness-[0.92] contrast-105 opacity-0';
@@ -3639,6 +3646,16 @@ HTML_CODE = r'''<!DOCTYPE html>
                 if (dawnRig) dawnRig.classList.remove('hidden');
             } else if (action === 'play_horn') {
                 playShipHorn(0.35);
+            }
+
+            // Steamship smoke visibility toggle: Only active on ships/harbors
+            if (smokeCanvas) {
+                const isShip = ['dock_1', 'dock_2', 'dock_3', 'ship_1', 'ship_1_dialogue', 'ship_2', 'marseille_step_1'].includes(step.id);
+                smokeCanvas.classList.toggle('hidden', !isShip);
+                if (!isShip) {
+                    smokeParticles = [];
+                    if (sCtx) sCtx.clearRect(0, 0, smokeCanvas.width, smokeCanvas.height);
+                }
             }
         }
 
@@ -4074,7 +4091,14 @@ HTML_CODE = r'''<!DOCTYPE html>
             smokeCanvas.height = window.innerHeight;
         }
 
+        function isSteamshipScene() {
+            const currentStep = SCENE_SCRIPT[state.currentStepIndex];
+            if (!currentStep) return false;
+            return ['dock_1', 'dock_2', 'dock_3', 'ship_1', 'ship_1_dialogue', 'ship_2', 'marseille_step_1'].includes(currentStep.id);
+        }
+
         function emitSmoke() {
+            if (!isSteamshipScene()) return;
             if (smokeParticles.length < 24) {
                 smokeParticles.push({
                     x: window.innerWidth * 0.6 + (Math.random() * 30 - 15),
@@ -4091,6 +4115,11 @@ HTML_CODE = r'''<!DOCTYPE html>
         function drawSmoke() {
             if (!sCtx) return;
             sCtx.clearRect(0, 0, smokeCanvas.width, smokeCanvas.height);
+            if (!isSteamshipScene()) {
+                smokeParticles = [];
+                requestAnimationFrame(drawSmoke);
+                return;
+            }
             emitSmoke();
 
             for (let i = smokeParticles.length - 1; i >= 0; i--) {

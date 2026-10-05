@@ -21,3 +21,12 @@
 - [x] 10. Biên dịch mã nguồn, kiểm tra 77/77 DOM elements (`verify_dom.py`) đạt 100% <!-- id: 36 -->
 - [x] 11. Chơi thử toàn diện từ Hồi 1 đến Hồi 3, đóng vai người dùng khó tính đánh giá và tinh chỉnh cho đến khi đạt độ hoàn mỹ <!-- id: 37 -->
 - [x] 12. Commit và đẩy toàn bộ mã nguồn sạch lên GitHub main <!-- id: 38 -->
+
+## Giai Đoạn 6: Nâng Cấp 2 Cảnh Nền Gây Hiểu Nhầm & Sửa Bug Khói Than
+- [/] 13. Khắc phục bug khói than `smokeCanvas`: Chỉ kích hoạt ở tàu biển/cảng biển, tắt và xóa hạt trên đất liền <!-- id: 39 -->
+- [ ] 14. Tạo tranh sơn dầu tả thực `act4_2_paris_room.jpg`: Căn gác trọ ngõ Compoint Paris 1920 ấm cúng, xóa bỏ hình khối lập thể <!-- id: 40 -->
+- [ ] 15. Tạo tranh sơn dầu tả thực `act5_2_guangzhou_school.jpg`: Lớp học số 13 đường Văn Minh, Quảng Châu 1925 cổ kính <!-- id: 41 -->
+- [ ] 16. Nâng cấp bổ sung tranh sơn dầu cho `act4_1_versailles_1919.jpg` và `act5_3_hongkong_unification.jpg` nếu cần thiết <!-- id: 42 -->
+- [ ] 17. Biên dịch, kiểm tra 77/77 DOM elements, kiểm thử trực quan trên trình duyệt <!-- id: 43 -->
+- [ ] 18. Vào vai người dùng khó tính soi xét toàn bộ trải nghiệm từ Hồi 4 đến Hồi 6 và xác nhận hoàn hảo <!-- id: 44 -->
+- [ ] 19. Commit và đẩy toàn bộ mã nguồn sạch lên GitHub main <!-- id: 45 -->
