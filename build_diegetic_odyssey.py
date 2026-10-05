@@ -1686,18 +1686,45 @@ HTML_CODE = r'''<!DOCTYPE html>
             },
 
             // === HOA KỲ (1912–1913): BẢN CHẤT XÃ HỘI TƯ BẢN & MẶT TRÁI DÂN CHỦ TƯ SẢN ===
-            // CẢNH 1.1: VỊNH NEW YORK — TƯỢNG NỮ THẦN TỰ DO TRONG SƯƠNG SỚM (MÙA THU 1912)
+            // SỰ KIỆN 1: VỊNH NEW YORK — TƯỢNG NỮ THẦN TỰ DO (MÙA THU 1912)
             {
                 id: 'usa_1',
                 image: 'usa_1_liberty.jpg',
                 act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
                 actIndex: 3,
-                sceneNum: 'Cảnh 6/11 • New York',
+                sceneNum: 'Cảnh 6/11 • Vịnh New York',
                 location: 'Vịnh New York (Hoa Kỳ) • Mùa Thu 1912',
-                coords: '40°41\'N 74°02\'W • Mũi Tàu Cập Bến & Tượng Nữ Thần Tự Do',
+                coords: '40°41\'N 74°02\'W • Đàm đạo bên mạn tàu vào cảng',
                 speaker: 'Văn Ba',
-                role: 'Chiêm nghiệm Tuyên ngôn Độc lập Mỹ 1776',
-                text: 'Tàu rẽ sương mù tiến vào New York... Tượng Thần Tự Do sừng sững giữa biển trời, Tuyên ngôn 1776 của họ viết về nhân quyền đẹp đẽ biết bao: "Mọi người sinh ra đều có quyền bình đẳng; tạo hóa cho họ những quyền không ai có thể xâm phạm được...". Lời văn ấy làm rung động lòng người! Nhưng anh có thấy không? Ngọn đuốc ấy rực sáng trên cao, nhưng bóng tối lại phủ dày đặc ngay dưới chân bệ tượng.',
+                role: 'Nguyễn Tất Thành (22 tuổi) • Bên mạn tàu gỗ',
+                text: 'Tàu đã rẽ sương mù vào vịnh New York rồi... Tượng Thần Tự Do sừng sững giữa biển trời, Tuyên ngôn 1776 của họ viết về nhân quyền đẹp đẽ biết bao: "Mọi người sinh ra đều có quyền bình đẳng; tạo hóa cho họ những quyền không ai có thể xâm phạm được...". Anh bạn trẻ, nhìn ngọn đuốc ấy, anh nghĩ gì?',
+                isChoice: true,
+                choices: [
+                    {
+                        key: '1',
+                        label: 'Lời văn của họ quá đẹp đẽ, nhưng sao người lao động nghèo ở xứ này vẫn chịu bất công, thưa anh Ba?',
+                        nextId: 'usa_1_lens',
+                        resonanceGain: 20
+                    },
+                    {
+                        key: '2',
+                        label: 'Tôi thấy ngọn đuốc thật lộng lẫy, nhưng dường như nó chỉ soi đường cho tàu chở vàng của giới chủ!',
+                        nextId: 'usa_1_lens',
+                        resonanceGain: 20
+                    }
+                ]
+            },
+            {
+                id: 'usa_1_lens',
+                image: 'usa_1_inspection.jpg',
+                act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
+                actIndex: 3,
+                sceneNum: 'Cảnh 6/11 • Lăng Kính Ống Nhòm',
+                location: 'Vịnh New York (Hoa Kỳ) • Mùa Thu 1912',
+                coords: 'Lăng kính quan sát hai thái cực xã hội',
+                speaker: 'Văn Ba',
+                role: 'Chỉ tay về hai thái cực của bức tượng đài',
+                text: 'Anh nhìn kỹ qua ống nhòm xem: Ngọn đuốc ấy rực sáng trên trời cao, nhưng bóng tối lại phủ dày đặc ngay dưới chân bệ tượng! Những con tàu tư bản chở đầy lợi nhuận cập bến, còn những người thợ bốc than nghèo khó thì lầm lũi trong màn sương lạnh. Lời tuyên ngôn đẹp như vàng ngọc kia người ta chỉ dùng để trang sức cho kẻ giàu mà thôi.',
                 action: 'ambient'
             },
             {
@@ -1707,25 +1734,52 @@ HTML_CODE = r'''<!DOCTYPE html>
                 actIndex: 3,
                 sceneNum: 'Cảnh 6/11 • Thấu Cảm',
                 location: 'Vịnh New York (Hoa Kỳ) • Mùa Thu 1912',
-                coords: 'Nghịch lý sau bức tượng tự do',
+                coords: 'Đồng lòng thấu suốt bản chất',
                 speaker: 'Bạn Đồng Hành',
-                role: 'Nhìn nhận nghịch lý của nền dân chủ tư sản',
-                text: 'Phải chăng ngọn đuốc ấy chỉ soi đường cho những con tàu tư bản chở đầy vàng bạc của giới chủ, chứ chưa từng rọi xuống những kiếp người lao động cùng cực ở xứ cờ hoa này? Lời văn của họ lấp lánh như vàng ngọc, nhưng người ta dùng nó để trang sức cho quyền lực nhiều hơn là trao tự do thực sự cho người nghèo khó.',
+                role: 'Đứng sát bên anh Ba, đồng lòng thấu suốt',
+                text: 'Nhờ có anh chỉ rõ, tôi mới thấu suốt bản chất! Không thể có tự do thật sự khi đa số người lao động vẫn chịu áp bức. Chuyến đi này của anh nhất định sẽ tìm ra con đường chân chính cho đồng bào mình!',
                 action: 'ambient'
             },
 
-            // CẢNH 1.2: BẾP BÁNH PARKER HOUSE — BOSTON (1912 – 1913)
+            // SỰ KIỆN 2: BẾP BÁNH PARKER HOUSE — BOSTON (1912 – 1913)
             {
                 id: 'usa_2',
                 image: 'usa_2_boston_bakery.jpg',
                 act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
                 actIndex: 3,
-                sceneNum: 'Cảnh 7/11 • Boston',
+                sceneNum: 'Cảnh 7/11 • Bếp Bánh Boston',
                 location: 'Bếp Bánh Khách Sạn Parker House • Boston (1912 – 1913)',
-                coords: '42°21\'N 71°03\'W • Tinh thần tự lực cánh sinh & Học hỏi tri thức',
+                coords: '42°21\'N 71°03\'W • Cùng đứng bên bàn làm bánh bột mì',
                 speaker: 'Văn Ba',
-                role: 'Lao động nuôi thân và thâu thái tri thức phương Tây',
-                text: 'Làm phụ bếp ở Parker House này tuy nhọc nhằn nhưng tâm hồn thanh thản. Đôi bàn tay mình làm ra chiếc bánh thơm nuôi sống bản thân, không phải cúi xin ai. Nhưng quý nhất là những giờ giải lao đọc báo: Muốn đánh đổ ách cai trị của thực dân, mình phải hiểu tường tận khoa học, kỹ thuật và thể chế của họ từ bên trong. Không hiểu đối phương thì làm sao tìm ra con đường chiến thắng?',
+                role: 'Phụ bếp làm bánh Parker House rolls',
+                text: 'Làm phụ bếp ở đây tuy nhọc nhằn nhưng tâm hồn thanh thản. Đôi bàn tay mình làm ra chiếc bánh thơm nuôi sống bản thân, không phải cúi xin ai. Nhưng sang đất Mỹ này, chúng ta đâu chỉ đi kiếm sống... Anh có để ý những tờ báo tôi thu nhặt mỗi ngày không?',
+                isChoice: true,
+                choices: [
+                    {
+                        key: '1',
+                        label: 'Tôi thấy anh tranh thủ từng giờ giải lao đọc báo, anh đang nghiên cứu điều gì từ họ?',
+                        nextId: 'usa_2_newspaper',
+                        resonanceGain: 20
+                    },
+                    {
+                        key: '2',
+                        label: 'Nước Mỹ có công nghệ và thể chế rất phát triển, liệu ta có thể học gì từ họ để cứu nước?',
+                        nextId: 'usa_2_newspaper',
+                        resonanceGain: 20
+                    }
+                ]
+            },
+            {
+                id: 'usa_2_newspaper',
+                image: 'usa_2_newspaper.jpg',
+                act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
+                actIndex: 3,
+                sceneNum: 'Cảnh 7/11 • Tờ Báo Tri Thức',
+                location: 'Bếp Bánh Khách Sạn Parker House • Boston (1912 – 1913)',
+                coords: 'Đẩy tờ báo The Boston Globe sang phía bạn',
+                speaker: 'Văn Ba',
+                role: 'Đẩy tờ báo The Boston Globe sang phía bạn',
+                text: 'Đây, anh xem bài xã luận này! Muốn đánh đổ ách cai trị của thực dân, mình phải hiểu tường tận khoa học, kỹ thuật và thể chế của họ từ bên trong. Không hiểu đối phương thì làm sao tìm ra con đường chiến thắng? Lao động để nuôi thân, còn tri thức là để cứu nước!',
                 action: 'ambient'
             },
             {
@@ -1733,16 +1787,16 @@ HTML_CODE = r'''<!DOCTYPE html>
                 image: 'usa_2_boston_bakery.jpg',
                 act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
                 actIndex: 3,
-                sceneNum: 'Cảnh 7/11 • Tiếp Lửa',
+                sceneNum: 'Cảnh 7/11 • Kính Phục',
                 location: 'Bếp Bánh Khách Sạn Parker House • Boston (1912 – 1913)',
-                coords: 'Ý chí độc lập kiên cường',
+                coords: 'Kính phục ý chí tự lực phi thường',
                 speaker: 'Bạn Đồng Hành',
-                role: 'Kính phục tinh thần tự lực của Bác',
-                text: 'Người ta vượt đại dương sang Mỹ là để tìm giấc mơ vàng, tìm kiếm an nhàn cho riêng mình. Còn anh nhào bột làm bánh là để nuôi dưỡng ý chí cứu nước cứu dân! Tinh thần tự lực cánh sinh và trí tuệ cầu thị của anh khiến tôi tin rằng không một gian khổ nào có thể cản bước anh được.',
+                role: 'Kính phục ý chí tự lực phi thường',
+                text: 'Người ta sang Mỹ vì giấc mơ vàng của riêng mình, còn anh nhào bột làm bánh là để nuôi dưỡng ý chí giải phóng non sông! Tinh thần tự lực cánh sinh và trí tuệ cầu thị của anh khiến tôi tin rằng không một gian khổ nào có thể cản bước anh được.',
                 action: 'ambient'
             },
 
-            // CẢNH 1.3: GÓC PHỐ HARLEM — MẶT TRÁI CHỦ NGHĨA TƯ BẢN (1913)
+            // SỰ KIỆN 3: GÓC PHỐ HARLEM — MẶT TRÁI CHỦ NGHĨA TƯ BẢN (1913)
             {
                 id: 'usa_3',
                 image: 'usa_3_harlem_street.jpg',
@@ -1752,8 +1806,8 @@ HTML_CODE = r'''<!DOCTYPE html>
                 location: 'Khu Người Nghèo Harlem • New York (1913)',
                 coords: '40°48\'N 73°56\'W • Hiện thực xã hội tư bản & Nạn phân biệt chủng tộc',
                 speaker: 'Văn Ba',
-                role: 'Nhận diện bản chất áp bức của nền dân chủ tư sản',
-                text: 'Rời trung tâm hoa lệ sang khu lao động, tôi thấy tận mắt cảnh những người lao động da đen bị hội kín KKK xua đuổi, bị đánh đập dã man không khác gì thời trung cổ. Ở ngay xứ sở tự do nhất trần đời này, người nghèo vẫn bị vắt kiệt mồ hôi nước mắt! Tôi hiểu rồi: Nền dân chủ tư sản hóa ra chỉ là thứ tự do của một nhóm thiểu số nhà giàu áp bức đa số nhân dân lao động mà thôi!',
+                role: 'Cùng bạn đứng bên góc phố lao động New York 1913',
+                text: 'Rời trung tâm hoa lệ sang khu lao động này, anh thấy tận mắt cảnh những người lao động da đen bị hội kín KKK xua đuổi, bị đánh đập dã man không khác gì thời trung cổ. Ở ngay xứ sở tự do nhất trần đời này, người nghèo vẫn bị vắt kiệt mồ hôi nước mắt! Tôi hiểu rồi: Nền dân chủ tư sản hóa ra chỉ là thứ tự do của một nhóm thiểu số nhà giàu áp bức đa số nhân dân lao động mà thôi!',
                 action: 'ambient'
             },
             {
@@ -1765,8 +1819,8 @@ HTML_CODE = r'''<!DOCTYPE html>
                 location: 'Khu Người Nghèo Harlem • New York (1913)',
                 coords: 'Đập tan ảo tưởng cải lương tư sản',
                 speaker: 'Bạn Đồng Hành',
-                role: 'Đúc kết bài học thực tiễn vô giá cùng Bác',
-                text: 'Bài học thực tiễn tại Harlem thật đanh thép! Nó đập tan mọi ảo tưởng ngây thơ về việc "nhờ cậy" các cường quốc tư bản sang khai hóa hay giúp đỡ nước mình. Con đường giải phóng dân tộc ta nhất định phải đi xa hơn, hướng tới quyền lợi thực sự cho toàn thể giai cấp cần lao!',
+                role: 'Khắc sâu chân lý & chuẩn bị sang Anh',
+                text: 'Bài học thực tiễn tại Harlem thật đanh thép! Nó đập tan mọi ảo tưởng ngây thơ về việc "nhờ cậy" các cường quốc tư bản sang khai hóa hay giúp đỡ nước mình. Nước Mỹ đã cho ta thấy rõ bản chất. Chúng ta cùng sang Anh, sang Luân Đôn thôi anh Ba!',
                 action: 'ambient'
             },
 
