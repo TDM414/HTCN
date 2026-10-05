@@ -64,6 +64,7 @@ HTML_CODE = r'''<!DOCTYPE html>
     <link rel="preload" as="image" href="marseille_1_port.jpg">
     <link rel="preload" as="image" href="marseille_left_carts.jpg">
     <link rel="preload" as="image" href="marseille_right_steps.jpg">
+    <link rel="preload" as="image" href="africa_1_coast.jpg">
     <link rel="preload" as="image" href="world_1_boston_london.jpg">
     <link rel="preload" as="image" href="act4_1_versailles_1919.jpg">
     <link rel="preload" as="image" href="act4_2_paris_room.jpg">
@@ -915,7 +916,7 @@ HTML_CODE = r'''<!DOCTYPE html>
                         <div class="pt-6">
                             <button id="btnFinishEpiphany" onclick="finishMarseilleSpatialScene()"
                                     class="min-h-[44px] py-3.5 px-8 rounded-xl bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500 hover:from-amber-400 hover:to-orange-400 text-black font-cinematic font-bold text-xs md:text-sm uppercase tracking-wider shadow-[0_0_35px_rgba(245,158,11,0.8)] transition active:scale-95 cursor-pointer animate-bounce flex items-center gap-2 mx-auto">
-                                <span>Tiếp Tục Hải Trình Ra Thế Giới (Sang Hoa Kỳ 1912)</span>
+                                <span>Tiếp Tục Hải Trình Ra Thế Giới (Vòng Quanh Châu Phi 1912)</span>
                                 <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
                             </button>
                         </div>
@@ -928,6 +929,203 @@ HTML_CODE = r'''<!DOCTYPE html>
                     <span class="text-amber-400 font-cinematic uppercase tracking-wider">Cảng Marseille • Tháng 7/1911</span>
                 </div>
 
+            </div>
+
+            <!-- ---------------------------------------------------- -->
+            <!-- 2.7. LUÂN ĐÔN 1913-1917: CÀO TUYẾT & LÒNG KIÊN ĐỊNH -->
+            <!-- ---------------------------------------------------- -->
+            <div id="diegeticLondonRig" class="hidden absolute inset-0 pointer-events-auto select-none flex flex-col justify-between p-4 md:p-8 bg-gradient-to-t from-black/90 via-black/40 to-black/80 backdrop-blur-[2px]">
+                <!-- Header -->
+                <div class="w-full max-w-4xl mx-auto flex items-center justify-between border-b border-cyan-500/30 pb-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-3 h-3 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_10px_#22d3ee]"></div>
+                        <span class="font-cinematic text-xs md:text-sm uppercase tracking-widest text-cyan-200 font-bold">
+                            LUÂN ĐÔN (ANH QUỐC) • MÙA ĐÔNG 1913 – 1917
+                        </span>
+                    </div>
+                    <div id="londonSnowCounterBadge" class="px-3.5 py-1 rounded-full bg-cyan-950/80 border border-cyan-400 text-cyan-300 font-typewriter text-xs font-bold shadow-md">
+                        0 / 3 Lượt Cào Tuyết
+                    </div>
+                </div>
+
+                <!-- Center Interactive Stage -->
+                <div class="w-full max-w-2xl mx-auto my-auto text-center flex flex-col items-center">
+                    <div class="relative w-full max-w-lg aspect-[16/9] rounded-2xl overflow-hidden border-2 border-cyan-500/40 shadow-[0_0_40px_rgba(34,211,238,0.2)] bg-slate-950/80 p-6 flex flex-col items-center justify-center">
+                        <div id="londonSnowStage" class="absolute inset-0 flex items-center justify-center">
+                            <div class="text-slate-400 font-cinematic text-sm tracking-wider uppercase mb-2">Con đường đá Carlton Hotel phủ tuyết dày</div>
+                        </div>
+
+                        <!-- Snow patches that disappear on click -->
+                        <div id="snowLayer1" class="absolute inset-4 rounded-xl bg-gradient-to-br from-white/90 via-slate-100/80 to-blue-100/90 backdrop-blur-md border border-white flex items-center justify-center transition-all duration-700 shadow-lg">
+                            <span class="text-slate-800 font-cinematic font-bold text-xs uppercase tracking-widest">Lớp tuyết dày đợt 1 • Băng giá bến xe Drayton</span>
+                        </div>
+                        <div id="snowLayer2" class="absolute inset-6 rounded-xl bg-gradient-to-br from-white/70 via-slate-200/70 to-blue-200/70 backdrop-blur-sm border border-white/60 flex items-center justify-center transition-all duration-700 shadow-md">
+                            <span class="text-slate-800 font-cinematic font-bold text-xs uppercase tracking-widest">Lớp tuyết cứng đợt 2 • Lối vào bếp khách sạn Carlton</span>
+                        </div>
+                        <div id="snowLayer3" class="absolute inset-8 rounded-xl bg-gradient-to-br from-white/50 via-slate-300/50 to-blue-300/50 backdrop-blur-xs border border-white/40 flex items-center justify-center transition-all duration-700 shadow">
+                            <span class="text-slate-800 font-cinematic font-bold text-xs uppercase tracking-widest">Lớp băng mỏng đợt 3 • Bậc đá công viên</span>
+                        </div>
+
+                        <!-- Action Button -->
+                        <div class="relative z-10 mt-auto">
+                            <button id="londonSnowShovelBtn" onclick="sweepSnowStep()"
+                                    class="min-h-[44px] py-3 px-6 rounded-xl bg-gradient-to-r from-cyan-600 via-teal-500 to-cyan-600 hover:from-cyan-500 hover:to-teal-400 text-white font-cinematic font-bold text-xs md:text-sm uppercase tracking-wider shadow-[0_0_25px_rgba(34,211,238,0.6)] transition active:scale-95 cursor-pointer flex items-center gap-2 mx-auto">
+                                <svg class="w-5 h-5 text-cyan-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2v6h6M4 22V4a2 2 0 0 1 2-2h8l6 6v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/></svg>
+                                <span>Cào Tuyết Trên Lối Đi [Nhấn Để Cào]</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Escoffier Insight Dialog & Completion -->
+                    <div id="londonCompletionBox" class="hidden mt-4 w-full max-w-xl bg-slate-900/90 border border-cyan-400/60 rounded-xl p-4 shadow-2xl animate-fade-in">
+                        <p class="font-cinematic text-xs md:text-sm text-cyan-200 leading-relaxed mb-3">
+                            <strong class="text-amber-400">Vua đầu bếp Auguste Escoffier:</strong> "Tôi sẽ dạy anh nghệ thuật nấu bếp để trở thành một đầu bếp lớn!"<br>
+                            <strong class="text-cyan-300">Văn Ba đáp từ tốn:</strong> "Cảm ơn ông, nhưng mục đích sang phương Tây của tôi là tìm con đường tự do cho đồng bào mình."
+                        </p>
+                        <button id="btnFinishLondonSnow" onclick="finishLondonSnowScene()"
+                                class="min-h-[44px] py-2.5 px-6 rounded-lg bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-cinematic font-bold text-xs md:text-sm uppercase tracking-wider shadow-lg transition active:scale-95 cursor-pointer">
+                            Tiếp Tục Cuộc Trò Chuyện Niềm Tin →
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Footer status bar -->
+                <div class="w-full max-w-4xl mx-auto flex items-center justify-between text-[11px] font-typewriter text-slate-400 pt-2 border-t border-cyan-500/20">
+                    <span id="londonInsightText" class="text-cyan-300/90 font-cinematic italic">"Mùa đông giá buốt, quét tuyết công viên để kiếm tiền sinh sống và kiên trì học tiếng Anh..."</span>
+                    <span class="text-cyan-400 font-cinematic uppercase tracking-wider">Khách Sạn Carlton & Luân Đôn • 1913 – 1917</span>
+                </div>
+            </div>
+
+            <!-- ---------------------------------------------------- -->
+            <!-- 2.8. VERSAILLES 18.06.1919: ĐÓNG DẤU NGUYỄN ÁI QUỐC -->
+            <!-- ---------------------------------------------------- -->
+            <div id="diegeticVersaillesRig" class="hidden absolute inset-0 pointer-events-auto select-none flex flex-col justify-between p-4 md:p-8 bg-gradient-to-t from-black/95 via-stone-950/70 to-black/90 backdrop-blur-[2px]">
+                <!-- Header -->
+                <div class="w-full max-w-4xl mx-auto flex items-center justify-between border-b border-red-500/40 pb-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-3 h-3 rounded-full bg-red-500 animate-pulse shadow-[0_0_10px_#ef4444]"></div>
+                        <span class="font-cinematic text-xs md:text-sm uppercase tracking-widest text-red-200 font-bold">
+                            HỘI NGHỊ HÒA BÌNH VERSAILLES • 18 THÁNG 6 NĂM 1919
+                        </span>
+                    </div>
+                    <div class="px-3.5 py-1 rounded-full bg-red-950/80 border border-red-500 text-red-300 font-typewriter text-xs font-bold shadow-md">
+                        Bản Yêu Sách 8 Điểm
+                    </div>
+                </div>
+
+                <!-- Center Interactive Document -->
+                <div class="w-full max-w-2xl mx-auto my-auto text-center flex flex-col items-center">
+                    <div id="versaillesDocStage" class="relative w-full max-w-md bg-[#f4ebd0] text-stone-900 rounded-xl p-6 shadow-[0_10px_40px_rgba(0,0,0,0.8)] border border-amber-800/40 font-typewriter text-left">
+                        <div class="text-center font-cinematic font-bold text-sm tracking-wider text-red-900 border-b border-red-900/30 pb-2 mb-3 uppercase">
+                            REVENDICATIONS DU PEUPLE ANNAMITE<br>
+                            <span class="text-xs text-stone-700 font-normal">Yêu Sách Của Nhân Dân An Nam (18.06.1919)</span>
+                        </div>
+                        <ul class="text-[11px] leading-relaxed text-stone-800 space-y-1 list-decimal list-inside font-medium">
+                            <li>Tổng ân xá cho tất cả tù chính trị người bản xứ;</li>
+                            <li>Cải cách nền công lý ở Đông Dương;</li>
+                            <li>Tự do báo chí và tự do ngôn luận;</li>
+                            <li>Tự do lập hội và tự do hội họp;</li>
+                            <li>Tự do cư trú và xuất ngoại;</li>
+                            <li>Tự do học tập, mở các trường kỹ thuật;</li>
+                            <li>Thay chế độ sắc lệnh bằng chế độ luật pháp;</li>
+                            <li>Có đoàn đại biểu thường trực tại Nghị viện Pháp.</li>
+                        </ul>
+
+                        <!-- Red Stamp Seal Mark (Appears on click) -->
+                        <div id="versaillesStampMark" class="hidden absolute bottom-4 right-4 w-28 h-28 border-4 border-red-600 rounded-full flex flex-col items-center justify-center text-center p-1 transform -rotate-12 bg-red-600/10 shadow-[0_0_20px_rgba(220,38,38,0.5)]">
+                            <span class="text-[9px] font-bold tracking-widest text-red-700 uppercase">HỘI NGƯỜI AN NAM</span>
+                            <span class="text-xs font-cinematic font-black tracking-wider text-red-800 uppercase mt-0.5">NGUYỄN ÁI QUỐC</span>
+                            <span class="text-[8px] font-bold text-red-700">PARIS 1919</span>
+                        </div>
+                    </div>
+
+                    <!-- Seal Stamp Action Button -->
+                    <div class="mt-5">
+                        <button id="versaillesSealStamp" onclick="stampVersaillesPetition()"
+                                class="min-h-[44px] py-3 px-8 rounded-xl bg-gradient-to-r from-red-700 via-red-600 to-red-800 hover:from-red-600 hover:to-red-700 text-amber-100 font-cinematic font-bold text-xs md:text-sm uppercase tracking-wider shadow-[0_0_30px_rgba(220,38,38,0.7)] transition active:scale-95 cursor-pointer flex items-center gap-2 mx-auto">
+                            <svg class="w-5 h-5 text-amber-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                            <span>Đóng Dấu Đỏ: Ký Tên NGUYỄN ÁI QUỐC</span>
+                        </button>
+                    </div>
+
+                    <!-- Completion Box -->
+                    <div id="versaillesCompletionBox" class="hidden mt-4 w-full max-w-xl bg-stone-900/90 border border-red-500/60 rounded-xl p-4 shadow-2xl animate-fade-in">
+                        <p class="font-cinematic text-xs md:text-sm text-red-200 leading-relaxed mb-3">
+                            Bản Yêu Sách lập tức được gửi đến các đoàn đại biểu dự Hội nghị Versailles và phân phát khắp các khu lao động Paris. Tên tuổi <strong class="text-amber-300">NGUYỄN ÁI QUỐC</strong> làm rúng động Mật thám Pháp!
+                        </p>
+                        <button id="btnFinishVersailles" onclick="finishVersaillesScene()"
+                                class="min-h-[44px] py-2.5 px-6 rounded-lg bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-cinematic font-bold text-xs md:text-sm uppercase tracking-wider shadow-lg transition active:scale-95 cursor-pointer">
+                            Tiếp Tục Lời Bình Đồng Hành →
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Footer status bar -->
+                <div class="w-full max-w-4xl mx-auto flex items-center justify-between text-[11px] font-typewriter text-slate-400 pt-2 border-t border-red-500/20">
+                    <span id="versaillesInsightText" class="text-red-300/90 font-cinematic italic">"Chủ nghĩa Wilson chỉ là trò bịp bợm. Muốn giải phóng, phải trông cậy vào chính lực lượng của bản thân mình!"</span>
+                    <span class="text-red-400 font-cinematic uppercase tracking-wider">Hội Nghị Versailles • 18.06.1919</span>
+                </div>
+            </div>
+
+            <!-- ---------------------------------------------------- -->
+            <!-- 2.9. NGÕ COMPOINT 07/1920: THẮP SÁNG LUẬN CƯƠNG LÊNIN -->
+            <!-- ---------------------------------------------------- -->
+            <div id="diegeticLeninRig" class="hidden absolute inset-0 pointer-events-auto select-none flex flex-col justify-between p-4 md:p-8 bg-gradient-to-t from-black/95 via-amber-950/40 to-black/90 backdrop-blur-[2px]">
+                <!-- Header -->
+                <div class="w-full max-w-4xl mx-auto flex items-center justify-between border-b border-amber-500/40 pb-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-3 h-3 rounded-full bg-amber-400 animate-pulse shadow-[0_0_10px_#f59e0b]"></div>
+                        <span class="font-cinematic text-xs md:text-sm uppercase tracking-widest text-amber-200 font-bold">
+                            CĂN PHÒNG TRỌ NGÕ COMPOINT • PARIS (THÁNG 7/1920)
+                        </span>
+                    </div>
+                    <div class="px-3.5 py-1 rounded-full bg-amber-950/80 border border-amber-500 text-amber-300 font-typewriter text-xs font-bold shadow-md">
+                        Báo L'Humanité (Nhân Đạo)
+                    </div>
+                </div>
+
+                <!-- Center Interactive Stage -->
+                <div class="w-full max-w-2xl mx-auto my-auto text-center flex flex-col items-center">
+                    <!-- Lamp Aura Glow Effect -->
+                    <div id="leninAuraGlow" class="absolute w-96 h-96 rounded-full bg-amber-500/20 blur-3xl pointer-events-none transition-opacity duration-1000 opacity-0"></div>
+
+                    <div id="leninLampStage" class="relative z-10 w-full max-w-md bg-stone-900/90 border border-amber-500/50 rounded-2xl p-6 shadow-[0_0_50px_rgba(245,158,11,0.2)] flex flex-col items-center">
+                        <!-- Newspaper preview -->
+                        <div id="leninThesisDoc" class="w-full bg-[#ede6d4] text-stone-900 rounded-lg p-4 font-typewriter text-left transition-all duration-700 brightness-50 mb-4 border border-stone-400 shadow-md">
+                            <div class="text-[10px] uppercase font-bold text-red-800 tracking-wider mb-1">JOURNAL L'HUMANITÉ • 16-17 JUILLET 1920</div>
+                            <div class="font-cinematic font-bold text-xs text-stone-950 uppercase border-b border-stone-400 pb-1 mb-2">
+                                Premier esquisse des thèses sur les questions nationales et coloniales
+                            </div>
+                            <p class="text-[11px] leading-relaxed italic text-stone-800">
+                                "...V.I. Lênin: Các đảng cộng sản phải tích cực ủng hộ phong trào giải phóng của các dân tộc thuộc địa; sự nghiệp giải phóng của giai cấp vô sản gắn liền với sự giải phóng các dân tộc bị áp bức..."
+                            </p>
+                        </div>
+
+                        <!-- Kerosene Lamp Button -->
+                        <button id="leninLampBtn" onclick="illuminateLeninTheses()"
+                                class="min-h-[44px] py-3 px-8 rounded-xl bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500 hover:from-amber-400 hover:to-orange-400 text-black font-cinematic font-bold text-xs md:text-sm uppercase tracking-wider shadow-[0_0_35px_rgba(245,158,11,0.8)] transition active:scale-95 cursor-pointer flex items-center gap-2">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v8M12 18v4M4.93 4.93l4.24 4.24M14.83 14.83l4.24 4.24M2 12h8M18 12h4M4.93 19.07l4.24-4.24M14.83 9.17l4.24-4.24"/></svg>
+                            <span>Thắp Ngọn Đèn Dầu • Bừng Sáng Chân Lý</span>
+                        </button>
+                    </div>
+
+                    <!-- Completion Box -->
+                    <div id="leninCompletionBox" class="hidden mt-4 w-full max-w-xl bg-stone-900/95 border border-amber-500/70 rounded-xl p-4 shadow-2xl animate-fade-in relative z-20">
+                        <p class="font-cinematic text-xs md:text-sm text-amber-200 leading-relaxed mb-3">
+                            Ánh sáng Luận cương soi tỏ căn phòng trọ nhỏ ngõ Compoint. Giọt nước mắt mừng vui lăn trên má người thanh niên yêu nước: <strong class="text-amber-400">"Đây là cái cần thiết cho chúng ta, đây là con đường giải phóng chúng ta!"</strong>
+                        </p>
+                        <button id="btnFinishLenin" onclick="finishLeninScene()"
+                                class="min-h-[44px] py-2.5 px-6 rounded-lg bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-300 hover:to-orange-400 text-black font-cinematic font-bold text-xs md:text-sm uppercase tracking-wider shadow-lg transition active:scale-95 cursor-pointer">
+                            Lắng Nghe Lời Tuyên Ngôn Thiêng Liêng →
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Footer status bar -->
+                <div class="w-full max-w-4xl mx-auto flex items-center justify-between text-[11px] font-typewriter text-slate-400 pt-2 border-t border-amber-500/20">
+                    <span id="leninInsightText" class="text-amber-300/90 font-cinematic italic">"Trong căn gác nhỏ ngõ Compoint, sưởi ấm bằng viên gạch nung bọc báo, tìm thấy con đường cứu nước..."</span>
+                    <span class="text-amber-400 font-cinematic uppercase tracking-wider">Ngõ Compoint • Paris (07/1920)</span>
+                </div>
             </div>
 
             <!-- ---------------------------------------------------- -->
@@ -1432,30 +1630,87 @@ HTML_CODE = r'''<!DOCTYPE html>
                 text: 'Chúng ta đã đặt chân lên đất Pháp. Hãy hướng tầm mắt sang hai bên bến cảng để quan sát đời sống thực sự của nhân dân nơi đây. Hãy chọn một hướng để bắt đầu quan sát!',
                 action: 'diegetic_marseille_spatial'
             },
+            // === CHÂU PHI (1912): ĐỒNG CẢM VỚI NGƯỜI CÙNG KHỔ ===
             {
-                id: 'world_1',
+                id: 'africa_1',
+                image: 'africa_1_coast.jpg',
+                act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
+                actIndex: 3,
+                sceneNum: 'Cảnh 4/8',
+                location: 'Dakar & Vùng Duyên Hải Châu Phi • 1912',
+                coords: 'Các Cảng Vùng Tây Phi & Biển Đỏ',
+                speaker: 'Văn Ba',
+                role: 'Quan sát những người phu da đen nhảy xuống biển kéo dây',
+                text: 'Nhìn những người nô lệ da đen bị xua xuống biển lạnh bốc dỡ hàng, rồi bị sóng cuốn đi trong tiếng roi vọt của viên giám thị... Tôi quặn thắt lòng. Dẫu khác màu da, nhưng nỗi đau của người mất nước thì ở đâu cũng giống như nhau!',
+                action: 'ambient'
+            },
+            {
+                id: 'africa_trust',
+                image: 'africa_1_coast.jpg',
+                act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
+                actIndex: 3,
+                sceneNum: 'Cảnh 5/8',
+                location: 'Dakar & Vùng Duyên Hải Châu Phi • 1912',
+                coords: 'Đêm trên boong tàu nhìn về lục địa đen',
+                speaker: 'Bạn Đồng Hành',
+                role: 'Khẳng định niềm tin cùng Anh Ba',
+                text: 'Anh Ba, nỗi đau này không hề uổng phí. Từng giọt mồ hôi và nước mắt anh nhìn thấy ở châu Phi hôm nay sẽ biến thành sức mạnh đoàn kết muôn triệu người cùng khổ trên toàn thế giới!',
+                action: 'ambient'
+            },
+
+            // === HOA KỲ (1912–1913): BẢN CHẤT XÃ HỘI TƯ BẢN ===
+            {
+                id: 'usa_1',
+                image: 'world_1_boston_london.jpg',
+                act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
+                actIndex: 3,
+                sceneNum: 'Cảnh 6/8',
+                location: 'Boston & New York (Hoa Kỳ) • 1912 – 1913',
+                coords: 'Khách Sạn Parker House, Boston (Mỹ)',
+                speaker: 'Văn Ba',
+                role: 'Quan sát mặt trái của chủ nghĩa tư bản',
+                text: 'Bên kia bức tượng Nữ thần Tự do tráng lệ, tôi tìm đến khu Harlem của người da đen, chứng kiến những người lao động nghèo bị phân biệt đối xử tàn khốc. Bản Tuyên ngôn Độc lập Mỹ năm 1776 viết về nhân quyền rất đẹp đẽ, nhưng vì sao người lao động vẫn cơ cực đến thế?!',
+                action: 'ambient'
+            },
+            {
+                id: 'usa_trust',
                 image: 'world_1_boston_london.jpg',
                 act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
                 actIndex: 3,
                 sceneNum: 'Cảnh 7/8',
                 location: 'Boston & New York (Hoa Kỳ) • 1912 – 1913',
                 coords: 'Khách Sạn Parker House, Boston (Mỹ)',
-                speaker: 'Người Dẫn Truyện',
-                role: 'Quan sát xã hội tư bản phương Tây',
-                text: 'Năm 1912–1913, con tàu đưa Người cập cảng Hoa Kỳ. Tại Boston và New York, Bác làm phụ bếp làm bánh ở khách sạn Parker House, đến thăm khu người da đen Harlem, tận mắt chứng kiến sự phân biệt chủng tộc tàn khốc đằng sau bức tượng Nữ thần Tự do.',
+                speaker: 'Bạn Đồng Hành',
+                role: 'Khắc sâu bài học thực tiễn',
+                text: 'Bởi vì tự do của chủ nghĩa tư bản chưa phải là tự do thực sự cho người cùng khổ. Anh đã nhìn thấu tận bản chất của chúng, và con đường anh tìm kiếm chắc chắn sẽ vượt xa những giới hạn đó!',
                 action: 'ambient'
             },
+
+            // === ANH QUỐC (1913–1917): Ý CHÍ THÉP GIỮA GIÁ LẠNH ===
             {
-                id: 'world_2',
+                id: 'london_1',
                 image: 'world_1_boston_london.jpg',
                 act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
                 actIndex: 3,
                 sceneNum: 'Cảnh 8/8',
                 location: 'London (Vương Quốc Anh) • 1913 – 1917',
-                coords: 'Khách Sạn Carlton, Luân Đôn (Anh)',
+                coords: 'Khách Sạn Carlton & Công Viên Mùa Đông Luân Đôn',
                 speaker: 'Văn Ba',
                 role: 'Quét tuyết mùa đông nước Anh',
-                text: 'Mùa đông Luân Đôn giá rét cắt da thịt, tôi đi quét tuyết trong công viên, làm bồi bàn ở khách sạn Carlton... Sống giữa lòng các đế quốc hùng mạnh, tôi càng thấy rõ: ở đâu nhân dân lao động cũng bị bóc lột, và ở đâu chủ nghĩa thực dân cũng tàn bạo như nhau!',
+                text: 'Mùa đông sương mù Luân Đôn giá buốt căm căm. Tôi phải dậy từ tinh mơ cào tuyết đóng băng trong công viên để kiếm vài xu sưởi ấm. Bàn tay cóng buốt rát bỏng, nhưng ngọn lửa trong lòng tôi chưa từng tắt!',
+                action: 'diegetic_london'
+            },
+            {
+                id: 'london_trust',
+                image: 'world_1_boston_london.jpg',
+                act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
+                actIndex: 3,
+                sceneNum: 'Cảnh 8/8 • Niềm Tin',
+                location: 'London (Vương Quốc Anh) • 1913 – 1917',
+                coords: 'Khách Sạn Carlton, Luân Đôn',
+                speaker: 'Bạn Đồng Hành',
+                role: 'Tiếp thêm hơi ấm niềm tin',
+                text: 'Tuyết lạnh London không khuất phục được ý chí của anh. Đầu bếp trứ danh Escoffier muốn dạy anh nghệ thuật ẩm thực đỉnh cao, nhưng anh đã từ chối để giữ trọn sứ mệnh cứu dân tộc. Chúng tôi luôn tin vào lý tưởng kiên định của anh!',
                 action: 'ambient'
             },
 
@@ -1465,12 +1720,25 @@ HTML_CODE = r'''<!DOCTYPE html>
                 image: 'act4_1_versailles_1919.jpg',
                 act: 'HỒI 4 • TỎA SÁNG CHÂN LÝ',
                 actIndex: 4,
-                sceneNum: 'Cảnh 1/4',
+                sceneNum: 'Cảnh 1/5',
                 location: 'Hội Nghị Hòa Bình Versailles (Pháp)',
                 coords: 'Paris (Pháp) • Ngày 18.06.1919',
-                speaker: 'Người Dẫn Truyện',
-                role: 'Bản Yêu sách làm chấn động đế quốc Pháp',
-                text: 'Ngày 18 tháng 6 năm 1919, thay mặt Hội những người An Nam yêu nước, một thanh niên gầy gò ký tên NGUYỄN ÁI QUỐC gửi tới Hội nghị Versailles "Bản Yêu sách của nhân dân An Nam" gồm 8 điểm, đòi quyền tự do, bình đẳng. Tên tuổi Nguyễn Ái Quốc bắt đầu làm rung chuyển chính giới Pháp!',
+                speaker: 'Nguyễn Ái Quốc',
+                role: 'Ký tên vào Bản Yêu Sách 8 Điểm',
+                text: 'Thay mặt Hội Những Người An Nam Yêu Nước, tôi gửi đến Hội nghị Versailles "Bản Yêu sách của nhân dân An Nam". Dù các cường quốc phớt lờ, nhưng tiếng chuông cảnh tỉnh đã gióng lên: Muốn giải phóng, dân tộc ta phải tự đứng trên đôi chân của chính mình!',
+                action: 'diegetic_versailles'
+            },
+            {
+                id: 'act4_1_trust',
+                image: 'act4_1_versailles_1919.jpg',
+                act: 'HỒI 4 • TỎA SÁNG CHÂN LÝ',
+                actIndex: 4,
+                sceneNum: 'Cảnh 2/5',
+                location: 'Hội Nghị Hòa Bình Versailles (Pháp)',
+                coords: 'Paris (Pháp) • Ngày 18.06.1919',
+                speaker: 'Bạn Đồng Hành',
+                role: 'Niềm tự hào non sông',
+                text: 'Cái tên NGUYỄN ÁI QUỐC xuất hiện như một tia chớp giữa trời Âu! Từ hôm nay, người dân mất nước An Nam đã có một người đại diện kiên trung dám nói thẳng vào mặt các cường quốc đế quốc!',
                 action: 'ambient'
             },
             {
@@ -1478,25 +1746,38 @@ HTML_CODE = r'''<!DOCTYPE html>
                 image: 'act4_2_paris_room.jpg',
                 act: 'HỒI 4 • TỎA SÁNG CHÂN LÝ',
                 actIndex: 4,
-                sceneNum: 'Cảnh 2/4',
+                sceneNum: 'Cảnh 3/5',
                 location: 'Ngõ Compoint, Quận 17, Paris',
                 coords: 'Paris (Pháp) • Tháng 7/1920 (Mùa Hè)',
-                speaker: 'Người Dẫn Truyện',
-                role: 'Căn phòng trọ nghèo ngõ Compoint',
-                text: 'Trong căn gác trọ nhỏ mùa đông sưởi bằng viên gạch nung bọc báo, tháng 7 năm 1920, Bác ngồi bên chiếc bàn gỗ đọc "Sơ thảo lần thứ nhất những luận cương về vấn đề dân tộc và thuộc địa" của V.I. Lênin đăng trên báo L’Humanité.',
-                action: 'ambient'
+                speaker: 'Nguyễn Ái Quốc',
+                role: 'Căn gác trọ mùa đông sưởi bằng gạch nung',
+                text: 'Đêm Paris giá lạnh, chỉ có viên gạch nung sưởi ấm đôi bàn tay. Nhưng đêm nay, dưới ngọn đèn dầu này, tôi mở tờ báo L\'Humanité đọc Luận cương của Lênin... Hãy thắp sáng ngọn đèn này cùng tôi!',
+                action: 'diegetic_lenin'
             },
             {
                 id: 'act4_2_quote',
                 image: 'act4_2_paris_room.jpg',
                 act: 'HỒI 4 • TỎA SÁNG CHÂN LÝ',
                 actIndex: 4,
-                sceneNum: 'Cảnh 3/4',
+                sceneNum: 'Cảnh 4/5',
                 location: 'Ngõ Compoint, Quận 17, Paris',
                 coords: 'Paris (Pháp) • Tháng 7/1920',
                 speaker: 'Nguyễn Ái Quốc',
                 role: 'Reo to lên một mình trong phòng trọ như nói với toàn thể đồng bào',
                 text: 'Hỡi đồng bào bị đọa đày đau khổ! Đây là cái cần thiết cho chúng ta, đây là con đường giải phóng chúng ta! Luận cương của Lênin làm cho tôi rất cảm động, phấn khởi, sáng tỏ, tin tưởng biết bao! Muốn cứu nước và giải phóng dân tộc không có con đường nào khác con đường cách mạng vô sản!',
+                action: 'ambient'
+            },
+            {
+                id: 'act4_2_trust',
+                image: 'act4_2_paris_room.jpg',
+                act: 'HỒI 4 • TỎA SÁNG CHÂN LÝ',
+                actIndex: 4,
+                sceneNum: 'Cảnh 5/5',
+                location: 'Ngõ Compoint, Quận 17, Paris',
+                coords: 'Paris (Pháp) • Tháng 7/1920',
+                speaker: 'Bạn Đồng Hành',
+                role: 'Lời hứa của hậu thế',
+                text: 'Chân lý đã bừng sáng! Con đường mà Bác tìm thấy trong căn phòng nhỏ ngõ Compoint hôm nay sẽ dẫn lối cho toàn thể dân tộc Việt Nam đi từ bùn đen nô lệ đến độc lập, tự do và vinh quang rực rỡ!',
                 action: 'ambient'
             },
             {
@@ -1650,6 +1931,7 @@ HTML_CODE = r'''<!DOCTYPE html>
             marseilleExplored: { left: false, right: false },
             marseilleSpatialView: 'center',
             marseilleDiscoveriesCount: 0,
+            londonSnowStep: 0,
             badgesUnified: 0,
             playerName: 'Nguyễn Văn Đồng Hành',
             playerAge: 21
@@ -2555,7 +2837,7 @@ HTML_CODE = r'''<!DOCTYPE html>
             const epiphanyOverlay = document.getElementById('marseilleEpiphanyOverlay');
             if (epiphanyOverlay) epiphanyOverlay.classList.add('hidden');
 
-            const targetIdx = SCENE_SCRIPT.findIndex(s => s.id === 'world_1');
+            const targetIdx = SCENE_SCRIPT.findIndex(s => s.id === 'africa_1');
             state.currentStepIndex = targetIdx !== -1 ? targetIdx : state.currentStepIndex + 1;
             renderCurrentStep();
         }
@@ -2596,6 +2878,203 @@ HTML_CODE = r'''<!DOCTYPE html>
             if (insightText) {
                 insightText.textContent = '"Người Pháp ở Pháp tốt và lịch sự hơn thực dân ở xứ ta rất nhiều..." — Văn Ba';
             }
+        }
+
+        // 5.27. Luân Đôn 1913-1917: Cào Tuyết Công Viên & Lòng Kiên Định (Diegetic London Snow)
+        function sweepSnowStep() {
+            initAudioContext();
+            playPencilScratchSound();
+            state.londonSnowStep = (state.londonSnowStep || 0) + 1;
+            const snowLayer = document.getElementById(`snowLayer${state.londonSnowStep}`);
+            if (snowLayer) {
+                snowLayer.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
+            }
+
+            const counterBadge = document.getElementById('londonSnowCounterBadge');
+            if (counterBadge) counterBadge.textContent = `${Math.min(state.londonSnowStep, 3)} / 3 Lượt Cào Tuyết`;
+
+            const insightText = document.getElementById('londonInsightText');
+            if (insightText) {
+                if (state.londonSnowStep === 1) {
+                    insightText.textContent = '"Gió tuyết thổi buốt thấu xương, nhưng càng lao động gian khó, ý chí giải phóng dân tộc càng được tôi rèn..."';
+                } else if (state.londonSnowStep === 2) {
+                    insightText.textContent = '"Bếp trưởng Escoffier muốn tôi ở lại học làm bếp trưởng với mức lương hậu hĩnh, nhưng tôi bảo tôi đến đây vì mục đích khác..."';
+                } else if (state.londonSnowStep >= 3) {
+                    insightText.innerHTML = '<strong class="text-cyan-300">Hoàn thành:</strong> Lối đi đã quang đãng! Ngọn lửa yêu nước đã sưởi ấm mùa đông băng giá Luân Đôn.';
+                    const completionBox = document.getElementById('londonCompletionBox');
+                    if (completionBox) completionBox.classList.remove('hidden');
+                    const shovelBtn = document.getElementById('londonSnowShovelBtn');
+                    if (shovelBtn) shovelBtn.classList.add('hidden');
+                    playPledgeChime();
+                }
+            }
+
+            state.resonance = Math.min(100, state.resonance + 8);
+            updateResonanceHUD();
+        }
+
+        function finishLondonSnowScene() {
+            initAudioContext();
+            const londonRig = document.getElementById('diegeticLondonRig');
+            if (londonRig) londonRig.classList.add('hidden');
+
+            state.historyLog.push({
+                speaker: 'Luân Đôn (Anh) • 1913 – 1917',
+                role: 'Văn Ba & Bạn đồng hành',
+                text: 'Cùng anh Ba quét tuyết trong công viên giữa mùa đông nước Anh, từ chối cuộc sống an nhàn đầu bếp Carlton để tiếp tục chí lớn giải phóng non sông.'
+            });
+
+            state.resonance = Math.min(100, state.resonance + 15);
+            updateResonanceHUD();
+
+            const targetIdx = SCENE_SCRIPT.findIndex(s => s.id === 'london_trust');
+            state.currentStepIndex = targetIdx !== -1 ? targetIdx : state.currentStepIndex + 1;
+            renderCurrentStep();
+        }
+
+        function resetLondonSnowUI() {
+            state.londonSnowStep = 0;
+            const b = document.getElementById('londonSnowCounterBadge');
+            if (b) b.textContent = '0 / 3 Lượt Cào Tuyết';
+            const s1 = document.getElementById('snowLayer1');
+            const s2 = document.getElementById('snowLayer2');
+            const s3 = document.getElementById('snowLayer3');
+            if (s1) s1.className = 'absolute inset-4 rounded-xl bg-gradient-to-br from-white/90 via-slate-100/80 to-blue-100/90 backdrop-blur-md border border-white flex items-center justify-center transition-all duration-700 shadow-lg';
+            if (s2) s2.className = 'absolute inset-6 rounded-xl bg-gradient-to-br from-white/70 via-slate-200/70 to-blue-200/70 backdrop-blur-sm border border-white/60 flex items-center justify-center transition-all duration-700 shadow-md';
+            if (s3) s3.className = 'absolute inset-8 rounded-xl bg-gradient-to-br from-white/50 via-slate-300/50 to-blue-300/50 backdrop-blur-xs border border-white/40 flex items-center justify-center transition-all duration-700 shadow';
+            const shovel = document.getElementById('londonSnowShovelBtn');
+            if (shovel) shovel.classList.remove('hidden');
+            const cBox = document.getElementById('londonCompletionBox');
+            if (cBox) cBox.classList.add('hidden');
+            const ins = document.getElementById('londonInsightText');
+            if (ins) ins.textContent = '"Mùa đông giá buốt, quét tuyết công viên để kiếm tiền sinh sống và kiên trì học tiếng Anh..."';
+        }
+
+        // 5.28. Versailles 18.06.1919: Đóng Dấu Đỏ Bản Yêu Sách 8 Điểm (Diegetic Versailles Stamp)
+        function stampVersaillesPetition() {
+            initAudioContext();
+            playStampSound();
+
+            const stampMark = document.getElementById('versaillesStampMark');
+            if (stampMark) stampMark.classList.remove('hidden');
+
+            const stampBtn = document.getElementById('versaillesSealStamp');
+            if (stampBtn) stampBtn.classList.add('pointer-events-none', 'opacity-50');
+
+            const insightText = document.getElementById('versaillesInsightText');
+            if (insightText) {
+                insightText.innerHTML = '<strong class="text-amber-300">Dấu Đỏ Lịch Sử:</strong> Danh xưng NGUYỄN ÁI QUỐC chính thức vang danh quốc tế, đại diện cho ý chí quật cường của 20 triệu đồng bào An Nam!';
+            }
+
+            state.resonance = Math.min(100, state.resonance + 20);
+            updateResonanceHUD();
+
+            playPledgeChime();
+            setTimeout(() => {
+                const completionBox = document.getElementById('versaillesCompletionBox');
+                if (completionBox) completionBox.classList.remove('hidden');
+            }, 600);
+        }
+
+        function finishVersaillesScene() {
+            initAudioContext();
+            const versaillesRig = document.getElementById('diegeticVersaillesRig');
+            if (versaillesRig) versaillesRig.classList.add('hidden');
+
+            state.historyLog.push({
+                speaker: 'Versailles (Pháp) • 18.06.1919',
+                role: 'Nguyễn Ái Quốc',
+                text: 'Gửi Bản Yêu sách 8 điểm của nhân dân An Nam tới Hội nghị Hòa bình Versailles, làm chấn động chính giới Pháp và thế giới.'
+            });
+
+            state.resonance = Math.min(100, state.resonance + 15);
+            updateResonanceHUD();
+
+            const targetIdx = SCENE_SCRIPT.findIndex(s => s.id === 'act4_1_trust');
+            state.currentStepIndex = targetIdx !== -1 ? targetIdx : state.currentStepIndex + 1;
+            renderCurrentStep();
+        }
+
+        function resetVersaillesUI() {
+            const mark = document.getElementById('versaillesStampMark');
+            if (mark) mark.classList.add('hidden');
+            const btn = document.getElementById('versaillesSealStamp');
+            if (btn) btn.classList.remove('pointer-events-none', 'opacity-50');
+            const cBox = document.getElementById('versaillesCompletionBox');
+            if (cBox) cBox.classList.add('hidden');
+            const ins = document.getElementById('versaillesInsightText');
+            if (ins) ins.textContent = '"Chủ nghĩa Wilson chỉ là trò bịp bợm. Muốn giải phóng, phải trông cậy vào chính lực lượng của bản thân mình!"';
+        }
+
+        // 5.29. Ngõ Compoint 07/1920: Thắp Sáng Luận Cương Lênin (Diegetic Lenin Theses Illumination)
+        function illuminateLeninTheses() {
+            initAudioContext();
+            playDawnBloomChord();
+
+            const glow = document.getElementById('leninAuraGlow');
+            if (glow) {
+                glow.classList.remove('opacity-0');
+                glow.classList.add('opacity-100');
+            }
+
+            const lampBtn = document.getElementById('leninLampBtn');
+            if (lampBtn) lampBtn.classList.add('pointer-events-none', 'animate-pulse');
+
+            const thesisDoc = document.getElementById('leninThesisDoc');
+            if (thesisDoc) {
+                thesisDoc.classList.remove('brightness-50');
+                thesisDoc.classList.add('brightness-110', 'shadow-[0_0_50px_rgba(245,158,11,0.6)]');
+            }
+
+            const insightText = document.getElementById('leninInsightText');
+            if (insightText) {
+                insightText.innerHTML = '<strong class="text-amber-300">Ánh Sáng Chân Lý:</strong> "Muốn cứu nước và giải phóng dân tộc, không có con đường nào khác con đường cách mạng vô sản!"';
+            }
+
+            state.resonance = 100;
+            updateResonanceHUD();
+
+            setTimeout(() => {
+                const completionBox = document.getElementById('leninCompletionBox');
+                if (completionBox) completionBox.classList.remove('hidden');
+            }, 700);
+        }
+
+        function finishLeninScene() {
+            initAudioContext();
+            const leninRig = document.getElementById('diegeticLeninRig');
+            if (leninRig) leninRig.classList.add('hidden');
+
+            state.historyLog.push({
+                speaker: 'Ngõ Compoint, Paris • 07/1920',
+                role: 'Nguyễn Ái Quốc',
+                text: 'Đọc Sơ thảo Luận cương của Lênin trên báo L\'Humanité, tìm ra con đường cứu nước duy nhất đúng đắn cho dân tộc Việt Nam.'
+            });
+
+            state.resonance = 100;
+            updateResonanceHUD();
+
+            const targetIdx = SCENE_SCRIPT.findIndex(s => s.id === 'act4_2_quote');
+            state.currentStepIndex = targetIdx !== -1 ? targetIdx : state.currentStepIndex + 1;
+            renderCurrentStep();
+        }
+
+        function resetLeninUI() {
+            const glow = document.getElementById('leninAuraGlow');
+            if (glow) {
+                glow.classList.add('opacity-0');
+                glow.classList.remove('opacity-100');
+            }
+            const doc = document.getElementById('leninThesisDoc');
+            if (doc) {
+                doc.className = 'w-full bg-[#ede6d4] text-stone-900 rounded-lg p-4 font-typewriter text-left transition-all duration-700 brightness-50 mb-4 border border-stone-400 shadow-md';
+            }
+            const btn = document.getElementById('leninLampBtn');
+            if (btn) btn.classList.remove('pointer-events-none', 'animate-pulse');
+            const cBox = document.getElementById('leninCompletionBox');
+            if (cBox) cBox.classList.add('hidden');
+            const ins = document.getElementById('leninInsightText');
+            if (ins) ins.textContent = '"Trong căn gác nhỏ ngõ Compoint, sưởi ấm bằng viên gạch nung bọc báo, tìm thấy con đường cứu nước..."';
         }
 
         // 5.3. Hợp Nhất 3 Tổ Chức Đảng (Diegetic Unification)
@@ -2663,6 +3142,8 @@ HTML_CODE = r'''<!DOCTYPE html>
                 badge.className = 'px-3 py-1 rounded bg-amber-500/20 border border-amber-400/50 text-amber-300 font-cinematic text-xs md:text-sm font-bold tracking-widest uppercase shadow-[0_0_15px_rgba(245,158,11,0.25)]';
             } else if (step.speaker === 'Nguyễn Ái Quốc') {
                 badge.className = 'px-3 py-1 rounded bg-red-900/40 border border-red-500/60 text-red-200 font-cinematic text-xs md:text-sm font-bold tracking-widest uppercase shadow-[0_0_15px_rgba(220,38,38,0.3)]';
+            } else if (step.speaker === 'Bạn Đồng Hành') {
+                badge.className = 'px-3 py-1 rounded bg-cyan-950/60 border border-cyan-400/60 text-cyan-200 font-cinematic text-xs md:text-sm font-bold tracking-widest uppercase shadow-[0_0_15px_rgba(6,182,212,0.3)]';
             } else {
                 badge.className = 'px-3 py-1 rounded bg-slate-800 border border-slate-700 text-slate-300 font-cinematic text-xs md:text-sm font-bold tracking-widest uppercase';
             }
@@ -2722,6 +3203,9 @@ HTML_CODE = r'''<!DOCTYPE html>
             const studyRig = document.getElementById('diegeticStudyRig');
             const marseilleRig = document.getElementById('diegeticMarseilleRig');
             const noDialogueCard = document.getElementById('marseilleNoDialogueCard');
+            const londonRig = document.getElementById('diegeticLondonRig');
+            const versaillesRig = document.getElementById('diegeticVersaillesRig');
+            const leninRig = document.getElementById('diegeticLeninRig');
             const unificationRig = document.getElementById('diegeticUnificationRig');
             const milestoneRig = document.getElementById('diegeticMilestoneRig');
             const dawnRig = document.getElementById('diegeticDawnRig');
@@ -2732,6 +3216,9 @@ HTML_CODE = r'''<!DOCTYPE html>
             if (studyRig) studyRig.classList.add('hidden');
             if (marseilleRig) marseilleRig.classList.add('hidden');
             if (noDialogueCard) noDialogueCard.classList.add('hidden');
+            if (londonRig) londonRig.classList.add('hidden');
+            if (versaillesRig) versaillesRig.classList.add('hidden');
+            if (leninRig) leninRig.classList.add('hidden');
             if (unificationRig) unificationRig.classList.add('hidden');
             if (milestoneRig) milestoneRig.classList.add('hidden');
             if (dawnRig) dawnRig.classList.add('hidden');
@@ -2766,6 +3253,45 @@ HTML_CODE = r'''<!DOCTYPE html>
                 if (dialogueBox) dialogueBox.classList.add('hidden');
                 if (marseilleRig) marseilleRig.classList.remove('hidden');
                 resetMarseilleSpatialUI();
+            } else if (action === 'diegetic_london') {
+                if (dialogueBox) dialogueBox.classList.add('hidden');
+                if (questBanner) questBanner.classList.remove('hidden');
+                const qTitle = document.getElementById('questTitle');
+                if (qTitle) qTitle.textContent = 'MÙA ĐÔNG NƯỚC ANH';
+                const qSub = document.getElementById('questSubtitle');
+                if (qSub) qSub.textContent = 'LUÂN ĐÔN • 1913–1917';
+                const qInst = document.getElementById('questInstruction');
+                if (qInst) qInst.textContent = 'Cào tuyết trên lối đi để kiếm sống và rèn luyện ý chí kiên định';
+                const qCount = document.getElementById('questCounter');
+                if (qCount) qCount.textContent = 'Cào tuyết';
+                if (londonRig) londonRig.classList.remove('hidden');
+                resetLondonSnowUI();
+            } else if (action === 'diegetic_versailles') {
+                if (dialogueBox) dialogueBox.classList.add('hidden');
+                if (questBanner) questBanner.classList.remove('hidden');
+                const qTitle = document.getElementById('questTitle');
+                if (qTitle) qTitle.textContent = 'BẢN YÊU SÁCH 8 ĐIỂM';
+                const qSub = document.getElementById('questSubtitle');
+                if (qSub) qSub.textContent = 'VERSAILLES • 18/06/1919';
+                const qInst = document.getElementById('questInstruction');
+                if (qInst) qInst.textContent = 'Đóng dấu đỏ xác thực danh xưng Nguyễn Ái Quốc gửi tới các cường quốc';
+                const qCount = document.getElementById('questCounter');
+                if (qCount) qCount.textContent = 'Đóng dấu';
+                if (versaillesRig) versaillesRig.classList.remove('hidden');
+                resetVersaillesUI();
+            } else if (action === 'diegetic_lenin') {
+                if (dialogueBox) dialogueBox.classList.add('hidden');
+                if (questBanner) questBanner.classList.remove('hidden');
+                const qTitle = document.getElementById('questTitle');
+                if (qTitle) qTitle.textContent = 'ÁNH SÁNG CHÂN LÝ';
+                const qSub = document.getElementById('questSubtitle');
+                if (qSub) qSub.textContent = 'NGÕ COMPOINT, PARIS • THÁNG 7/1920';
+                const qInst = document.getElementById('questInstruction');
+                if (qInst) qInst.textContent = 'Thắp sáng ngọn đèn dầu bão để soi tỏ Luận cương Lênin';
+                const qCount = document.getElementById('questCounter');
+                if (qCount) qCount.textContent = 'Thắp sáng';
+                if (leninRig) leninRig.classList.remove('hidden');
+                resetLeninUI();
             } else if (action === 'diegetic_unification') {
                 if (dialogueBox) dialogueBox.classList.add('hidden');
                 if (questBanner) questBanner.classList.remove('hidden');
@@ -2859,6 +3385,21 @@ HTML_CODE = r'''<!DOCTYPE html>
                 if (state.marseilleExplored && state.marseilleExplored.left && state.marseilleExplored.right) {
                     finishMarseilleSpatialScene();
                 }
+                return;
+            }
+
+            if (currentStep && currentStep.action === 'diegetic_london') {
+                if (state.londonSnowStep >= 3) {
+                    finishLondonSnowScene();
+                }
+                return;
+            }
+
+            if (currentStep && currentStep.action === 'diegetic_versailles') {
+                return;
+            }
+
+            if (currentStep && currentStep.action === 'diegetic_lenin') {
                 return;
             }
 

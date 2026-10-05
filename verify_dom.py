@@ -28,6 +28,10 @@ required_ids = [
     'marseilleEpiphanyOverlay',
     'btnFinishEpiphany',
     'marseilleInsightText',
+    # London, Versailles, Lenin Rigs (1913-1920):
+    'diegeticLondonRig', 'londonSnowCounterBadge', 'londonSnowStage', 'snowLayer1', 'snowLayer2', 'snowLayer3', 'londonSnowShovelBtn', 'londonCompletionBox', 'btnFinishLondonSnow', 'londonInsightText',
+    'diegeticVersaillesRig', 'versaillesDocStage', 'versaillesStampMark', 'versaillesSealStamp', 'versaillesCompletionBox', 'btnFinishVersailles', 'versaillesInsightText',
+    'diegeticLeninRig', 'leninAuraGlow', 'leninLampStage', 'leninThesisDoc', 'leninLampBtn', 'leninCompletionBox', 'btnFinishLenin', 'leninInsightText',
     # Hong Kong & Pac Bo rigs:
     'diegeticUnificationRig', 'diegeticMilestoneRig', 'diegeticDawnRig'
 ]
