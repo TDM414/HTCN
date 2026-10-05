@@ -57,7 +57,7 @@
     <link rel="preload" as="image" href="marseille_right_steps.jpg">
     <link rel="preload" as="image" href="africa_1_coast.jpg">
     <link rel="preload" as="image" href="africa_2_red_sea.jpg">
-    <link rel="preload" as="image" href="world_1_boston_london.jpg">
+    <link rel="preload" as="image" href="london_1_snow_street.jpg">
     <link rel="preload" as="image" href="act4_1_versailles_1919.jpg">
     <link rel="preload" as="image" href="act4_2_paris_room.jpg">
     <link rel="preload" as="image" href="act4_3_tours_congress.jpg">
@@ -126,11 +126,11 @@
 
         /* Dialogue Card */
         .dialogue-card {
-            background: rgba(7, 12, 24, 0.93);
-            border: 1px solid rgba(212, 163, 72, 0.42);
-            box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.95), 0 0 35px rgba(212, 163, 72, 0.16);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
+            background: rgba(6, 10, 18, 0.86);
+            border: 1px solid rgba(212, 163, 72, 0.38);
+            box-shadow: 0 15px 40px -10px rgba(0, 0, 0, 0.95), 0 0 25px rgba(212, 163, 72, 0.12);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
         }
 
         /* Diegetic interactive prop styling */
@@ -252,45 +252,45 @@
 
             <!-- Controls -->
             <div class="flex items-center gap-2">
-                <!-- Thấu Kính Button -->
+                <!-- Thấu Kính Button (Ẩn để giữ không khí chân thực 1911, bảo tồn ID cho DOM) -->
                 <button id="btnTimeLens" onclick="toggleTimeLens()" title="Thấu Kính Xuyên Thời Gian (Phím T)"
-                        class="min-w-[44px] min-h-[44px] px-3 py-2 rounded-xl border border-cyan-400/50 bg-cyan-950/40 hover:bg-cyan-900/60 text-cyan-300 font-cinematic text-xs font-bold tracking-wider flex items-center gap-2 cursor-pointer transition-all shadow-[0_0_15px_rgba(6,182,212,0.3)]">
-                    <svg class="w-4 h-4 text-cyan-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/></svg>
-                    <span class="hidden sm:inline">Thấu Kính [T]</span>
+                        class="hidden min-w-[44px] min-h-[44px] px-3 py-2 rounded-xl border border-cyan-400/50 bg-cyan-950/40 text-cyan-300 font-cinematic text-xs font-bold tracking-wider">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><line x1="12" y1="2" x2="12" y2="4"/></svg>
+                    <span>Thấu Kính</span>
                 </button>
 
-                <!-- Chapter Menu -->
-                <button onclick="toggleChapterMenu(true)" title="Menu Hồi Ký (Phím C)"
-                        class="min-w-[44px] min-h-[44px] px-3 py-2 rounded-xl border border-brass/40 bg-abyss/80 hover:bg-brass/20 text-brass text-xs font-cinematic font-bold tracking-wider flex items-center gap-1.5 cursor-pointer">
+                <!-- Chapter Menu [C] -->
+                <button onclick="toggleChapterMenu(true)" title="Danh Mục Hồi Ký (Phím C)"
+                        class="min-w-[40px] min-h-[40px] px-3 py-1.5 rounded-xl border border-brass/40 bg-abyss/80 hover:bg-brass/20 text-brass text-xs font-cinematic font-bold tracking-wider flex items-center gap-1.5 cursor-pointer transition-all shadow-sm">
                     <svg class="w-4 h-4 text-brass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
                     <span class="hidden md:inline">Hồi Ký [C]</span>
                 </button>
 
-                <!-- Audio Toggle -->
-                <button id="btnAudioToggle" onclick="toggleAudio()" title="Âm thanh (Phím M)"
-                        class="min-w-[44px] min-h-[44px] p-2.5 rounded-lg border border-brass/40 bg-abyss/80 hover:bg-brass/20 text-brass transition-all flex items-center justify-center cursor-pointer">
-                    <svg id="iconAudioOn" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
-                    <svg id="iconAudioOff" class="w-5 h-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+                <!-- History Log [L] -->
+                <button onclick="toggleLogModal(true)" title="Nhật Ký Hội Thoại (Phím L)"
+                        class="min-w-[40px] min-h-[40px] p-2 rounded-lg border border-brass/40 bg-abyss/80 hover:bg-brass/20 text-brass transition-all flex items-center justify-center cursor-pointer shadow-sm">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
                 </button>
 
-                <!-- Autoplay -->
-                <button id="btnAutoPlay" onclick="toggleAutoPlay()" title="Tự động dẫn truyện (Phím A)"
-                        class="min-w-[44px] min-h-[44px] p-2.5 rounded-lg border border-brass/40 bg-abyss/80 hover:bg-brass/20 text-brass transition-all flex items-center justify-center cursor-pointer">
-                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+                <!-- Audio Toggle [M] -->
+                <button id="btnAudioToggle" onclick="toggleAudio()" title="Âm Thanh Nhạc Nền (Phím M)"
+                        class="min-w-[40px] min-h-[40px] p-2 rounded-lg border border-brass/40 bg-abyss/80 hover:bg-brass/20 text-brass transition-all flex items-center justify-center cursor-pointer shadow-sm">
+                    <svg id="iconAudioOn" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                    <svg id="iconAudioOff" class="w-4 h-4 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
                 </button>
 
-                <!-- History Log -->
-                <button onclick="toggleLogModal(true)" title="Nhật ký hội thoại (Phím L)"
-                        class="min-w-[44px] min-h-[44px] p-2.5 rounded-lg border border-brass/40 bg-abyss/80 hover:bg-brass/20 text-brass transition-all flex items-center justify-center cursor-pointer">
-                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                <!-- Autoplay [A] -->
+                <button id="btnAutoPlay" onclick="toggleAutoPlay()" title="Tự Động Dẫn Truyện (Phím A)"
+                        class="min-w-[40px] min-h-[40px] p-2 rounded-lg border border-brass/40 bg-abyss/80 hover:bg-brass/20 text-brass transition-all flex items-center justify-center cursor-pointer shadow-sm">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
                 </button>
 
-                <!-- Hide UI (Phím H - Chuẩn LoL Spirit Blossom) -->
-                <button id="btnToggleUI" onclick="toggleHideUI()" title="Ẩn/Hiện toàn bộ giao diện [Phím H]"
-                        class="min-w-[44px] min-h-[44px] px-2.5 py-2 rounded-lg border border-brass/40 bg-abyss/80 hover:bg-brass/20 text-brass text-xs font-cinematic font-bold tracking-wider flex items-center gap-1.5 cursor-pointer">
+                <!-- Hide UI [H / U] -->
+                <button id="btnToggleUI" onclick="toggleHideUI()" title="Ẩn/Hiện toàn bộ giao diện [Phím H / U]"
+                        class="min-w-[40px] min-h-[40px] px-2.5 py-1.5 rounded-lg border border-brass/40 bg-abyss/80 hover:bg-brass/20 text-brass text-xs font-cinematic font-bold tracking-wider flex items-center gap-1.5 cursor-pointer shadow-sm transition-all">
                     <svg id="iconEyeOpen" class="w-4 h-4 text-brass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
                     <svg id="iconEyeClosed" class="w-4 h-4 text-amber-400 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
-                    <span class="hidden xl:inline">Ẩn UI [H]</span>
+                    <span class="hidden xl:inline">Ẩn UI [H/U]</span>
                 </button>
             </div>
         </header>
@@ -1209,44 +1209,44 @@
         </div>
 
         <!-- ========================================== -->
-        <!-- DIALOGUE & KINETIC SUBTITLE FOOTER -->
+        <!-- DIALOGUE & KINETIC SUBTITLE FOOTER (SLIM THEATRICAL 18-20% HEIGHT) -->
         <!-- ========================================== -->
-        <main class="hud-element relative z-20 p-4 md:p-6 flex flex-col justify-end w-full max-w-5xl mx-auto pointer-events-none">
-            <div class="w-full flex flex-col gap-3 pointer-events-auto">
+        <main class="hud-element relative z-20 p-2.5 md:p-3.5 pb-2 flex flex-col justify-end w-full max-w-4xl mx-auto pointer-events-none">
+            <div class="w-full flex flex-col gap-2 pointer-events-auto">
                 
                 <!-- Branching Choices -->
-                <div id="choicesContainer" class="hidden flex flex-col gap-2 mb-1 animate-fade-in">
-                    <span class="text-[11px] font-typewriter text-amber-300/90 tracking-wider uppercase flex items-center gap-1.5 px-1">
-                        <svg class="w-3.5 h-3.5 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                <div id="choicesContainer" class="hidden flex flex-col gap-1.5 mb-0.5 animate-fade-in">
+                    <span class="text-[10px] md:text-[11px] font-typewriter text-amber-300/90 tracking-wider uppercase flex items-center gap-1.5 px-1">
+                        <svg class="w-3 h-3 text-amber-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
                         Lựa chọn đồng hành của bạn:
                     </span>
-                    <div id="choicesList" class="grid grid-cols-1 md:grid-cols-2 gap-2.5"></div>
+                    <div id="choicesList" class="grid grid-cols-1 md:grid-cols-2 gap-2"></div>
                 </div>
 
                 <!-- Theatrical Dialogue Card -->
                 <div id="dialogueBox" onclick="handleDialogueBoxClick()"
-                     class="dialogue-card rounded-xl p-5 md:p-6 cursor-pointer transition-all duration-200 hover:border-brass/70 focus-visible:ring-2 focus-visible:ring-brass relative group">
+                     class="dialogue-card rounded-xl p-3 md:p-3.5 cursor-pointer transition-all duration-200 hover:border-brass/70 focus-visible:ring-2 focus-visible:ring-brass relative group">
                     
-                    <div class="flex items-center justify-between pb-3 mb-3 border-b border-brass/25">
-                        <div class="flex items-center gap-3">
-                            <span id="speakerBadge" class="px-3 py-1 rounded bg-brass/20 border border-brass/40 text-brass font-cinematic text-xs md:text-sm font-bold tracking-widest uppercase">
+                    <div class="flex items-center justify-between pb-1.5 mb-1.5 border-b border-brass/20">
+                        <div class="flex items-center gap-2.5">
+                            <span id="speakerBadge" class="px-2.5 py-0.5 rounded bg-brass/20 border border-brass/40 text-brass font-cinematic text-xs font-bold tracking-widest uppercase">
                                 Người Dẫn Truyện
                             </span>
-                            <span id="speakerRole" class="text-xs text-slate-400 font-typewriter">
+                            <span id="speakerRole" class="text-[11px] text-slate-400 font-typewriter truncate max-w-[280px] sm:max-w-none">
                                 Bến Nhà Rồng • 05/06/1911
                             </span>
                         </div>
-                        <div class="flex items-center gap-2 text-[11px] text-slate-400 font-typewriter">
-                            <span class="hidden sm:inline">Phím [Space] / Nhấp để tiếp tục</span>
-                            <svg class="w-4 h-4 text-brass animate-bounce" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                        <div class="flex items-center gap-1.5 text-[10px] text-slate-400 font-typewriter">
+                            <span class="hidden sm:inline">Phím [Space] / Nhấp tiếp tục</span>
+                            <svg class="w-3.5 h-3.5 text-brass animate-bounce" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                         </div>
                     </div>
 
-                    <div class="min-h-[72px] md:min-h-[84px] flex items-start">
-                        <p id="dialogueContent" class="text-sm md:text-base leading-relaxed text-slate-100 font-normal tracking-wide"></p>
+                    <div class="min-h-[44px] md:min-h-[50px] flex items-start">
+                        <p id="dialogueContent" class="text-xs md:text-sm leading-relaxed text-slate-100 font-normal tracking-wide"></p>
                     </div>
 
-                    <div class="mt-3 pt-2 flex items-center justify-between text-[11px] text-slate-400 border-t border-slate-800/80">
+                    <div class="mt-2 pt-1 flex items-center justify-between text-[10px] text-slate-400 border-t border-slate-800/80">
                         <div class="flex items-center gap-1.5 font-typewriter">
                             <span id="stepActSummary">Hồi 1/6:</span>
                             <span id="stepSceneTitle" class="text-slate-200 font-semibold">Lời Thề Gác Trọ</span>
@@ -1458,25 +1458,25 @@
                 coords: '10°46\'N 106°42\'E • Đầu Tháng 06/1911 (Đêm)',
                 speaker: 'Văn Ba',
                 role: 'Nguyễn Tất Thành (21 tuổi)',
-                text: 'Tôi muốn đi ra nước ngoài, xem nước Pháp và các nước khác. Sau khi xem xét họ làm như thế nào, tôi sẽ trở về giúp đồng bào chúng ta... Anh có dám cùng tôi đi chuyến này không?',
+                text: 'Tôi muốn sang Pháp, sang phương Tây xem họ làm thế nào rồi về giúp đồng bào mình... Anh có muốn đi cùng tôi chuyến này không?',
                 isChoice: true,
                 choices: [
                     {
                         key: '1',
-                        label: 'Tôi quyết đi cùng anh! Nhưng sang đó, ta lấy tiền đâu mà sống giữa đất khách quê người?',
-                        nextId: 'inn_2',
+                        label: 'Đi chứ, anh ở đâu tôi ở đó! Nhưng sang đất khách quê người không một xu dính túi, ta sống bằng gì hả anh Ba?',
+                        nextId: 'inn_1_reply_money',
                         resonanceGain: 25
                     },
                     {
                         key: '2',
-                        label: 'Đại dương mênh mông, gian nan muôn trùng... Anh Ba thật sự không sợ hiểm nguy sao?',
-                        nextId: 'inn_2',
+                        label: 'Đại dương mênh mông bão tố, đường sang Tây mù mịt vạn dặm... Anh Ba thật tình không thấy lo sao?',
+                        nextId: 'inn_1_reply_courage',
                         resonanceGain: 25
                     }
                 ]
             },
             {
-                id: 'inn_2',
+                id: 'inn_1_reply_money',
                 image: 'inn_2_hands.jpg',
                 act: 'HỒI 1 • LỜI THỀ GÁC TRỌ',
                 actIndex: 1,
@@ -1484,8 +1484,23 @@
                 location: 'Căn Gác Trọ Nhỏ — Sài Gòn',
                 coords: '10°46\'N 106°42\'E • Đầu Tháng 06/1911 (Đêm)',
                 speaker: 'Văn Ba',
-                role: 'Xòe rộng hai bàn tay rắn rỏi trước ngọn đèn dầu',
-                text: 'Đây, tiền đây! Chúng ta sẽ làm việc. Chúng ta sẽ làm bất cứ việc gì để sống và để đi. Hai bàn tay này sẽ nuôi sống chúng ta, anh đừng lo lắng! Có lao động, có ý chí thì không gì là không thể vượt qua.',
+                role: 'Xòe rộng hai bàn tay rắn rỏi trước ngọn đèn dầu, mỉm cười',
+                text: 'Đây, tiền đây chứ đâu! Chúng ta còn trẻ, có đôi bàn tay này thì sợ gì. Sang đó ta làm bồi bàn, quét dọn, cào than... làm bất cứ việc gì lương thiện để sống và để học hỏi. Có lao động và có ý chí thì nhất định không chết đói!',
+                nextId: 'inn_3',
+                action: 'ambient'
+            },
+            {
+                id: 'inn_1_reply_courage',
+                image: 'inn_2_hands.jpg',
+                act: 'HỒI 1 • LỜI THỀ GÁC TRỌ',
+                actIndex: 1,
+                sceneNum: 'Cảnh 3/4',
+                location: 'Căn Gác Trọ Nhỏ — Sài Gòn',
+                coords: '10°46\'N 106°42\'E • Đầu Tháng 06/1911 (Đêm)',
+                speaker: 'Văn Ba',
+                role: 'Nhìn sâu vào mắt bạn, giọng trầm ấm và kiên định',
+                text: 'Lo chứ, con người bằng xương bằng thịt ai chẳng biết ớn lạnh trước sóng to gió lớn. Nhưng nghĩ đến cảnh bà con mình ở quê nhà còng lưng chịu sưu cao thuế nặng, đòn roi ngập đầu... thì chút sóng gió ngoài biển khơi có xá gì đâu anh!',
+                nextId: 'inn_3',
                 action: 'ambient'
             },
             {
@@ -1498,7 +1513,7 @@
                 coords: '10°46\'N 106°42\'E • Rạng Sáng 05.06.1911',
                 speaker: 'Người Dẫn Truyện',
                 role: 'Khoảnh khắc ước hẹn lịch sử',
-                text: 'Hai bàn tay siết chặt nhau qua ánh đèn dầu bập bùng. Lời thề son sắt giữa hai người thanh niên yêu nước đã được kết giao trong đêm tối thuộc địa. Bình minh đã hé, bến cảng Sài Gòn đang đón đợi!',
+                text: 'Hai bàn tay siết chặt nhau qua ánh đèn dầu bập bùng. Lời hẹn ước son sắt của hai người thanh niên tuổi đôi mươi đã kết giao trong đêm gác trọ. Bình minh ló dạng, bến cảng Sài Gòn đang đón đợi những bước chân tiên phong!',
                 action: 'ambient'
             },
 
@@ -1632,7 +1647,7 @@
                 location: 'Dakar & Bờ Biển Tây Phi • 1912',
                 coords: 'Cảng Dakar & Các Vùng Thuộc Địa Tây Phi',
                 speaker: 'Văn Ba',
-                role: 'Nỗi đau trước cảnh nô lệ da đen bị xua xuống biển',
+                role: 'Nỗi đau trước cảnh người bản xứ bị áp bức dã man',
                 text: 'Nhìn những người nô lệ da đen bị xua xuống biển lạnh bốc dỡ hàng, rồi bị sóng cuốn trôi trong tiếng roi vút của viên giám thị... Tôi quặn thắt lòng. Dẫu khác màu da, nhưng nỗi đau của người mất nước thì ở đâu cũng giống như nhau!',
                 action: 'ambient'
             },
@@ -1645,8 +1660,8 @@
                 location: 'Dakar & Bờ Biển Tây Phi • 1912',
                 coords: 'Tiếng gọi lương tri của người cùng khổ',
                 speaker: 'Bạn Đồng Hành',
-                role: 'Chia sẻ nỗi đau mất nước cùng Anh Ba',
-                text: 'Chứng kiến thảm cảnh này, tôi mới thấu suốt vì sao anh không chọn con đường cầu viện ngoại bang. Dưới ách thực dân, giai cấp cần lao ở đâu cũng chung một nỗi đọa đày. Tiếng roi quất kia chính là tiếng gọi lương tri thôi thúc ta tìm đường giải phóng!',
+                role: 'Đứng lặng bên anh Ba nơi mạn tàu',
+                text: 'Nhìn những người phu da đen gầy gò gục ngã dưới làn roi của cai Pháp mà lòng tôi thắt lại... Ở xứ mình cũng thế mà sang đến tận châu Phi này cũng không khác. Nỗi đau của người mất nước ở đâu cũng cay đắng như nhau anh Ba à.',
                 action: 'ambient'
             },
             {
@@ -1659,7 +1674,7 @@
                 coords: 'Mạn Thuyền Hơi Nước Giữa Biển Đêm',
                 speaker: 'Văn Ba',
                 role: 'Nỗi trăn trở đại đoàn kết các dân tộc thuộc địa',
-                text: 'Đêm nay đứng nơi mạn tàu nhìn về bờ Biển Đỏ mịt mùng, sóng dữ dập dồn... Tôi tự hỏi: Làm sao để liên kết hàng trăm triệu con người cùng khổ đang rên xiết ở Á - Phi lại với nhau? Nếu không đoàn kết lại, làm sao bẻ gãy được gông cùm thực dân?',
+                text: 'Đêm nay đứng nơi mạn tàu nhìn về bờ Biển Đỏ mịt mùng, sóng dữ dập dồn... Tôi tự hỏi: Làm sao để liên kết hàng trăm triệu con người cùng khổ đang rên xiết ở Á - Phi lại với nhau? Nếu không dựa vào nhau, làm sao bẻ gãy được gông cùm thực dân?',
                 action: 'ambient'
             },
             {
@@ -1671,8 +1686,8 @@
                 location: 'Vùng Biển Đỏ • Đêm Giông Bão 1912',
                 coords: 'Ngọn lửa đoàn kết vô sản năm châu',
                 speaker: 'Bạn Đồng Hành',
-                role: 'Khẳng định niềm tin sắt son cùng Anh Ba',
-                text: 'Anh Ba, nỗi trăn trở đêm nay của anh sẽ không hề uổng phí! Từng giọt mồ hôi và nước mắt anh nhìn thấy ở châu Phi hôm nay sẽ hóa thành ngọn cờ hiệu triệu muôn triệu người cùng khổ toàn thế giới đứng lên tự cứu mình. Chúng tôi vững tin vào anh!',
+                role: 'Đưa tay che ngọn gió tạt vào áo anh Ba',
+                text: 'Gió biển đêm nay lạnh quá, nhưng nghe anh nói tôi thấy ấm lòng. Đồng bào mình ở quê nhà hay những người da màu cùng khổ ngoài kia, nếu không biết dựa vào nhau thì làm sao thoát khỏi cảnh trầm luân. Tôi tin con đường anh đang đi sẽ tìm thấy câu trả lời!',
                 action: 'ambient'
             },
 
@@ -1688,34 +1703,49 @@
                 coords: '40°41\'N 74°02\'W • Đàm đạo bên mạn tàu vào cảng',
                 speaker: 'Văn Ba',
                 role: 'Nguyễn Tất Thành (22 tuổi) • Bên mạn tàu gỗ',
-                text: 'Tàu đã rẽ sương mù vào vịnh New York rồi... Tượng Thần Tự Do sừng sững giữa biển trời, Tuyên ngôn 1776 của họ viết về nhân quyền đẹp đẽ biết bao: "Mọi người sinh ra đều có quyền bình đẳng; tạo hóa cho họ những quyền không ai có thể xâm phạm được...". Anh bạn trẻ, nhìn ngọn đuốc ấy, anh nghĩ gì?',
+                text: 'Tàu đã rẽ sương mù vào vịnh New York rồi... Tượng Thần Tự Do uy nghi giữa biển trời, trên tay cầm ngọn đuốc sáng rực. Người Mỹ ghi trong Tuyên ngôn 1776 rằng mọi người sinh ra đều có quyền bình đẳng và mưu cầu hạnh phúc... Nhìn ngọn đuốc trên tay bà ấy, anh nghĩ sao?',
                 isChoice: true,
                 choices: [
                     {
                         key: '1',
-                        label: 'Lời văn của họ quá đẹp đẽ, nhưng sao người lao động nghèo ở xứ này vẫn chịu bất công, thưa anh Ba?',
-                        nextId: 'usa_1_lens',
+                        label: 'Lời tuyên ngôn của họ đẹp như trăng rằm, nhưng sao người phu nghèo tha hương như chúng mình đến đây vẫn thấy lạnh lưng thế anh?',
+                        nextId: 'usa_1_reply_injustice',
                         resonanceGain: 20
                     },
                     {
                         key: '2',
-                        label: 'Tôi thấy ngọn đuốc thật lộng lẫy, nhưng dường như nó chỉ soi đường cho tàu chở vàng của giới chủ!',
-                        nextId: 'usa_1_lens',
+                        label: 'Tượng đồng sừng sững, đuốc sáng lóa mắt... nhưng tôi thấy nó như ngọn hải đăng soi cho những con tàu chở vàng của giới tài phiệt thì đúng hơn!',
+                        nextId: 'usa_1_reply_capital',
                         resonanceGain: 20
                     }
                 ]
             },
             {
-                id: 'usa_1_lens',
+                id: 'usa_1_reply_injustice',
                 image: 'usa_1_inspection.jpg',
                 act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
                 actIndex: 3,
-                sceneNum: 'Cảnh 6/11 • Lăng Kính Ống Nhòm',
+                sceneNum: 'Cảnh 6/11 • Lăng Kính Quan Sát',
                 location: 'Vịnh New York (Hoa Kỳ) • Mùa Thu 1912',
-                coords: 'Lăng kính quan sát hai thái cực xã hội',
+                coords: 'Góc nhìn thấu suốt người lao động',
                 speaker: 'Văn Ba',
-                role: 'Chỉ tay về hai thái cực của bức tượng đài',
-                text: 'Anh nhìn kỹ qua ống nhòm xem: Ngọn đuốc ấy rực sáng trên trời cao, nhưng bóng tối lại phủ dày đặc ngay dưới chân bệ tượng! Những con tàu tư bản chở đầy lợi nhuận cập bến, còn những người thợ bốc than nghèo khó thì lầm lũi trong màn sương lạnh. Lời tuyên ngôn đẹp như vàng ngọc kia người ta chỉ dùng để trang sức cho kẻ giàu mà thôi.',
+                role: 'Gật đầu, đưa chiếc ống nhòm đồng cho bạn',
+                text: 'Anh nói trúng tâm can tôi rồi đấy. Anh ghé mắt nhìn qua kính này mà xem: Ngay dưới chân bệ đá sừng sững kia, bao nhiêu người phu bốc than, phụ tàu da màu đang run rẩy vì đói lạnh. Ngọn đuốc soi tận mây xanh, nhưng dưới chân tượng lại là bóng tối mịt mùng!',
+                nextId: 'usa_1_trust',
+                action: 'ambient'
+            },
+            {
+                id: 'usa_1_reply_capital',
+                image: 'usa_1_inspection.jpg',
+                act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
+                actIndex: 3,
+                sceneNum: 'Cảnh 6/11 • Lăng Kính Quan Sát',
+                location: 'Vịnh New York (Hoa Kỳ) • Mùa Thu 1912',
+                coords: 'Bản chất tích lũy tư bản',
+                speaker: 'Văn Ba',
+                role: 'Khẽ mỉm cười nhưng ánh mắt đượm buồn',
+                text: 'Quan sát sắc sảo lắm! Những con tàu buôn khổng lồ cập bến mang về lợi nhuận kết xù cho những ông chủ phố Wall, còn người nghèo khắp bốn phương dạt về đây chỉ nhận lại đồng lương rẻ mạt. Ánh sáng tự do ấy rốt cuộc thuộc về ai?',
+                nextId: 'usa_1_trust',
                 action: 'ambient'
             },
             {
@@ -1727,8 +1757,8 @@
                 location: 'Vịnh New York (Hoa Kỳ) • Mùa Thu 1912',
                 coords: 'Đồng lòng thấu suốt bản chất',
                 speaker: 'Bạn Đồng Hành',
-                role: 'Đứng sát bên anh Ba, đồng lòng thấu suốt',
-                text: 'Nhờ có anh chỉ rõ, tôi mới thấu suốt bản chất! Không thể có tự do thật sự khi đa số người lao động vẫn chịu áp bức. Chuyến đi này của anh nhất định sẽ tìm ra con đường chân chính cho đồng bào mình!',
+                role: 'Đứng kề vai bên anh Ba đón ngọn gió biển lạnh',
+                text: 'Có đi cùng anh, tận mắt nhìn thế này tôi mới vỡ lẽ... Nước Mỹ tráng lệ thật, nhưng tự do không thể là thứ chỉ dành cho kẻ giàu. Muốn cứu dân mình, ta phải tìm một con đường chân chính khác!',
                 action: 'ambient'
             },
 
@@ -1743,34 +1773,49 @@
                 coords: '42°21\'N 71°03\'W • Cùng đứng bên bàn làm bánh bột mì',
                 speaker: 'Văn Ba',
                 role: 'Phụ bếp làm bánh Parker House rolls',
-                text: 'Làm phụ bếp ở đây tuy nhọc nhằn nhưng tâm hồn thanh thản. Đôi bàn tay mình làm ra chiếc bánh thơm nuôi sống bản thân, không phải cúi xin ai. Nhưng sang đất Mỹ này, chúng ta đâu chỉ đi kiếm sống... Anh có để ý những tờ báo tôi thu nhặt mỗi ngày không?',
+                text: 'Làm phụ bếp ở Parker House tuy mỏi nhừ đôi chân nhưng chiếc bánh mình làm ra nuôi sống bản thân bằng giọt mồ hôi lương thiện. Nhưng sang đất Mỹ này, chúng ta đâu chỉ đi kiếm sống... Anh có để ý những tờ báo tôi lượm về đọc mỗi đêm không?',
                 isChoice: true,
                 choices: [
                     {
                         key: '1',
-                        label: 'Tôi thấy anh tranh thủ từng giờ giải lao đọc báo, anh đang nghiên cứu điều gì từ họ?',
-                        nextId: 'usa_2_newspaper',
+                        label: 'Tôi thấy anh chong đèn đọc báo sau mỗi ca làm việc, anh đang tìm hiểu điều gì từ họ?',
+                        nextId: 'usa_2_reply_newspaper',
                         resonanceGain: 20
                     },
                     {
                         key: '2',
-                        label: 'Nước Mỹ có công nghệ và thể chế rất phát triển, liệu ta có thể học gì từ họ để cứu nước?',
-                        nextId: 'usa_2_newspaper',
+                        label: 'Nước Mỹ máy móc tối tân, phố xá sầm uất... liệu sau này quê mình có học được gì từ họ không anh?',
+                        nextId: 'usa_2_reply_institutions',
                         resonanceGain: 20
                     }
                 ]
             },
             {
-                id: 'usa_2_newspaper',
+                id: 'usa_2_reply_newspaper',
                 image: 'usa_2_newspaper.jpg',
                 act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
                 actIndex: 3,
                 sceneNum: 'Cảnh 7/11 • Tờ Báo Tri Thức',
                 location: 'Bếp Bánh Khách Sạn Parker House • Boston (1912 – 1913)',
-                coords: 'Đẩy tờ báo The Boston Globe sang phía bạn',
+                coords: 'Đẩy nhẹ tờ The Boston Globe sang phía bạn',
                 speaker: 'Văn Ba',
-                role: 'Đẩy tờ báo The Boston Globe sang phía bạn',
-                text: 'Đây, anh xem bài xã luận này! Muốn đánh đổ ách cai trị của thực dân, mình phải hiểu tường tận khoa học, kỹ thuật và thể chế của họ từ bên trong. Không hiểu đối phương thì làm sao tìm ra con đường chiến thắng? Lao động để nuôi thân, còn tri thức là để cứu nước!',
+                role: 'Đẩy nhẹ tờ The Boston Globe sang phía bạn',
+                text: 'Tôi đọc để xem họ tổ chức xã hội thế nào, người dân họ đấu tranh đòi quyền lợi ra sao. Muốn đánh đổ ách cai trị của thực dân thì mình phải hiểu tường tận khoa học, luật lệ và ngóc ngách của họ từ bên trong chứ!',
+                nextId: 'usa_2_trust',
+                action: 'ambient'
+            },
+            {
+                id: 'usa_2_reply_institutions',
+                image: 'usa_2_newspaper.jpg',
+                act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
+                actIndex: 3,
+                sceneNum: 'Cảnh 7/11 • Tờ Báo Tri Thức',
+                location: 'Bếp Bánh Khách Sạn Parker House • Boston (1912 – 1913)',
+                coords: 'Chỉ vào những trang tin tức kinh tế',
+                speaker: 'Văn Ba',
+                role: 'Chỉ vào những trang tin tức kinh tế',
+                text: 'Học chứ! Khoa học kỹ thuật và sự năng động của họ là thứ mình phải chắt lọc lấy. Nhưng học cái hay của họ để tự lực tự cường làm giàu cho xứ sở mình, chứ tuyệt đối không thể đi làm nô lệ cho đồng tiền của họ!',
+                nextId: 'usa_2_trust',
                 action: 'ambient'
             },
             {
@@ -1778,12 +1823,12 @@
                 image: 'usa_2_boston_bakery.jpg',
                 act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
                 actIndex: 3,
-                sceneNum: 'Cảnh 7/11 • Kính Phục',
+                sceneNum: 'Cảnh 7/11 • Tình Anh Em',
                 location: 'Bếp Bánh Khách Sạn Parker House • Boston (1912 – 1913)',
-                coords: 'Kính phục ý chí tự lực phi thường',
+                coords: 'Sát cánh bên khay bánh thơm',
                 speaker: 'Bạn Đồng Hành',
-                role: 'Kính phục ý chí tự lực phi thường',
-                text: 'Người ta sang Mỹ vì giấc mơ vàng của riêng mình, còn anh nhào bột làm bánh là để nuôi dưỡng ý chí giải phóng non sông! Tinh thần tự lực cánh sinh và trí tuệ cầu thị của anh khiến tôi tin rằng không một gian khổ nào có thể cản bước anh được.',
+                role: 'Mỉm cười phụ anh Ba lau dọn khay bánh',
+                text: 'Thấy anh ban ngày nhào bột, đêm về chong đèn học hỏi không mỏi mệt, tôi càng tin người có chí sáng như anh Ba thì dù ở góc bể chân trời nào cũng sẽ tìm ra lối thoát cho non sông.',
                 action: 'ambient'
             },
 
@@ -1798,7 +1843,7 @@
                 coords: '40°48\'N 73°56\'W • Hiện thực xã hội tư bản & Nạn phân biệt chủng tộc',
                 speaker: 'Văn Ba',
                 role: 'Cùng bạn đứng bên góc phố lao động New York 1913',
-                text: 'Rời trung tâm hoa lệ sang khu lao động này, anh thấy tận mắt cảnh những người lao động da đen bị hội kín KKK xua đuổi, bị đánh đập dã man không khác gì thời trung cổ. Ở ngay xứ sở tự do nhất trần đời này, người nghèo vẫn bị vắt kiệt mồ hôi nước mắt! Tôi hiểu rồi: Nền dân chủ tư sản hóa ra chỉ là thứ tự do của một nhóm thiểu số nhà giàu áp bức đa số nhân dân lao động mà thôi!',
+                text: 'Rời khỏi những đại lộ sầm uất sang góc phố Harlem này, anh thấy tận mắt cảnh những người lao động da đen bị xua đuổi, bị kỳ thị đắng cay... Ở ngay xứ sở xưng danh tự do nhất thế giới, người nghèo khổ vẫn là người chịu thiệt thòi nhất. Tự do của họ hóa ra chỉ là tự do cho thiểu số kẻ có tiền!',
                 action: 'ambient'
             },
             {
@@ -1806,19 +1851,19 @@
                 image: 'usa_3_harlem_street.jpg',
                 act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
                 actIndex: 3,
-                sceneNum: 'Cảnh 8/11 • Chân Lý',
+                sceneNum: 'Cảnh 8/11 • Lên Đường',
                 location: 'Khu Người Nghèo Harlem • New York (1913)',
-                coords: 'Đập tan ảo tưởng cải lương tư sản',
+                coords: 'Thấu hiểu thực tế xã hội phương Tây',
                 speaker: 'Bạn Đồng Hành',
-                role: 'Khắc sâu chân lý & chuẩn bị sang Anh',
-                text: 'Bài học thực tiễn tại Harlem thật đanh thép! Nó đập tan mọi ảo tưởng ngây thơ về việc "nhờ cậy" các cường quốc tư bản sang khai hóa hay giúp đỡ nước mình. Nước Mỹ đã cho ta thấy rõ bản chất. Chúng ta cùng sang Anh, sang Luân Đôn thôi anh Ba!',
+                role: 'Kéo cao cổ áo len cũ, nhìn về bến cảng',
+                text: 'Thế mới hay, áp bức bất công chẳng chừa một xứ sở nào. Giờ thì tôi hiểu vì sao anh không màng ở lại chốn phồn hoa này rồi. Đi thôi anh Ba, gió lạnh luồn qua phố rồi, chúng ta cùng sang Luân Đôn thôi!',
                 action: 'ambient'
             },
 
             // === ANH QUỐC (1913–1917): Ý CHÍ THÉP GIỮA GIÁ LẠNH ===
             {
                 id: 'london_1',
-                image: 'world_1_boston_london.jpg',
+                image: 'london_1_snow_street.jpg',
                 act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
                 actIndex: 3,
                 sceneNum: 'Cảnh 9/11 • Cào Tuyết',
@@ -1826,25 +1871,25 @@
                 coords: 'Công Viên Phủ Tuyết & Sương Mù Luân Đôn',
                 speaker: 'Văn Ba',
                 role: 'Cào tuyết kiếm sống và tự học tiếng Anh',
-                text: 'Mùa đông sương mù Luân Đôn giá buốt căm căm. Tôi phải dậy từ tinh mơ cào tuyết đóng băng trong công viên để kiếm vài xu sưởi ấm. Bàn tay cóng buốt rát bỏng, nhưng ngọn lửa trong lòng tôi chưa từng tắt!',
+                text: 'Mùa đông sương mù Luân Đôn giá buốt căm căm. Tôi dậy từ tinh mơ cào tuyết đóng băng trong công viên để kiếm vài xu mua mẩu bánh mì khô và củi sưởi. Bàn tay cóng buốt rát bỏng, nhưng cứ nghĩ đến ngày về với đồng bào thì người lại thấy ấm dần lên!',
                 action: 'diegetic_london'
             },
             {
                 id: 'london_1_trust',
-                image: 'world_1_boston_london.jpg',
+                image: 'london_1_snow_street.jpg',
                 act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
                 actIndex: 3,
                 sceneNum: 'Cảnh 9/11 • Tiếp Lửa',
                 location: 'Luân Đôn (Vương Quốc Anh) • Mùa Đông 1913 – 1917',
                 coords: 'Ý chí tôi luyện trong bão tuyết',
                 speaker: 'Bạn Đồng Hành',
-                role: 'Tiếp thêm hơi ấm niềm tin cùng Anh Ba',
-                text: 'Gió tuyết phương Tây không thể làm nguội ý chí gang thép của anh! Từng nhát xẻng cào tuyết trong giá buốt hôm nay chính là từng bước tôi luyện bản lĩnh của một bậc vĩ nhân. Chúng tôi tin vào nghị lực phi thường của anh!',
+                role: 'Cầm xẻng cào tuyết cùng anh Ba',
+                text: 'Lại đây để tôi cào tuyết đỡ cho một tay! Hai anh em mình cùng làm thì tuyết dày mấy cũng dọn xong, giá lạnh mấy rồi cũng sẽ vượt qua thôi anh Ba!',
                 action: 'ambient'
             },
             {
                 id: 'london_2',
-                image: 'world_1_boston_london.jpg',
+                image: 'london_1_snow_street.jpg',
                 act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
                 actIndex: 3,
                 sceneNum: 'Cảnh 10/11 • Carlton Hotel',
@@ -1852,23 +1897,22 @@
                 coords: 'Gian Bếp Khách Sạn & Vua Bếp Escoffier',
                 speaker: 'Văn Ba',
                 role: 'Từ chối vinh hoa vì sứ mệnh cứu dân tộc',
-                text: 'Vua đầu bếp Auguste Escoffier quý mến muốn truyền thụ nghệ thuật ẩm thực đỉnh cao để tôi trở thành bếp trưởng giàu có và danh giá. Nhưng nếu chỉ màng sung sướng bản thân nơi xứ người, thì ai sẽ gánh vác nỗi đau của non sông đang quằn quại trong xiềng xích?',
+                text: 'Ông Escoffier quý mến muốn giữ tôi lại, dạy hết bí quyết ẩm thực để làm bếp trưởng giàu có nơi khách sạn sang trọng này. Nhưng nếu chỉ màng miếng ăn ngon manh áo ấm cho riêng mình thì chuyến đi ngàn dặm này hóa ra thành vô nghĩa sao anh?',
                 action: 'ambient'
             },
             {
                 id: 'london_2_trust',
-                image: 'world_1_boston_london.jpg',
+                image: 'london_1_snow_street.jpg',
                 act: 'HỒI 3 • HẢI TRÌNH & THẾ GIỚI',
                 actIndex: 3,
-                sceneNum: 'Cảnh 10/11 • Kính Phục',
+                sceneNum: 'Cảnh 10/11 • Đồng Lòng',
                 location: 'Khách Sạn Carlton • Luân Đôn 1914',
-                coords: 'Nhân cách sáng ngời vì nước quên thân',
+                coords: 'Chí lớn vượt trên danh lợi',
                 speaker: 'Bạn Đồng Hành',
-                role: 'Nghiêng mình trước nhân cách cao thượng',
-                text: 'Trước danh lợi nhung lụa, sự kiên định của anh sáng ngời như ngọc! Từ chối vinh hoa cá nhân để dấn thân trọn đời cho đại nghĩa dân tộc — chúng tôi mãi mãi nghiêng mình kính phục phẩm cách cao thượng của anh!',
+                role: 'Nắm chặt tay anh Ba',
+                text: 'Tôi hiểu tấm lòng anh! Đã cất bước vì nước nhà thì vinh hoa nhung lụa nơi đất khách làm sao níu chân anh Ba được. Tôi nguyện theo bước anh đến cùng!',
                 action: 'ambient'
             },
-
             // === HỒI 4: TỎA SÁNG CHÂN LÝ CỨU NƯỚC (PARIS 1917 – 1923) ===
             {
                 id: 'act4_1',
@@ -1918,8 +1962,8 @@
                 location: 'Số 9 Ngõ Compoint, Quận 17, Paris',
                 coords: 'Hơi ấm từ ngọn lửa lòng kiên định',
                 speaker: 'Bạn Đồng Hành',
-                role: 'Hơi ấm từ viên gạch hồng ủ nóng triệu con tim',
-                text: 'Viên gạch nung hồng trong đêm đông Compoint đã ủ ấm trái tim của cả một dân tộc! Gian khổ nhường ấy mà Người vẫn dành trọn tâm trí cho độc lập tự do. Hậu thế chúng con xin nghiêng mình trước đức hy sinh vô bờ bến của Người!',
+                role: 'Hơi ấm từ viên gạch hồng Compoint',
+                text: 'Viên gạch nung hồng trong đêm đông Compoint đã ủ ấm một ý chí vĩ đại. Gian khổ nhường ấy mà anh vẫn kiên gan bền chí vì tương lai dân tộc!',
                 action: 'ambient'
             },
             {
@@ -1953,12 +1997,12 @@
                 image: 'act4_2_paris_room.jpg',
                 act: 'HỒI 4 • TỎA SÁNG CHÂN LÝ',
                 actIndex: 4,
-                sceneNum: 'Cảnh 5/6 • Lời Hứa Hậu Thế',
+                sceneNum: 'Cảnh 5/6 • Ánh Sáng Chân Lý',
                 location: 'Ngõ Compoint, Quận 17, Paris',
                 coords: 'Paris (Pháp) • Chân lý bừng sáng',
                 speaker: 'Bạn Đồng Hành',
-                role: 'Lời hứa thiêng liêng của hậu thế',
-                text: 'Chân lý đã bừng sáng! Giọt nước mắt của Bác rơi trên tờ báo L\'Humanité đêm nay đã chấm dứt đêm dài tăm tối ngàn năm. Con đường mà Bác tìm thấy trong căn phòng nhỏ ngõ Compoint sẽ dẫn lối cho toàn thể dân tộc Việt Nam đi tới độc lập, tự do và vinh quang rực rỡ!',
+                role: 'Xúc động trào dâng bên ánh đèn',
+                text: 'Nhìn những giọt nước mắt xúc động của anh rơi trên trang báo L\'Humanité đêm nay, tôi biết con đường độc lập tự do đã thực sự bừng sáng! Con đường mà anh tìm thấy trong căn phòng nhỏ này sẽ đưa dân tộc ta thoát khỏi cảnh lầm than.',
                 action: 'ambient'
             },
             {
@@ -3622,17 +3666,31 @@
         }
 
         function advanceDialogue() {
+            // PILLAR 1: Click 1 finishes typewriter immediately!
+            if (state.isTyping) {
+                finishTypewriter();
+                return;
+            }
+
+            // If awaiting player branching choice, do not advance until choice is selected
             if (state.waitingForChoice) return;
 
             const currentStep = SCENE_SCRIPT[state.currentStepIndex];
+
+            // If current step explicitly defines next step id (branching convergence)
+            if (currentStep && currentStep.nextId) {
+                const targetIdx = SCENE_SCRIPT.findIndex(s => s.id === currentStep.nextId);
+                state.currentStepIndex = targetIdx !== -1 ? targetIdx : state.currentStepIndex + 1;
+                renderCurrentStep();
+                return;
+            }
+
             if (currentStep && currentStep.action === 'marseille_disembark_no_dialogue') {
                 const targetIdx = SCENE_SCRIPT.findIndex(s => s.id === 'marseille_step_2');
                 state.currentStepIndex = targetIdx !== -1 ? targetIdx : state.currentStepIndex + 1;
                 renderCurrentStep();
                 return;
             }
-
-            if (state.isTyping) { finishTypewriter(); return; }
 
             if (currentStep && currentStep.action === 'open_boiler_hotspot') {
                 openBoilerModal();
@@ -3681,13 +3739,13 @@
             list.innerHTML = '';
             choices.forEach((c) => {
                 const btn = document.createElement('button');
-                btn.className = 'p-3.5 rounded-xl border border-brass/40 bg-abyss/90 hover:bg-brass/25 hover:border-brass text-left text-xs md:text-sm text-slate-100 transition-all flex items-start gap-2.5 cursor-pointer group';
+                btn.className = 'p-2.5 md:p-3 rounded-lg border border-brass/40 bg-abyss/95 hover:bg-brass/20 hover:border-brass text-left text-xs md:text-sm text-slate-100 transition-all flex items-start gap-2.5 cursor-pointer group shadow-lg';
                 btn.onclick = (e) => {
                     e.stopPropagation();
                     selectChoice(c);
                 };
                 btn.innerHTML = `
-                    <span class="inline-flex items-center justify-center min-w-[24px] h-6 rounded bg-brass/20 text-brass font-typewriter font-bold text-xs group-hover:bg-brass group-hover:text-void transition-colors">[${c.key}]</span>
+                    <span class="inline-flex items-center justify-center min-w-[22px] h-5 rounded bg-brass/25 text-brass font-typewriter font-bold text-xs group-hover:bg-brass group-hover:text-void transition-colors shrink-0">[${c.key}]</span>
                     <span class="leading-snug">${c.label}</span>
                 `;
                 list.appendChild(btn);
@@ -3695,6 +3753,8 @@
         }
 
         function selectChoice(choice) {
+            clearInterval(state.typingTimer);
+            state.isTyping = false;
             state.waitingForChoice = false;
             document.getElementById('choicesContainer').classList.add('hidden');
             state.resonance = Math.min(100, state.resonance + choice.resonanceGain);
@@ -3890,7 +3950,7 @@
                 toggleAutoPlay();
             } else if (e.key.toLowerCase() === 'l') {
                 toggleLogModal(document.getElementById('logModal').classList.contains('hidden'));
-            } else if (e.key.toLowerCase() === 'h') {
+            } else if (e.key.toLowerCase() === 'h' || e.key.toLowerCase() === 'u') {
                 toggleHideUI();
             } else if (e.key.toLowerCase() === 'r') {
                 restartExperience();
