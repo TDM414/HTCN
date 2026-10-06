@@ -554,6 +554,34 @@
             </div>
 
             <!-- ---------------------------------------------------- -->
+            <!-- 2.45. GỢI Ý MỞ SỔ TAY HỌC TIẾNG PHÁP CỦA ANH BA (SHIP CABIN) -->
+            <!-- ---------------------------------------------------- -->
+            <div id="frenchNotebookDeskTrigger" class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-16 flex flex-col items-center pointer-events-auto animate-fade-in">
+                <button id="btnOpenFrenchNotebook" onclick="openFrenchNotebookFromDesk()"
+                        class="group p-5 md:p-6 rounded-2xl bg-gradient-to-br from-amber-950/95 via-stone-900/90 to-black/95 border-2 border-amber-400/80 shadow-[0_0_50px_rgba(245,158,11,0.6)] flex items-center gap-4 hover:scale-105 active:scale-95 transition-all cursor-pointer backdrop-blur-md">
+                    <div class="w-14 h-14 rounded-xl bg-amber-500/20 border border-amber-400/60 flex items-center justify-center text-3xl shadow-inner group-hover:rotate-6 transition-transform">
+                        📖
+                    </div>
+                    <div class="text-left">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+                            <span class="text-amber-400 font-cinematic text-xs tracking-widest uppercase font-bold">Vật Phẩm Lịch Sử</span>
+                        </div>
+                        <h4 class="text-amber-200 font-cinematic font-bold text-base md:text-lg tracking-wider uppercase group-hover:text-amber-100 drop-shadow">
+                            Mở Sổ Tay Ghi Chép Của Anh Ba
+                        </h4>
+                        <p class="text-slate-300 font-typewriter text-xs mt-0.5">
+                            Cùng nắn nót học 5 từ vựng tiếng Pháp dưới ánh đèn bão
+                        </p>
+                    </div>
+                    <div class="ml-2 pl-4 border-l border-amber-500/30 text-amber-300 group-hover:text-amber-100 flex items-center gap-1 font-cinematic text-xs uppercase font-bold tracking-wider">
+                        <span>Mở Sổ</span>
+                        <span>→</span>
+                    </div>
+                </button>
+            </div>
+
+            <!-- ---------------------------------------------------- -->
             <!-- 2.5. HẢI TRÌNH 1911: HỌC TỪ MỚI DƯỚI ÁNH ĐÈN DẦU TRONG PHÒNG -->
             <!-- ---------------------------------------------------- -->
             <div id="diegeticStudyRig" class="hidden absolute inset-0 pointer-events-auto select-none flex flex-col items-center justify-center p-3 md:p-6 pb-40 md:pb-44 z-15">
@@ -1236,7 +1264,7 @@
                             </span>
                         </div>
                         <div class="flex items-center gap-1.5 text-[10px] text-slate-400 font-typewriter">
-                            <span class="hidden sm:inline">Phím [Space] / Nhấp tiếp tục</span>
+                            <span id="dialoguePromptHint" class="hidden sm:inline">Phím [Space] / Nhấp tiếp tục</span>
                             <svg class="w-3.5 h-3.5 text-brass animate-bounce" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
                         </div>
                     </div>
@@ -2237,7 +2265,8 @@
             londonSnowStep: 0,
             badgesUnified: 0,
             playerName: 'Nguyễn Văn Đồng Hành',
-            playerAge: 21
+            playerAge: 21,
+            interactivePhase: 'inactive'
         };
 
         /* ----------------------------------------------------
@@ -2399,6 +2428,32 @@
                 gain.connect(audioCtx.destination);
                 src.start(strokeTime);
             }
+        }
+
+        function playPageTurnSound() {
+            initAudioContext();
+            if (!audioCtx || !state.audioEnabled) return;
+            try {
+                const bSize = Math.floor(audioCtx.sampleRate * 0.2);
+                const buffer = audioCtx.createBuffer(1, bSize, audioCtx.sampleRate);
+                const data = buffer.getChannelData(0);
+                for (let i = 0; i < bSize; i++) {
+                    data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (bSize * 0.35));
+                }
+                const src = audioCtx.createBufferSource();
+                src.buffer = buffer;
+                const filter = audioCtx.createBiquadFilter();
+                filter.type = 'bandpass';
+                filter.frequency.setValueAtTime(1400, audioCtx.currentTime);
+                filter.Q.setValueAtTime(2.2, audioCtx.currentTime);
+                const gain = audioCtx.createGain();
+                gain.gain.setValueAtTime(0.35, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.2);
+                src.connect(filter);
+                filter.connect(gain);
+                gain.connect(audioCtx.destination);
+                src.start();
+            } catch(e) {}
         }
 
         function playStampSound() {
@@ -2912,6 +2967,18 @@
         }
 
         // 5.25. Học Từ Mới Dưới Ánh Đèn Dầu 1911 (Diegetic French Vocabulary Study)
+        function openFrenchNotebookFromDesk() {
+            initAudioContext();
+            playPageTurnSound();
+            const deskTrigger = document.getElementById('frenchNotebookDeskTrigger');
+            if (deskTrigger) deskTrigger.classList.add('hidden');
+            const studyRig = document.getElementById('diegeticStudyRig');
+            if (studyRig) studyRig.classList.remove('hidden');
+            state.interactivePhase = 'active';
+            const promptHint = document.getElementById('dialoguePromptHint');
+            if (promptHint) promptHint.textContent = 'Đang học 5 từ vựng tiếng Pháp...';
+        }
+
         function learnWord(num, french, viet, insight) {
             initAudioContext();
             playPencilScratchSound();
@@ -2971,6 +3038,9 @@
 
             const studyRig = document.getElementById('diegeticStudyRig');
             if (studyRig) studyRig.classList.add('hidden');
+            const deskTrigger = document.getElementById('frenchNotebookDeskTrigger');
+            if (deskTrigger) deskTrigger.classList.add('hidden');
+            state.interactivePhase = 'inactive';
 
             state.resonance = Math.min(100, state.resonance + 15);
             updateResonanceHUD();
@@ -2982,6 +3052,8 @@
 
         function resetStudyUI() {
             state.wordsLearnedCount = 0;
+            const deskTrigger = document.getElementById('frenchNotebookDeskTrigger');
+            if (deskTrigger) deskTrigger.classList.add('hidden');
             const emptyPrompt = document.getElementById('notebookEmptyPrompt');
             if (emptyPrompt) emptyPrompt.classList.remove('hidden');
 
@@ -3511,10 +3583,17 @@
                 dialogueBox.classList.remove('opacity-90');
             }
 
-            // 6. Diegetic In-Scene Activations
+            // 6. Diegetic In-Scene Activations & Two-Phase Interaction State
+            const isInteractiveAction = ['diegetic_register', 'diegetic_study', 'diegetic_london', 'diegetic_versailles', 'diegetic_lenin', 'diegetic_unification', 'diegetic_milestone'].includes(step.action);
+            state.interactivePhase = isInteractiveAction ? 'narrative' : 'inactive';
+
             handleDiegeticTriggers(step.action);
 
             // 7. Kinetic typewriter: always renders dialogue text across all scenes
+            const promptHint = document.getElementById('dialoguePromptHint');
+            if (promptHint) {
+                promptHint.textContent = isInteractiveAction ? 'Đang truyền tải hồi ký... [Space/Nhấp để lướt]' : 'Phím [Space] / Nhấp tiếp tục';
+            }
             startTypewriter(step.text);
         }
 
@@ -3524,6 +3603,7 @@
             const hotspot = document.getElementById('furnaceHotspot');
             const registerRig = document.getElementById('diegeticRegisterRig');
             const studyRig = document.getElementById('diegeticStudyRig');
+            const notebookTrigger = document.getElementById('frenchNotebookDeskTrigger');
             const marseilleRig = document.getElementById('diegeticMarseilleRig');
             const noDialogueCard = document.getElementById('marseilleNoDialogueCard');
             const londonRig = document.getElementById('diegeticLondonRig');
@@ -3533,10 +3613,11 @@
             const milestoneRig = document.getElementById('diegeticMilestoneRig');
             const dawnRig = document.getElementById('diegeticDawnRig');
 
-            // Reset rigs and quest banner by default
+            // Reset rigs and quest banner by default: during narrative phase, minigames remain hidden
             if (hotspot) hotspot.classList.add('hidden');
             if (registerRig) registerRig.classList.add('hidden');
             if (studyRig) studyRig.classList.add('hidden');
+            if (notebookTrigger) notebookTrigger.classList.add('hidden');
             if (marseilleRig) marseilleRig.classList.add('hidden');
             if (noDialogueCard) noDialogueCard.classList.add('hidden');
             if (londonRig) londonRig.classList.add('hidden');
@@ -3551,84 +3632,10 @@
             if (dialogueBox) dialogueBox.classList.remove('hidden');
 
             if (action === 'open_boiler_hotspot' || action === 'diegetic_boiler') {
-                // Show pulsing hotspot on furnace door
                 if (hotspot) hotspot.classList.remove('hidden');
-            } else if (action === 'diegetic_register') {
-                if (questBanner) questBanner.classList.remove('hidden');
-                const qTitle = document.getElementById('questTitle');
-                if (qTitle) qTitle.textContent = 'THỦ TỤC XUẤT BẾN';
-                const qSub = document.getElementById('questSubtitle');
-                if (qSub) qSub.textContent = 'BẾN NHÀ RỒNG • 05/06/1911';
-                const qInst = document.getElementById('questInstruction');
-                if (qInst) qInst.textContent = 'Ký tên vào Sổ Thuyền Viên để nhận danh phận thủy thủ "Văn Ba" bước lên tàu';
-                const qCount = document.getElementById('questCounter');
-                if (qCount) qCount.textContent = 'Chờ ký tên';
-                if (registerRig) registerRig.classList.remove('hidden');
-            } else if (action === 'diegetic_study') {
-                if (studyRig) studyRig.classList.remove('hidden');
-            } else if (action === 'marseille_disembark_no_dialogue') {
-                playShipHorn(0.3);
             } else if (action === 'diegetic_marseille_spatial') {
                 if (marseilleRig) marseilleRig.classList.remove('hidden');
                 resetMarseilleSpatialUI();
-            } else if (action === 'diegetic_london') {
-                if (questBanner) questBanner.classList.remove('hidden');
-                const qTitle = document.getElementById('questTitle');
-                if (qTitle) qTitle.textContent = 'MÙA ĐÔNG NƯỚC ANH';
-                const qSub = document.getElementById('questSubtitle');
-                if (qSub) qSub.textContent = 'LUÂN ĐÔN • 1913–1917';
-                const qInst = document.getElementById('questInstruction');
-                if (qInst) qInst.textContent = 'Cào tuyết trên lối đi để kiếm sống và rèn luyện ý chí kiên định';
-                const qCount = document.getElementById('questCounter');
-                if (qCount) qCount.textContent = 'Cào tuyết';
-                if (londonRig) londonRig.classList.remove('hidden');
-                resetLondonSnowUI();
-            } else if (action === 'diegetic_versailles') {
-                if (questBanner) questBanner.classList.remove('hidden');
-                const qTitle = document.getElementById('questTitle');
-                if (qTitle) qTitle.textContent = 'BẢN YÊU SÁCH 8 ĐIỂM';
-                const qSub = document.getElementById('questSubtitle');
-                if (qSub) qSub.textContent = 'VERSAILLES • 18/06/1919';
-                const qInst = document.getElementById('questInstruction');
-                if (qInst) qInst.textContent = 'Đóng dấu đỏ xác thực danh xưng Nguyễn Ái Quốc gửi tới các cường quốc';
-                const qCount = document.getElementById('questCounter');
-                if (qCount) qCount.textContent = 'Đóng dấu';
-                if (versaillesRig) versaillesRig.classList.remove('hidden');
-                resetVersaillesUI();
-            } else if (action === 'diegetic_lenin') {
-                if (questBanner) questBanner.classList.remove('hidden');
-                const qTitle = document.getElementById('questTitle');
-                if (qTitle) qTitle.textContent = 'ÁNH SÁNG CHÂN LÝ';
-                const qSub = document.getElementById('questSubtitle');
-                if (qSub) qSub.textContent = 'NGÕ COMPOINT, PARIS • THÁNG 7/1920';
-                const qInst = document.getElementById('questInstruction');
-                if (qInst) qInst.textContent = 'Thắp sáng ngọn đèn dầu bão để soi tỏ Luận cương Lênin';
-                const qCount = document.getElementById('questCounter');
-                if (qCount) qCount.textContent = 'Thắp sáng';
-                if (leninRig) leninRig.classList.remove('hidden');
-                resetLeninUI();
-            } else if (action === 'diegetic_unification') {
-                if (questBanner) questBanner.classList.remove('hidden');
-                const qTitle = document.getElementById('questTitle');
-                if (qTitle) qTitle.textContent = 'HỢP NHẤT LỊCH SỬ';
-                const qSub = document.getElementById('questSubtitle');
-                if (qSub) qSub.textContent = 'HƯƠNG CẢNG • 03/02/1930';
-                const qInst = document.getElementById('questInstruction');
-                if (qInst) qInst.textContent = 'Nhấp nút hợp nhất để hòa quyện 3 tổ chức thành một Đảng duy nhất';
-                const qCount = document.getElementById('questCounter');
-                if (qCount) qCount.textContent = 'Chờ hợp nhất';
-                if (unificationRig) unificationRig.classList.remove('hidden');
-            } else if (action === 'diegetic_milestone') {
-                if (questBanner) questBanner.classList.remove('hidden');
-                const qTitle = document.getElementById('questTitle');
-                if (qTitle) qTitle.textContent = 'MÙA XUÂN TRỞ VỀ';
-                const qSub = document.getElementById('questSubtitle');
-                if (qSub) qSub.textContent = 'CỘT MỐC 108 PÁC BÓ • 1941';
-                const qInst = document.getElementById('questInstruction');
-                if (qInst) qInst.textContent = 'Chạm tay vào Cột Mốc 108 để cảm nhận hơi ấm thiêng liêng của đất mẹ';
-                const qCount = document.getElementById('questCounter');
-                if (qCount) qCount.textContent = 'Chạm cột mốc';
-                if (milestoneRig) milestoneRig.classList.remove('hidden');
             } else if (action === 'diegetic_dawn') {
                 playDawnBloomChord();
                 if (dawnRig) dawnRig.classList.remove('hidden');
@@ -3646,6 +3653,103 @@
                     smokeParticles = [];
                     if (sCtx) sCtx.clearRect(0, 0, smokeCanvas.width, smokeCanvas.height);
                 }
+            }
+        }
+
+        // Activates the interactive mini-game rig in Phase 2 after dialogue has concluded
+        function activateCurrentInteractiveRig() {
+            state.interactivePhase = 'active';
+            const currentStep = SCENE_SCRIPT[state.currentStepIndex];
+            if (!currentStep) return;
+            const action = currentStep.action;
+
+            const questBanner = document.getElementById('diegeticQuestBanner');
+            const registerRig = document.getElementById('diegeticRegisterRig');
+            const londonRig = document.getElementById('diegeticLondonRig');
+            const versaillesRig = document.getElementById('diegeticVersaillesRig');
+            const leninRig = document.getElementById('diegeticLeninRig');
+            const unificationRig = document.getElementById('diegeticUnificationRig');
+            const milestoneRig = document.getElementById('diegeticMilestoneRig');
+            const promptHint = document.getElementById('dialoguePromptHint');
+            if (promptHint) promptHint.textContent = 'Đang thực hiện thử thách lịch sử...';
+
+            if (action === 'diegetic_register') {
+                if (questBanner) questBanner.classList.remove('hidden');
+                const qTitle = document.getElementById('questTitle');
+                if (qTitle) qTitle.textContent = 'THỦ TỤC XUẤT BẾN';
+                const qSub = document.getElementById('questSubtitle');
+                if (qSub) qSub.textContent = 'BẾN NHÀ RỒNG • 05/06/1911';
+                const qInst = document.getElementById('questInstruction');
+                if (qInst) qInst.textContent = 'Ký tên vào Sổ Thuyền Viên để nhận danh phận thủy thủ "Văn Ba" bước lên tàu';
+                const qCount = document.getElementById('questCounter');
+                if (qCount) qCount.textContent = 'Chờ ký tên';
+                if (registerRig) registerRig.classList.remove('hidden');
+                const nameInput = document.getElementById('inscenePlayerName');
+                if (nameInput) nameInput.focus();
+                playPledgeChime();
+            } else if (action === 'diegetic_london') {
+                if (questBanner) questBanner.classList.remove('hidden');
+                const qTitle = document.getElementById('questTitle');
+                if (qTitle) qTitle.textContent = 'MÙA ĐÔNG NƯỚC ANH';
+                const qSub = document.getElementById('questSubtitle');
+                if (qSub) qSub.textContent = 'LUÂN ĐÔN • 1913–1917';
+                const qInst = document.getElementById('questInstruction');
+                if (qInst) qInst.textContent = 'Cào tuyết trên lối đi để kiếm sống và rèn luyện ý chí kiên định';
+                const qCount = document.getElementById('questCounter');
+                if (qCount) qCount.textContent = 'Cào tuyết';
+                if (londonRig) londonRig.classList.remove('hidden');
+                resetLondonSnowUI();
+                playShovelScrapeSound();
+            } else if (action === 'diegetic_versailles') {
+                if (questBanner) questBanner.classList.remove('hidden');
+                const qTitle = document.getElementById('questTitle');
+                if (qTitle) qTitle.textContent = 'BẢN YÊU SÁCH 8 ĐIỂM';
+                const qSub = document.getElementById('questSubtitle');
+                if (qSub) qSub.textContent = 'VERSAILLES • 18/06/1919';
+                const qInst = document.getElementById('questInstruction');
+                if (qInst) qInst.textContent = 'Đóng dấu đỏ xác thực danh xưng Nguyễn Ái Quốc gửi tới các cường quốc';
+                const qCount = document.getElementById('questCounter');
+                if (qCount) qCount.textContent = 'Đóng dấu';
+                if (versaillesRig) versaillesRig.classList.remove('hidden');
+                resetVersaillesUI();
+                playPledgeChime();
+            } else if (action === 'diegetic_lenin') {
+                if (questBanner) questBanner.classList.remove('hidden');
+                const qTitle = document.getElementById('questTitle');
+                if (qTitle) qTitle.textContent = 'ÁNH SÁNG CHÂN LÝ';
+                const qSub = document.getElementById('questSubtitle');
+                if (qSub) qSub.textContent = 'NGÕ COMPOINT, PARIS • THÁNG 7/1920';
+                const qInst = document.getElementById('questInstruction');
+                if (qInst) qInst.textContent = 'Thắp sáng ngọn đèn dầu bão để soi tỏ Luận cương Lênin';
+                const qCount = document.getElementById('questCounter');
+                if (qCount) qCount.textContent = 'Thắp sáng';
+                if (leninRig) leninRig.classList.remove('hidden');
+                resetLeninUI();
+                playDawnBloomChord();
+            } else if (action === 'diegetic_unification') {
+                if (questBanner) questBanner.classList.remove('hidden');
+                const qTitle = document.getElementById('questTitle');
+                if (qTitle) qTitle.textContent = 'HỢP NHẤT LỊCH SỬ';
+                const qSub = document.getElementById('questSubtitle');
+                if (qSub) qSub.textContent = 'HƯƠNG CẢNG • 03/02/1930';
+                const qInst = document.getElementById('questInstruction');
+                if (qInst) qInst.textContent = 'Nhấp nút hợp nhất để hòa quyện 3 tổ chức thành một Đảng duy nhất';
+                const qCount = document.getElementById('questCounter');
+                if (qCount) qCount.textContent = 'Chờ hợp nhất';
+                if (unificationRig) unificationRig.classList.remove('hidden');
+                playPledgeChime();
+            } else if (action === 'diegetic_milestone') {
+                if (questBanner) questBanner.classList.remove('hidden');
+                const qTitle = document.getElementById('questTitle');
+                if (qTitle) qTitle.textContent = 'MÙA XUÂN TRỞ VỀ';
+                const qSub = document.getElementById('questSubtitle');
+                if (qSub) qSub.textContent = 'CỘT MỐC 108 PÁC BÓ • 1941';
+                const qInst = document.getElementById('questInstruction');
+                if (qInst) qInst.textContent = 'Chạm tay vào Cột Mốc 108 để cảm nhận hơi ấm thiêng liêng của đất mẹ';
+                const qCount = document.getElementById('questCounter');
+                if (qCount) qCount.textContent = 'Chạm cột mốc';
+                if (milestoneRig) milestoneRig.classList.remove('hidden');
+                playDawnBloomChord();
             }
         }
 
@@ -3675,7 +3779,24 @@
             state.isTyping = false;
             document.getElementById('dialogueContent').textContent = state.fullText;
 
-            if (state.autoPlay && !state.waitingForChoice) {
+            const currentStep = SCENE_SCRIPT[state.currentStepIndex];
+            const isInteractiveAction = currentStep && ['diegetic_register', 'diegetic_study', 'diegetic_london', 'diegetic_versailles', 'diegetic_lenin', 'diegetic_unification', 'diegetic_milestone'].includes(currentStep.action);
+
+            const promptHint = document.getElementById('dialoguePromptHint');
+            if (isInteractiveAction && state.interactivePhase === 'narrative') {
+                state.interactivePhase = 'ready';
+                if (currentStep.action === 'diegetic_study') {
+                    const deskTrigger = document.getElementById('frenchNotebookDeskTrigger');
+                    if (deskTrigger) deskTrigger.classList.remove('hidden');
+                    if (promptHint) promptHint.textContent = '📖 Nhấp vào Sổ tay của Anh Ba để học →';
+                } else {
+                    if (promptHint) promptHint.textContent = '⚡ Nhấp chuột / [Space] để bắt đầu hành động →';
+                }
+            } else if (!isInteractiveAction) {
+                if (promptHint) promptHint.textContent = 'Phím [Space] / Nhấp tiếp tục';
+            }
+
+            if (state.autoPlay && !state.waitingForChoice && state.interactivePhase !== 'ready' && state.interactivePhase !== 'active') {
                 clearTimeout(state.autoPlayTimer);
                 state.autoPlayTimer = setTimeout(advanceDialogue, 4000);
             }
@@ -3692,6 +3813,35 @@
             if (state.waitingForChoice) return;
 
             const currentStep = SCENE_SCRIPT[state.currentStepIndex];
+
+            // TWO-PHASE FLOW: If dialogue has completed and interactive rig is awaiting activation
+            if (state.interactivePhase === 'ready') {
+                if (currentStep && currentStep.action === 'diegetic_study') {
+                    openFrenchNotebookFromDesk();
+                } else {
+                    activateCurrentInteractiveRig();
+                }
+                return;
+            }
+
+            // If currently in active interactive minigame, handle completion or prevent accidental skip
+            if (state.interactivePhase === 'active') {
+                if (currentStep && currentStep.action === 'diegetic_study') {
+                    if (state.wordsLearnedCount >= 5) {
+                        finishStudyScene();
+                    }
+                    return;
+                }
+                if (currentStep && currentStep.action === 'diegetic_london') {
+                    if (state.londonSnowStep >= 3) {
+                        finishLondonSnowScene();
+                    }
+                    return;
+                }
+                if (['diegetic_register', 'diegetic_versailles', 'diegetic_lenin', 'diegetic_unification', 'diegetic_milestone'].includes(currentStep.action)) {
+                    return;
+                }
+            }
 
             // If current step explicitly defines next step id (branching convergence)
             if (currentStep && currentStep.nextId) {
@@ -3713,46 +3863,10 @@
                 return;
             }
 
-            if (currentStep && currentStep.action === 'diegetic_register') {
-                const nameInput = document.getElementById('inscenePlayerName');
-                if (nameInput) nameInput.focus();
-                return;
-            }
-
-            if (currentStep && currentStep.action === 'diegetic_study') {
-                if (state.wordsLearnedCount >= 5) {
-                    finishStudyScene();
-                }
-                return;
-            }
-
             if (currentStep && currentStep.action === 'diegetic_marseille_spatial') {
                 if (state.marseilleExplored && state.marseilleExplored.left && state.marseilleExplored.right) {
                     finishMarseilleSpatialScene();
                 }
-                return;
-            }
-
-            if (currentStep && currentStep.action === 'diegetic_london') {
-                if (state.londonSnowStep >= 3) {
-                    finishLondonSnowScene();
-                }
-                return;
-            }
-
-            if (currentStep && currentStep.action === 'diegetic_versailles') {
-                return;
-            }
-
-            if (currentStep && currentStep.action === 'diegetic_lenin') {
-                return;
-            }
-
-            if (currentStep && currentStep.action === 'diegetic_unification') {
-                return;
-            }
-
-            if (currentStep && currentStep.action === 'diegetic_milestone') {
                 return;
             }
 
